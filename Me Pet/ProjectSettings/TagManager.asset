@@ -8,7 +8,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Panel
   - Water
   - UI
   - Cat
@@ -46,6 +46,9 @@ TagManager:
     locked: 0
   - name: Cat
     uniqueID: 973510837
+    locked: 0
+  - name: UI
+    uniqueID: 2728926863
     locked: 0
   m_RenderingLayers:
   - Default

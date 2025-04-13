@@ -29,6 +29,21 @@ public class Energy_Bar : MonoBehaviour
     public Slider health_Slider;
     public float health_deduct_time = 60f;
 
+    [Header("Progress")]
+    public int progress_max = 100;
+    public int progress_current;
+    public Image progress_Image;
+    public float progress_increase_time = 60f;
+
+    public enum PetStage
+    {
+        Kid,
+        Teen,
+        Adult,
+        Old
+    }
+
+    public PetStage currentStage = PetStage.Kid;
 
     void Start()
     {
@@ -44,10 +59,14 @@ public class Energy_Bar : MonoBehaviour
         health_current = health_max; // Initialize health
         health_Slider.value = 1; // Full health at start
 
+        progress_current = 0;
+        progress_Image.fillAmount = 0;
+
         StartCoroutine(DeductEnergyOverTime());
         StartCoroutine(DeductHungerOverTime());
         StartCoroutine(DeductHappinessOverTime());
         StartCoroutine(DeductHealthOverTime());
+        StartCoroutine(IncreaseProgressOverTime());
     }
 
     IEnumerator DeductEnergyOverTime()
@@ -83,6 +102,15 @@ public class Energy_Bar : MonoBehaviour
         {
             yield return new WaitForSeconds(energy_deduct_time); // Wait for 1 minute
             DeductHealth(1); // Reduce 1% of max energy
+        }
+    }
+
+    IEnumerator IncreaseProgressOverTime()
+    {
+        while (progress_current < progress_max)
+        {
+            yield return new WaitForSeconds(progress_increase_time); // Wait 60 seconds
+            AddProgress(1); // Add 1% each time
         }
     }
 
@@ -129,5 +157,40 @@ public class Energy_Bar : MonoBehaviour
     void GetHealthFill()
     {
         health_Slider.value = (float)health_current / health_max;
+    }
+
+    void AddProgress(int percent)
+    {
+        int amountToAdd = Mathf.CeilToInt((percent / 100f) * progress_max);
+        progress_current = Mathf.Min(progress_max, progress_current + amountToAdd);
+        GetProgressFill();
+    }
+
+    void GetProgressFill()
+    {
+        progress_Image.fillAmount = (float)progress_current / progress_max;
+    }
+
+
+    public void IncreaseProgress(int value)
+    {
+        progress_current += value;
+
+        if (progress_current >= progress_max)
+        {
+            progress_current = 0; // Reset progress
+            AdvanceStage();
+        }
+    }
+
+    void AdvanceStage()
+    {
+        if (currentStage == PetStage.Kid)
+            currentStage = PetStage.Teen;
+        else if (currentStage == PetStage.Teen)
+            currentStage = PetStage.Adult;
+        else if (currentStage == PetStage.Adult)
+            currentStage = PetStage.Old;
+        // If already Old, you can decide whether to do nothing or show "Passed Away"
     }
 }
