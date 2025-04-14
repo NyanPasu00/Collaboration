@@ -8,16 +8,23 @@ public class StatusDetail: MonoBehaviour
     public GameObject statusPanel;
     public TextMeshProUGUI statusText;
     public TextMeshProUGUI statusTitle;
+    public TextMeshProUGUI stageText;
 
     // These should reference your values from the other script
     public Energy_Bar stats;
 
-    private bool panelOpen = true;
+    [SerializeField]
+    private bool panelOpen = false;
+
+    private void Start()
+    {
+        statusPanel.SetActive(false);
+    }
 
     void Update()
     {
         // Only update if panel is open
-        if (panelOpen)
+        if (panelOpen == true)
         {
             UpdateStatusText();
 
@@ -31,9 +38,10 @@ public class StatusDetail: MonoBehaviour
 
     public void ToggleStatusPanel()
     {
+        Debug.Log("Correct");
         panelOpen = !panelOpen;
         statusPanel.SetActive(panelOpen);
-        if (panelOpen)
+        if (panelOpen == true)
         {
             UpdateStatusText();
         }
@@ -47,12 +55,18 @@ public class StatusDetail: MonoBehaviour
 
     void UpdateStatusText()
     {
-        statusTitle.text = $"Lily's Status\n";
-        statusText.text = $"Progress: {stats.progress_current}%\n" +
+        float progressPercent = (float)stats.progress_current / stats.progress_max * 100f;
+
+        statusTitle.text = $"Jade's Conditions";
+
+        stageText.text = $"Stage: {stats.currentStage}";
+
+        statusText.text = $"Progress: {progressPercent:F0}%\n" +
                           $"Energy: {stats.energy_current}%\n" +
                           $"Hunger: {stats.hunger_current}%\n" +
                           $"Happiness: {stats.happiness_current}%\n" +
                           $"Health: {stats.health_current}%";
+
     }
 
     bool IsPointerOverUIElement()
