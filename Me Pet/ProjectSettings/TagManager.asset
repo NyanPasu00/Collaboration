@@ -50,5 +50,8 @@ TagManager:
   - name: UI
     uniqueID: 2728926863
     locked: 0
+  - name: 'Ditigal Album '
+    uniqueID: 3820120873
+    locked: 0
   m_RenderingLayers:
   - Default
