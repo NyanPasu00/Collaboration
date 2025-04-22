@@ -2,9 +2,26 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using TMPro;
+using static UnityEngine.EventSystems.EventTrigger;
+using UnityEngine.InputSystem.EnhancedTouch;
 
 public class Energy_Bar : MonoBehaviour
 {
+    public bool firstTimePlay = true;
+    [System.Serializable]
+    public class PetData
+    {
+        public int energy;
+        public int hunger;
+        public int happiness;
+        public int health;
+        public int progress;
+        public PetStage stage;
+        public PetStage represent;
+        public string lastSavedTime; // Store as string to serialize easily
+        public bool firstTime;
+    }
+
     [SerializeField]
     [Header("Energy")]
     public int energy_max = 100;
@@ -62,31 +79,16 @@ public class Energy_Bar : MonoBehaviour
 
     void Start()
     {
-        energy_current = energy_max; // Initialize energy
-        energy_Slider.value = 1; // Full energy at start
-        energyDetail_Slider.value = 1;
+        LoadPetData();
+        UpdateAllUI();
 
-        hunger_current = hunger_max; // Initialize hunger
-        hunger_Slider.value = 1; // Full hunger at start
-        hungerDetail_Slider.value = 1;
-
-        happiness_current = happiness_max; // Initialize happiness
-        happiness_Slider.value = 1; // Full happiness at start
-        happinessDetail_Slider.value = 1;
-
-        health_current = health_max; // Initialize health
-        health_Slider.value = 1; // Full health at start
-        healthDetail_Slider.value = 1;
-
-        progress_current = 0;
-        progress_Image.fillAmount = 0;
-        progressDetail_Slider.value = 0;
 
         StartCoroutine(DeductEnergyOverTime());
         StartCoroutine(DeductHungerOverTime());
         StartCoroutine(DeductHappinessOverTime());
         StartCoroutine(DeductHealthOverTime());
         StartCoroutine(IncreaseProgressOverTime());
+
     }
 
     IEnumerator DeductEnergyOverTime()
@@ -209,6 +211,7 @@ public class Energy_Bar : MonoBehaviour
             stageRepresent.text = $"{PetStageRepresent.T}\n";
             progress_current = 0;
             progress_Image.fillAmount = 0f;
+            progressDetail_Slider.value = 0f;
         }
         else if (currentStage == PetStage.Teen)
         {
@@ -216,6 +219,7 @@ public class Energy_Bar : MonoBehaviour
             stageRepresent.text = $"{PetStageRepresent.A}\n";
             progress_current = 0;
             progress_Image.fillAmount = 0f;
+            progressDetail_Slider.value = 0f;
         }
         else if (currentStage == PetStage.Adult)
         {
@@ -223,8 +227,117 @@ public class Energy_Bar : MonoBehaviour
             stageRepresent.text = $"{PetStageRepresent.O}\n";
             progress_current = 0;
             progress_Image.fillAmount = 0f;
+            progressDetail_Slider.value = 0f;
         }
            
         // If already Old, you can decide whether to do nothing or show "Passed Away"
     }
+
+    void OnApplicationQuit()
+    {
+        SavePetData();
+    }
+
+    void OnApplicationPause(bool pause)
+    {
+        if (pause)
+        {
+            SavePetData();
+        }
+    }
+
+    void SavePetData()
+    {
+        PetData data = new PetData();
+        data.energy = energy_current;
+        data.hunger = hunger_current;
+        data.happiness = happiness_current;
+        data.health = health_current;
+        data.progress = progress_current;
+        data.stage = currentStage;
+        data.lastSavedTime = System.DateTime.Now.ToString();
+        data.firstTime = false;
+
+        string json = JsonUtility.ToJson(data);
+        PlayerPrefs.SetString("PetData", json);
+        PlayerPrefs.Save();
+        Debug.Log("Save folder: " + Application.persistentDataPath);
+    }
+
+    void LoadPetData()
+    {
+        if (PlayerPrefs.HasKey("PetData"))
+        {
+            string json = PlayerPrefs.GetString("PetData");
+            PetData data = JsonUtility.FromJson<PetData>(json);
+
+            firstTimePlay = data.firstTime;
+            if (firstTimePlay == false)
+            {
+                // Calculate time difference
+                System.DateTime lastTime = System.DateTime.Parse(data.lastSavedTime);
+                System.TimeSpan timeDiff = System.DateTime.Now - lastTime;
+                double minutesPassed = timeDiff.TotalMinutes;
+
+                // Example: Deduct 1% per minute for each stat
+                int energyLost = Mathf.CeilToInt((float)(minutesPassed * 0.01 * energy_max));
+                int hungerLost = Mathf.CeilToInt((float)(minutesPassed * 0.01 * hunger_max));
+                int happinessLost = Mathf.CeilToInt((float)(minutesPassed * 0.01 * happiness_max));
+                int healthLost = Mathf.CeilToInt((float)(minutesPassed * 0.01 * health_max));
+                int progressIncrese = Mathf.CeilToInt((float)(minutesPassed * 0.01 * progress_max));
+
+                energy_current = Mathf.Max(0, data.energy - energyLost);
+                hunger_current = Mathf.Max(0, data.hunger - hungerLost);
+                happiness_current = Mathf.Max(0, data.happiness - happinessLost);
+                health_current = Mathf.Max(0, data.health - healthLost);
+                progress_current = Mathf.Max(0, data.progress + progressIncrese);
+                currentStage = data.stage;
+
+                if (progress_current > 99)
+                {
+                    progress_current = 99;
+                }
+
+                if (currentStage == PetStage.Kid)
+                {
+                    stageRepresent.text = $"{PetStageRepresent.K}\n";
+
+                }
+                else if (currentStage == PetStage.Teen)
+                {
+
+                    stageRepresent.text = $"{PetStageRepresent.T}\n";
+
+                }
+                else if (currentStage == PetStage.Adult)
+                {
+
+                    stageRepresent.text = $"{PetStageRepresent.A}\n";
+
+                }
+                else if (currentStage == PetStage.Old)
+                {
+
+                    stageRepresent.text = $"{PetStageRepresent.O}\n";
+
+                }
+
+            }
+
+        }
+        else
+        {
+            Debug.Log("No saved pet data found.");
+        }
+    }
+
+    void UpdateAllUI()
+    {
+        GetProgressFill();
+        GetHealthFill();
+        GetEnergyFill();
+        GetHungerFill();
+        GetHappinessFill();
+    }
+
 }

@@ -38,7 +38,6 @@ public class StatusDetail: MonoBehaviour
 
     public void ToggleStatusPanel()
     {
-        Debug.Log("Correct");
         panelOpen = !panelOpen;
         statusPanel.SetActive(panelOpen);
         if (panelOpen == true)
