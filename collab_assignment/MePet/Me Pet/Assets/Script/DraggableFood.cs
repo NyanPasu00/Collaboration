@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class DraggableFood : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     public Canvas canvas;
-    public Animator catAnimator; // <- Drag your cat's Animator here
+    public Animator catAnimator; 
 
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;

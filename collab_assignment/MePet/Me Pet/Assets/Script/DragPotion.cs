@@ -9,16 +9,22 @@ public class DragPotion : MonoBehaviour
     private bool isDrinking = false;
     private bool isOverMouth = false;
 
+    private bool isOverPlate = false;
+    public Animator catAnimator; 
+
+
     public GameObject mouthPointObject; 
     public GameObject MedicationDialogue;
     public Energy_Bar energyBarScript;
 
+    public AudioSource eatingSound;
     public AudioSource audioSource;
     public AudioClip healthWarningClip;
     private bool hasPlayedHealthSound = false;
 
     void Start()
     {
+
         originalPosition = transform.position;
 
         if (mouthPointObject == null)
@@ -115,9 +121,20 @@ public class DragPotion : MonoBehaviour
     {
         isDrinking = true;
 
+        // Snap potion to center of mouth
+        if (mouthPointObject != null)
+        {
+            transform.position = mouthPointObject.transform.position;
+        }
+
+        // Start animation
+        if (catAnimator != null)
+            catAnimator.SetBool("Eating", true);
+        if (eatingSound != null)
+            eatingSound.Play();
 
         // Wait 2 seconds visually at mouth
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
 
         // Increase health by 10%
         energyBarScript.IncreaseHealth();
@@ -125,9 +142,22 @@ public class DragPotion : MonoBehaviour
         // Return potion to original position
         transform.position = originalPosition;
 
+        yield return new WaitForSeconds(0.4f);
+
+        if (eatingSound != null)
+            eatingSound.Stop();
+        // Stop animation
+        if (catAnimator != null)
+            catAnimator.SetBool("Eating", false);
         isDrinking = false;
     }
 
+    public void EndEatingAnimation()
+    {
+        catAnimator.SetBool("Eating", false);
+        catAnimator.SetBool("CatIdleEatingPose", true);
+
+    }
 
     Vector3 GetMouseWorldPos()
     {
