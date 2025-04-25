@@ -1,19 +1,22 @@
 fileFormatVersion: 2
-guid: 9121c9ab354588648b14abdcba4d2bf6
+guid: d7c57c783bfc4a5409a64556858c6e51
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7711677792995873859
-    second: Dance_0
+      213: 3643419794548232310
+    second: Pause Button_0
   - first:
-      213: -4696794327389405035
-    second: Dance_1
+      213: 5752877151337169816
+    second: Pause Button_1
   - first:
-      213: -4894443350474409068
-    second: Dance_2
+      213: -2410691471306779826
+    second: Pause Button_2
   - first:
-      213: 1123764808090180189
-    second: Dance_3
+      213: 459330185415248067
+    second: Pause Button_3
+  - first:
+      213: 713872491935059220
+    second: Pause Button_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -122,13 +125,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Dance_0
+      name: Pause Button_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 190
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,74 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 34499c13812650b60800000000000000
-      internalID: 7711677792995873859
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dance_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 59082e4a172a1deb0800000000000000
-      internalID: -4696794327389405035
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dance_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 49b33b164b1731cb0800000000000000
-      internalID: -4894443350474409068
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dance_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d5adc45932a689f00800000000000000
-      internalID: 1123764808090180189
+      spriteID: 6709caddff6009230800000000000000
+      internalID: 3643419794548232310
       vertices: []
       indices: 
       edges: []
@@ -213,7 +150,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 994dabb19d965c742af7e3c14841b0aa
+    spriteID: 87b36e749192b41449bea4864b940a68
     internalID: 0
     vertices: []
     indices: 
@@ -223,10 +160,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Dance_0: 7711677792995873859
-      Dance_1: -4696794327389405035
-      Dance_2: -4894443350474409068
-      Dance_3: 1123764808090180189
+      Pause Button_0: 3643419794548232310
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

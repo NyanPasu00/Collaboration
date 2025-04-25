@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: 9121c9ab354588648b14abdcba4d2bf6
+guid: 0da2cbc64529b5548b4d70670e5080ff
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7711677792995873859
-    second: Dance_0
-  - first:
-      213: -4696794327389405035
-    second: Dance_1
-  - first:
-      213: -4894443350474409068
-    second: Dance_2
-  - first:
-      213: 1123764808090180189
-    second: Dance_3
+      213: -2799692873189853672
+    second: Arrow Left_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -122,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Dance_0
+      name: Arrow Left_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 468
+        height: 465
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,74 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 34499c13812650b60800000000000000
-      internalID: 7711677792995873859
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dance_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 59082e4a172a1deb0800000000000000
-      internalID: -4696794327389405035
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dance_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 49b33b164b1731cb0800000000000000
-      internalID: -4894443350474409068
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dance_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d5adc45932a689f00800000000000000
-      internalID: 1123764808090180189
+      spriteID: 816735d4a2e7529d0800000000000000
+      internalID: -2799692873189853672
       vertices: []
       indices: 
       edges: []
@@ -213,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 994dabb19d965c742af7e3c14841b0aa
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -223,10 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Dance_0: 7711677792995873859
-      Dance_1: -4696794327389405035
-      Dance_2: -4894443350474409068
-      Dance_3: 1123764808090180189
+      Arrow Left_0: -2799692873189853672
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
