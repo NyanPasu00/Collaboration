@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Medication.unity
     guid: 27fd4ebba08828d43803b334d18aba99
   - enabled: 1
-    path: Assets/Scenes/Kitchen.unity
+    path: Assets/Scenes/OldKitchen.unity
     guid: 76560e73da59e4b45b586fd85b342d9a
   m_configObjects:
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: a70a8afbcc050a347ac899f08d92864a, type: 2}

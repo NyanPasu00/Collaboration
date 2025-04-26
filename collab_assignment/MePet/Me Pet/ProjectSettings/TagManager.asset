@@ -48,6 +48,9 @@ TagManager:
   - name: Background
     uniqueID: 3575415113
     locked: 0
+  - name: BgItem
+    uniqueID: 31873067
+    locked: 0
   - name: Cat
     uniqueID: 973510837
     locked: 0
