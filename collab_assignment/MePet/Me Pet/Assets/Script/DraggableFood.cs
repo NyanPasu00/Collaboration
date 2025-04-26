@@ -13,6 +13,8 @@ public class DraggableFood : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     private Vector3 originalPosition;
     public GameObject platePosition;
+    public GameObject FoodFullDialog;
+    public GameObject FeedSuccessDialogue;
     public Energy_Bar energyBarScript;
     public AudioSource eatingSound;
     private Transform originalParent;
@@ -59,14 +61,23 @@ public class DraggableFood : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
         if (hovered != null && hovered.CompareTag("Plate"))
         {
-            // Temporarily set parent to plate
-            transform.SetParent(hovered.transform);
-            rectTransform.anchoredPosition = new Vector2(0, 35); 
+            if (energyBarScript.hunger_current >= 100)
+            {
+                FoodFullDialog.SetActive(true);
+                // Return potion to original position
+                transform.position = originalPosition;
+            }
+            else
+            {
+                // Temporarily set parent to plate
+                transform.SetParent(hovered.transform);
+                rectTransform.anchoredPosition = new Vector2(0, 35);
 
 
-            // Start eating process
-            StartCoroutine(HandleEating());
-            return;
+                // Start eating process
+                StartCoroutine(HandleEating());
+                return;
+            }
         }
 
         // Invalid drop — reset
@@ -112,6 +123,14 @@ public class DraggableFood : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         // Stop animation
         if (catAnimator != null)
             catAnimator.SetBool("Eating", false);
+
+        if (FeedSuccessDialogue != null)
+            FeedSuccessDialogue.SetActive(true);
+
+        yield return new WaitForSeconds(1f);
+
+        if (FeedSuccessDialogue != null)
+            FeedSuccessDialogue.SetActive(false);
     }
 
     public void EndEatingAnimation()

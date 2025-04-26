@@ -27,7 +27,7 @@ public class Energy_Bar : MonoBehaviour
     public int health_max = 100;
     public int health_current;
     public Slider health_Slider;
-    public float health_deduct_time = 10f;
+    public float health_deduct_time = 60f;
 
     [Header("Progress")]
     public int progress_max = 100;

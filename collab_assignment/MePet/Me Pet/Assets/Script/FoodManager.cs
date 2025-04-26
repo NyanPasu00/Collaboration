@@ -6,6 +6,7 @@ public class FoodManager : MonoBehaviour
 {
     public GameObject FoodSelection;
     public GameObject FoodDialog;
+    public GameObject FoodFullDialog;
     public Image selectedFoodImage;
     public Energy_Bar energyBarScript;
     public AudioSource audioSource;
@@ -66,6 +67,13 @@ public class FoodManager : MonoBehaviour
                     FoodDialog.SetActive(false);
                 }
                 hasPlayedHungerSound = false; // reset when hunger goes back up
+            }
+            if (energyBarScript.hunger_current < 100)
+            {
+                if (FoodFullDialog != null && FoodFullDialog.activeSelf)
+                {
+                    FoodFullDialog.SetActive(false);
+                }
             }
         }
     }

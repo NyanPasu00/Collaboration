@@ -9,19 +9,19 @@ public class DragPotion : MonoBehaviour
     private bool isDrinking = false;
     private bool isOverMouth = false;
 
-    private bool isOverPlate = false;
     public Animator catAnimator; 
 
 
-    public GameObject mouthPointObject; 
+    public GameObject mouthPointObject;
     public GameObject MedicationDialogue;
+    public GameObject HealthFullDialogue;
+    public GameObject FeedSuccessDialogue;
     public Energy_Bar energyBarScript;
 
     public AudioSource eatingSound;
     public AudioSource audioSource;
     public AudioClip healthWarningClip;
     private bool hasPlayedHealthSound = false;
-
     void Start()
     {
 
@@ -63,6 +63,14 @@ public class DragPotion : MonoBehaviour
                 }
                 hasPlayedHealthSound = false;
             }
+            if (energyBarScript.health_current < 100)
+            {
+                if (HealthFullDialogue != null && HealthFullDialogue.activeSelf)
+                {
+                    HealthFullDialogue.SetActive(false);
+                }
+            }
+
         }
     }
 
@@ -92,7 +100,16 @@ public class DragPotion : MonoBehaviour
 
             if (isOverMouth)
             {
-                StartCoroutine(DrinkPotion());
+                if (energyBarScript.health_current >= 100)
+                {
+                    HealthFullDialogue.SetActive(true);
+                    // Return potion to original position
+                    transform.position = originalPosition;
+                }
+                else
+                {
+                    StartCoroutine(DrinkPotion());
+                }
             }
             else
             {
@@ -144,11 +161,20 @@ public class DragPotion : MonoBehaviour
 
         yield return new WaitForSeconds(0.4f);
 
+
         if (eatingSound != null)
             eatingSound.Stop();
         // Stop animation
         if (catAnimator != null)
             catAnimator.SetBool("Eating", false);
+
+        if (FeedSuccessDialogue != null)
+            FeedSuccessDialogue.SetActive(true);
+        
+        yield return new WaitForSeconds(1f);
+
+        if (FeedSuccessDialogue != null)
+            FeedSuccessDialogue.SetActive(false);
         isDrinking = false;
     }
 
