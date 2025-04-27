@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ricecooker01a_0: -8180210291656545426
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

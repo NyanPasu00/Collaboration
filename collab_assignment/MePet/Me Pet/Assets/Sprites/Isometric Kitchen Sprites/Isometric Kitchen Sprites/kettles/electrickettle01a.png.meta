@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      electrickettle01a_0: 540610593984719853
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

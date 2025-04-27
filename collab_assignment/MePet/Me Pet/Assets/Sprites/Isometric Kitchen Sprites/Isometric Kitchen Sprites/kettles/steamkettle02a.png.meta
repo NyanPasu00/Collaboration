@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      steamkettle02a_0: 478323564384038626
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

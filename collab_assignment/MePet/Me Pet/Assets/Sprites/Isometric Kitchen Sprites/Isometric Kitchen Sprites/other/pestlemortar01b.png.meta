@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      pestlemortar01b_0: -1779855536512737041
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
