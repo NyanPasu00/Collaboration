@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
-
+using TMPro;
+using System.Collections;
 public class SongCategoryButton : MonoBehaviour
 {
     public string categoryName; // e.g., "Rock", "Rap"
@@ -14,7 +15,9 @@ public class SongCategoryButton : MonoBehaviour
     public Animator petAnimator; // Reference to character's Animator
     public Transform petPosition;
     public AudioSource musicPlayer; // Audio Source to play the song
-
+    public TextMeshProUGUI reactionText;
+    public Energy_Bar happinessBar; 
+    private Coroutine regenHappinessCoroutine;
 
     public AudioClip rockMusic;
     public AudioClip rapMusic;
@@ -39,11 +42,31 @@ public class SongCategoryButton : MonoBehaviour
             petAnimator.SetBool("Laydown", false);
             petAnimator.SetBool("Dance", true);
             petPosition.localPosition = new Vector3(-1.73f, -3.93f, 0f);
+            reactionText.text = "I Love this song!";
+
+            if (regenHappinessCoroutine == null)
+            {
+                Debug.Log("Regen!!!");
+                regenHappinessCoroutine = StartCoroutine(RegenerateHappiness());
+            }
+            happinessBar.PauseHappinessDeduction();
+            
         }
         else
         {
             petAnimator.SetBool("Laydown", false);
             petAnimator.SetBool("Sad", true);
+            petPosition.localPosition = new Vector3(-1.97f, -3.81f, 0f);
+            reactionText.text = "I hate this song...";
+
+            
+            if (regenHappinessCoroutine != null)
+            {
+                StopCoroutine(regenHappinessCoroutine);
+                regenHappinessCoroutine = null;
+            }
+
+            happinessBar.ResumeHappinessDeduction();
         }
     }
 
@@ -98,5 +121,29 @@ public class SongCategoryButton : MonoBehaviour
         petAnimator.SetBool("Sad", false);
         petAnimator.SetBool("Laydown", true);
         petPosition.localPosition = new Vector3(-2.09765f, -2.680398f, 0f);
+
+        if (regenHappinessCoroutine != null)
+        {
+            StopCoroutine(regenHappinessCoroutine);
+            regenHappinessCoroutine = null;
+        }
+
+        happinessBar.ResumeHappinessDeduction();
+    }
+    private IEnumerator RegenerateHappiness()
+    {
+        while (happinessBar.happiness_current < happinessBar.happiness_max)
+        {
+            happinessBar.happiness_current += 1;
+            if (happinessBar.happiness_current > happinessBar.happiness_max)
+                happinessBar.happiness_current = happinessBar.happiness_max;
+
+            happinessBar.happiness_Slider.value = (float)happinessBar.happiness_current / happinessBar.happiness_max;
+            happinessBar.happinessDetail_Slider.value = (float)happinessBar.happiness_current / happinessBar.happiness_max;
+
+            yield return new WaitForSeconds(1f); // Adjust delay as needed
+        }
+
+        regenHappinessCoroutine = null; // Reset reference after fully regenerated
     }
 }

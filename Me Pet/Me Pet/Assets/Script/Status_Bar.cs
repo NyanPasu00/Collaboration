@@ -41,6 +41,8 @@ public class Energy_Bar : MonoBehaviour
     public Slider progressDetail_Slider;
     public float progress_increase_time = 60f;
 
+    private Coroutine energyDeductCoroutine;
+    private Coroutine happinessDeductCoroutine;
     public enum PetStage
     {
         Kid,
@@ -82,9 +84,9 @@ public class Energy_Bar : MonoBehaviour
         progress_Image.fillAmount = 0;
         progressDetail_Slider.value = 0;
 
-        StartCoroutine(DeductEnergyOverTime());
+        energyDeductCoroutine = StartCoroutine(DeductEnergyOverTime());
         StartCoroutine(DeductHungerOverTime());
-        StartCoroutine(DeductHappinessOverTime());
+        happinessDeductCoroutine = StartCoroutine(DeductHappinessOverTime());
         StartCoroutine(DeductHealthOverTime());
         StartCoroutine(IncreaseProgressOverTime());
     }
@@ -132,6 +134,26 @@ public class Energy_Bar : MonoBehaviour
             yield return new WaitForSeconds(progress_increase_time); // Wait 60 seconds
             IncreaseProgress(1); // Add 1% each time
         }
+    }
+
+    public void IncreaseHealth()
+    {
+        health_current = health_current + 10;
+        if(health_current >= 100)
+        {
+            health_current = 100;
+        }
+        GetHealthFill();
+    }
+
+    public void IncreaseFood()
+    {
+        hunger_current = hunger_current + 10;
+        if (hunger_current >= 100)
+        {
+            hunger_current = 100;
+        }
+        GetHungerFill();
     }
 
     void DeductEnergy(int percent)
@@ -226,5 +248,39 @@ public class Energy_Bar : MonoBehaviour
         }
            
         // If already Old, you can decide whether to do nothing or show "Passed Away"
+    }
+
+    public void PauseEnergyDeduction()
+    {
+        if (energyDeductCoroutine != null)
+        {
+            StopCoroutine(energyDeductCoroutine);
+            energyDeductCoroutine = null;
+        }
+    }
+
+    public void ResumeEnergyDeduction()
+    {
+        if (energyDeductCoroutine == null)
+        {
+            energyDeductCoroutine = StartCoroutine(DeductEnergyOverTime());
+        }
+    }
+
+    public void PauseHappinessDeduction()
+    {
+        if (happinessDeductCoroutine != null)
+        {
+            StopCoroutine(happinessDeductCoroutine);
+            happinessDeductCoroutine = null;
+        }
+    }
+
+    public void ResumeHappinessDeduction()
+    {
+        if (happinessDeductCoroutine == null)
+        {
+            happinessDeductCoroutine = StartCoroutine(DeductHappinessOverTime());
+        }
     }
 }

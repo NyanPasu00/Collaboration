@@ -57,7 +57,9 @@ public class StatusDetail: MonoBehaviour
     {
         float progressPercent = (float)stats.progress_current / stats.progress_max * 100f;
 
-        statusTitle.text = $"Jade's Conditions";
+        string petName = PlayerPrefs.GetString("PetName", "Pet");
+
+        statusTitle.text = $"{petName}'s Conditions";
 
         stageText.text = $"Stage: {stats.currentStage}";
 
