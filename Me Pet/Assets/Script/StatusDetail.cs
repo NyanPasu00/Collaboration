@@ -38,6 +38,7 @@ public class StatusDetail: MonoBehaviour
 
     public void ToggleStatusPanel()
     {
+        Debug.Log("Correct");
         panelOpen = !panelOpen;
         statusPanel.SetActive(panelOpen);
         if (panelOpen == true)
@@ -56,7 +57,9 @@ public class StatusDetail: MonoBehaviour
     {
         float progressPercent = (float)stats.progress_current / stats.progress_max * 100f;
 
-        statusTitle.text = $"Jade's Conditions";
+        string petName = PlayerPrefs.GetString("PetName", "Pet");
+
+        statusTitle.text = $"{petName}'s Conditions";
 
         stageText.text = $"Stage: {stats.currentStage}";
 

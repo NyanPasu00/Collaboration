@@ -2,8 +2,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using TMPro;
-using static UnityEngine.EventSystems.EventTrigger;
-using UnityEngine.InputSystem.EnhancedTouch;
 
 public class Energy_Bar : MonoBehaviour
 {
@@ -11,6 +9,7 @@ public class Energy_Bar : MonoBehaviour
     [System.Serializable]
     public class PetData
     {
+        public float dirty;
         public int energy;
         public int hunger;
         public int happiness;
@@ -21,6 +20,8 @@ public class Energy_Bar : MonoBehaviour
         public string lastSavedTime; // Store as string to serialize easily
         public bool firstTime;
     }
+
+    public CatDirtyManager dirtyManager;
 
     [SerializeField]
     [Header("Energy")]
@@ -58,6 +59,8 @@ public class Energy_Bar : MonoBehaviour
     public Slider progressDetail_Slider;
     public float progress_increase_time = 60f;
 
+    private Coroutine energyDeductCoroutine;
+    private Coroutine happinessDeductCoroutine;
     public enum PetStage
     {
         Kid,
@@ -86,9 +89,8 @@ public class Energy_Bar : MonoBehaviour
         StartCoroutine(DeductEnergyOverTime());
         StartCoroutine(DeductHungerOverTime());
         StartCoroutine(DeductHappinessOverTime());
-        StartCoroutine(DeductHealthOverTime());
-        StartCoroutine(IncreaseProgressOverTime());
 
+        StartCoroutine(IncreaseProgressOverTime());
     }
 
     IEnumerator DeductEnergyOverTime()
@@ -134,6 +136,50 @@ public class Energy_Bar : MonoBehaviour
             yield return new WaitForSeconds(progress_increase_time); // Wait 60 seconds
             IncreaseProgress(1); // Add 1% each time
         }
+    }
+
+    public void IncreaseHealth()
+    {
+        health_current = health_current + 10;
+        if(health_current >= 100)
+        {
+            health_current = 100;
+        }
+        GetHealthFill();
+    }
+
+    public void IncreaseFood()
+    {
+        hunger_current = hunger_current + 10;
+        if (hunger_current >= 100)
+        {
+            hunger_current = 100;
+        }
+        GetHungerFill();
+    }
+
+    public void GamePlayEnergyNeed()
+    {
+        
+        if (energy_current <= 30)
+        {
+            GetEnergyFill();
+        }
+        else
+        {
+            energy_current = energy_current - 15;
+            GetEnergyFill();
+        }
+    }
+
+    public void increaseHappiness(int happiness)
+    {
+        happiness_current = happiness_current + happiness;
+        if (hunger_current >= 100)
+        {
+            hunger_current = 100;
+        }
+        GetHappinessFill();
     }
 
     void DeductEnergy(int percent)
@@ -211,7 +257,6 @@ public class Energy_Bar : MonoBehaviour
             stageRepresent.text = $"{PetStageRepresent.T}\n";
             progress_current = 0;
             progress_Image.fillAmount = 0f;
-            progressDetail_Slider.value = 0f;
         }
         else if (currentStage == PetStage.Teen)
         {
@@ -219,7 +264,6 @@ public class Energy_Bar : MonoBehaviour
             stageRepresent.text = $"{PetStageRepresent.A}\n";
             progress_current = 0;
             progress_Image.fillAmount = 0f;
-            progressDetail_Slider.value = 0f;
         }
         else if (currentStage == PetStage.Adult)
         {
@@ -227,7 +271,7 @@ public class Energy_Bar : MonoBehaviour
             stageRepresent.text = $"{PetStageRepresent.O}\n";
             progress_current = 0;
             progress_Image.fillAmount = 0f;
-            progressDetail_Slider.value = 0f;
+            StartCoroutine(DeductHealthOverTime());
         }
            
         // If already Old, you can decide whether to do nothing or show "Passed Away"
@@ -246,9 +290,10 @@ public class Energy_Bar : MonoBehaviour
         }
     }
 
-    void SavePetData()
+    public void SavePetData()
     {
         PetData data = new PetData();
+        data.dirty = dirtyManager.dirty;
         data.energy = energy_current;
         data.hunger = hunger_current;
         data.happiness = happiness_current;
@@ -262,6 +307,7 @@ public class Energy_Bar : MonoBehaviour
         PlayerPrefs.SetString("PetData", json);
         PlayerPrefs.Save();
         Debug.Log("Save folder: " + Application.persistentDataPath);
+        Debug.Log("dirty : " + data.dirty);
     }
 
     void LoadPetData()
@@ -292,6 +338,7 @@ public class Energy_Bar : MonoBehaviour
                 health_current = Mathf.Max(0, data.health - healthLost);
                 progress_current = Mathf.Max(0, data.progress + progressIncrese);
                 currentStage = data.stage;
+                dirtyManager.dirty = data.dirty;
 
                 if (progress_current > 99)
                 {
@@ -340,4 +387,37 @@ public class Energy_Bar : MonoBehaviour
         GetHappinessFill();
     }
 
+    public void PauseEnergyDeduction()
+    {
+        if (energyDeductCoroutine != null)
+        {
+            StopCoroutine(energyDeductCoroutine);
+            energyDeductCoroutine = null;
+        }
+    }
+
+    public void ResumeEnergyDeduction()
+    {
+        if (energyDeductCoroutine == null)
+        {
+            energyDeductCoroutine = StartCoroutine(DeductEnergyOverTime());
+        }
+    }
+
+    public void PauseHappinessDeduction()
+    {
+        if (happinessDeductCoroutine != null)
+        {
+            StopCoroutine(happinessDeductCoroutine);
+            happinessDeductCoroutine = null;
+        }
+    }
+
+    public void ResumeHappinessDeduction()
+    {
+        if (happinessDeductCoroutine == null)
+        {
+            happinessDeductCoroutine = StartCoroutine(DeductHappinessOverTime());
+        }
+    }
 }

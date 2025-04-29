@@ -1,0 +1,74 @@
+using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class BallMissed : MonoBehaviour
+{
+    public static BallMissed instance;
+
+    public TextMeshProUGUI missed;
+    public GameObject gameOverPanel; // Drag this in the Inspector
+    public GameObject pausePanel;
+    public TextMeshProUGUI currentScoreText;
+    public TextMeshProUGUI highScoreText;
+
+    private int misscount = 0;
+    private int highScore = 0;
+
+    void Awake()
+    {
+        if (instance == null)
+            instance = this;
+    }
+
+    public void PauseGame()
+    {
+        Time.timeScale = 0f;
+        pausePanel.SetActive(true);
+    }
+
+    public void MissScore()
+    {
+        misscount += 1;
+        missed.text = "Missed: " + misscount.ToString() + "/8";
+
+        if (misscount >= 8)
+        {
+            TriggerGameOver();
+        }
+    }
+
+    private void TriggerGameOver()
+    {
+        Time.timeScale = 0f; //Pause the game
+        gameOverPanel.SetActive(true);
+
+        int currentScore = ScoreManager.instance.GetScore(); // Add GetScore() method in ScoreManager
+
+        currentScoreText.text = "" + currentScore;
+
+        if (currentScore > highScore)
+        {
+            highScore = currentScore;
+        }
+
+        highScoreText.text = "" + highScore;
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1f;
+        pausePanel.SetActive(false);
+    }
+    public void RestartGame()
+    {
+        Time.timeScale = 1f; // Unpause the game
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name); // Reload current scene
+    }
+
+    public void QuitGame()
+    {
+        Time.timeScale = 1f; // Just in case
+        SceneManager.LoadScene(0);
+    }
+}
