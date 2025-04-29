@@ -3,8 +3,23 @@ using UnityEngine.SceneManagement; // very important
 
 public class StartGame : MonoBehaviour
 {
+    public Energy_Bar energyBarCheck;
+    public GameObject EnergyNotEnough;
+
+    void Start()
+    {
+        EnergyNotEnough.SetActive(false);
+    }
     public void LoadPlayBallScene()
     {
-        SceneManager.LoadScene("PlayBallScene"); // <- your scene name here!
+        if (energyBarCheck.energy_current <= 30)
+        {
+            EnergyNotEnough.SetActive(true);
+        }
+        else
+        {
+            energyBarCheck.GamePlayEnergyNeed();
+            SceneManager.LoadScene("PlayBallScene"); // <- your scene name here!
+        }
     }
 }

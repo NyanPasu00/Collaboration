@@ -156,6 +156,20 @@ public class Energy_Bar : MonoBehaviour
         GetHungerFill();
     }
 
+    public void GamePlayEnergyNeed()
+    {
+        
+        if (energy_current <= 30)
+        {
+            GetEnergyFill();
+        }
+        else
+        {
+            energy_current = energy_current - 15;
+            GetEnergyFill();
+        }
+    }
+
     void DeductEnergy(int percent)
     {
         int amountToDeduct = Mathf.CeilToInt((percent / 100f) * energy_max);
