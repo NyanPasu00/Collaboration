@@ -5,6 +5,7 @@ using System.Collections;
 public class SongCategoryButton : MonoBehaviour
 {
     public string categoryName; // e.g., "Rock", "Rap"
+    public BGMScript bgm;
 
     public Button lightToggleButton;
 
@@ -33,6 +34,7 @@ public class SongCategoryButton : MonoBehaviour
         MusicScreenPanel.SetActive(true);
         lightToggleButton.gameObject.SetActive(false);
 
+
         // Play music
         PlayCategoryMusic();
 
@@ -51,17 +53,18 @@ public class SongCategoryButton : MonoBehaviour
                 regenHappinessCoroutine = StartCoroutine(RegenerateHappiness());
             }
             happinessBar.PauseHappinessDeduction();
-            
+
         }
         else
         {
+
             petAnimator.SetBool("Dance", false);
             petAnimator.SetBool("Laydown", false);
             petAnimator.SetBool("Sad", true);
             petPosition.localPosition = new Vector3(-1.97f, -3.81f, 0f);
             reactionText.text = "I hate this song...";
 
-            
+
             if (regenHappinessCoroutine != null)
             {
                 StopCoroutine(regenHappinessCoroutine);
@@ -79,9 +82,13 @@ public class SongCategoryButton : MonoBehaviour
 
     private void PlayCategoryMusic()
     {
+        if (bgm != null)
+        {
+            bgm.StopMusic();
+        }
         switch (categoryName)
         {
-            case "Rock":
+            case "Rock":              
                 musicPlayer.clip = rockMusic;
                 break;
             case "Rap":
@@ -116,7 +123,12 @@ public class SongCategoryButton : MonoBehaviour
         lightToggleButton.gameObject.SetActive(true);
         // Stop the music
         if (musicPlayer.isPlaying)
+        {
             musicPlayer.Stop();
+            bgm.PlayMusic();
+        }
+           
+            
 
         // Reset animation states
         petAnimator.SetBool("Dance", false);
@@ -147,5 +159,42 @@ public class SongCategoryButton : MonoBehaviour
         }
 
         regenHappinessCoroutine = null; // Reset reference after fully regenerated
+    }
+
+
+    public void playRock()
+    {
+        categoryName = "Rock";
+        ChangeToMusicScreen();
+    }
+
+    public void playRap()
+    {
+        categoryName = "Rap";
+        ChangeToMusicScreen();
+    }
+
+    public void playReggae()
+    {
+        categoryName = "Reggae";
+        ChangeToMusicScreen();
+    }
+
+    public void playCountry()
+    {
+        categoryName = "Country";
+        ChangeToMusicScreen();
+    }
+
+    public void playJazz()
+    {
+        categoryName = "Jazz";
+        ChangeToMusicScreen();
+    }
+
+    public void playMetal()
+    {
+        categoryName = "Metal";
+        ChangeToMusicScreen();
     }
 }

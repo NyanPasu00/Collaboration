@@ -12,6 +12,7 @@ public class StatusDetail: MonoBehaviour
 
     // These should reference your values from the other script
     public Energy_Bar stats;
+    public SceneLoader loader;
 
     [SerializeField]
     private bool panelOpen = false;
@@ -49,6 +50,7 @@ public class StatusDetail: MonoBehaviour
 
     void ClosePanel()
     {
+        loader.playAudio();
         statusPanel.SetActive(false);
         panelOpen = false;
     }

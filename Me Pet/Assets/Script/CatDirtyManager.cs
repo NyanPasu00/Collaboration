@@ -65,7 +65,28 @@ public class CatDirtyManager : MonoBehaviour
         }
     }
 
+    public void HandleFullyCleaned()
+    {
+        if (currentShower != null)
+        {
+            currentShower.StopShower();
+            currentShower = null;
+        }
 
+        hasShownHalfCleanMessage = false;
+        firstTime = true;
+
+        if (catAnimator != null && hasUsedSoap)
+        {
+            cat.transform.position = new Vector3(-0.04f, -1.5f, 0f);
+            catAnimator.SetBool("isClean", true);
+            energy.increaseHappiness(10);
+            Debug.Log("clean cat");
+            ShowCloudMessage("All clean! Great job!", 2.5f);
+
+            Invoke(nameof(ResetToIdle), 2f);
+        }
+    }
 
     void Update()
     {

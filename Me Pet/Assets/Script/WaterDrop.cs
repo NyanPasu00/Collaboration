@@ -1,32 +1,4 @@
-﻿//using UnityEngine;
-
-//public class WaterDrop : MonoBehaviour
-//{
-//    public GameObject showerController; // Prefab with shower head + particle system + sound
-
-//    void OnTriggerEnter2D(Collider2D other)
-//    {
-//        if (other.CompareTag("Pet"))
-//        {
-//            Debug.Log("Water drop touched the pet, transforming into shower!");
-
-//            Vector3 showerPosition = other.transform.position + new Vector3(0, 2.3f, 0);
-//            GameObject shower = Instantiate(showerController, showerPosition, Quaternion.identity);
-
-//            // Assign the pet as the target in case it's not pre-set
-//            ShowerController controller = shower.GetComponent<ShowerController>();
-//            if (controller != null && controller.petTarget == null)
-//            {
-//                controller.petTarget = other.transform;
-//                //controller.StartShower();
-//            }
-
-//            Destroy(gameObject);
-//        }
-//    }
-//}
-
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 
 public class WaterDrop : MonoBehaviour

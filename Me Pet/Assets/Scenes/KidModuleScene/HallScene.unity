@@ -340,7 +340,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: I NEED TO BATH !!!!!!!!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: bbdef87b398c0d94ab18715a13f750c7, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 94aec477f2c9127489a7fb07f498277e, type: 2}
   m_sharedMaterial: {fileID: -1118073565571878047, guid: bbdef87b398c0d94ab18715a13f750c7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1241,66 +1241,6 @@ Canvas:
   m_SortingLayerID: -1566040433
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!1 &174843804
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 174843806}
-  - component: {fileID: 174843805}
-  m_Layer: 0
-  m_Name: JazzManage
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &174843805
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 174843804}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd33fe6e19f401d468b16ce30788cd01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  categoryName: Jazz
-  lightToggleButton: {fileID: 1736986104}
-  SongMenuPanel: {fileID: 278133962}
-  HallPanel: {fileID: 1035634458}
-  MusicScreenPanel: {fileID: 885365922}
-  petAnimator: {fileID: 2144841301}
-  petPosition: {fileID: 2144841300}
-  musicPlayer: {fileID: 63834873}
-  reactionText: {fileID: 217348069}
-  happinessBar: {fileID: 255022664}
-  rockMusic: {fileID: 8300000, guid: 5f793a8cca5171c4cafee1df6e39f3ff, type: 3}
-  rapMusic: {fileID: 8300000, guid: 41fe5b9352c26dc458a1a939dc84db7c, type: 3}
-  reggaeMusic: {fileID: 8300000, guid: 14457907bf76d63429218a0579809f04, type: 3}
-  countryMusic: {fileID: 8300000, guid: c361abb9f25ceb9408dcdb5f6415d14f, type: 3}
-  jazzMusic: {fileID: 8300000, guid: 37673213464010b429195711b1e09be1, type: 3}
-  metalMusic: {fileID: 8300000, guid: eb537ba88ec477c43b7eb5bb6c292f90, type: 3}
---- !u!4 &174843806
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 174843804}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1681957396}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &188823512
 GameObject:
   m_ObjectHideFlags: 0
@@ -1723,27 +1663,27 @@ MonoBehaviour:
   energy_current: 100
   energy_Slider: {fileID: 1322222151}
   energyDetail_Slider: {fileID: 1798379591}
-  energy_deduct_time: 2
+  energy_deduct_time: 60
   hunger_max: 100
   hunger_current: 100
   hunger_Slider: {fileID: 96501346}
   hungerDetail_Slider: {fileID: 1536039296}
-  hunger_deduct_time: 2
+  hunger_deduct_time: 60
   happiness_max: 100
   happiness_current: 100
   happiness_Slider: {fileID: 1974423869}
   happinessDetail_Slider: {fileID: 2133073182}
-  happiness_deduct_time: 2
+  happiness_deduct_time: 60
   health_max: 100
   health_current: 100
   health_Slider: {fileID: 403095715}
   healthDetail_Slider: {fileID: 1021599756}
-  health_deduct_time: 2
+  health_deduct_time: 60
   progress_max: 100
   progress_current: 0
   progress_Image: {fileID: 1165590361}
   progressDetail_Slider: {fileID: 965522107}
-  progress_increase_time: 2
+  progress_increase_time: 60
   currentStage: 0
   stageRepresent: {fileID: 1888166904}
 --- !u!1 &259933053
@@ -1917,6 +1857,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1681957401}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: playAudio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &265233411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2042,6 +1994,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1635414631}
         m_TargetAssemblyTypeName: StatusDetail, Assembly-CSharp
         m_MethodName: ToggleStatusPanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1681957401}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: playAudio
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2330,7 +2294,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -1566040433
   m_SortingOrder: 4
   m_TargetDisplay: 0
 --- !u!224 &345938447
@@ -2650,9 +2614,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1616287945}
+      - m_Target: {fileID: 1681957399}
         m_TargetAssemblyTypeName: SongCategoryButton, Assembly-CSharp
-        m_MethodName: ChangeToMusicScreen
+        m_MethodName: playRock
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3171,66 +3135,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1 &506722389
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 506722391}
-  - component: {fileID: 506722390}
-  m_Layer: 0
-  m_Name: ReggaeManage
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &506722390
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 506722389}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd33fe6e19f401d468b16ce30788cd01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  categoryName: Reggae
-  lightToggleButton: {fileID: 1736986104}
-  SongMenuPanel: {fileID: 278133962}
-  HallPanel: {fileID: 1035634458}
-  MusicScreenPanel: {fileID: 885365922}
-  petAnimator: {fileID: 2144841301}
-  petPosition: {fileID: 2144841300}
-  musicPlayer: {fileID: 63834873}
-  reactionText: {fileID: 217348069}
-  happinessBar: {fileID: 255022664}
-  rockMusic: {fileID: 8300000, guid: 5f793a8cca5171c4cafee1df6e39f3ff, type: 3}
-  rapMusic: {fileID: 8300000, guid: 41fe5b9352c26dc458a1a939dc84db7c, type: 3}
-  reggaeMusic: {fileID: 8300000, guid: 14457907bf76d63429218a0579809f04, type: 3}
-  countryMusic: {fileID: 8300000, guid: c361abb9f25ceb9408dcdb5f6415d14f, type: 3}
-  jazzMusic: {fileID: 8300000, guid: 37673213464010b429195711b1e09be1, type: 3}
-  metalMusic: {fileID: 8300000, guid: eb537ba88ec477c43b7eb5bb6c292f90, type: 3}
---- !u!4 &506722391
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 506722389}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1681957396}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -3697,6 +3601,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1681957401}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: playAudio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &603545508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3905,6 +3821,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1681957401}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: playAudio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &649959695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3925,7 +3853,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -2970073484504309273, guid: 1a6688b1ce6853f488c5b602bb9eec62, type: 3}
+  m_Sprite: {fileID: -2970073484504309273, guid: 5c8658db0b5b51541ba87af67d2aad3a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4612,9 +4540,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 506722390}
+      - m_Target: {fileID: 1681957399}
         m_TargetAssemblyTypeName: SongCategoryButton, Assembly-CSharp
-        m_MethodName: ChangeToMusicScreen
+        m_MethodName: playReggae
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4710,6 +4638,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1635414631}
         m_TargetAssemblyTypeName: StatusDetail, Assembly-CSharp
         m_MethodName: ToggleStatusPanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1681957401}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: playAudio
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4888,7 +4828,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 973510837
+  m_SortingLayerID: -1566040433
   m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!1 &885365922
@@ -5222,66 +5162,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &986545891
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 986545893}
-  - component: {fileID: 986545892}
-  m_Layer: 0
-  m_Name: MetalManage
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &986545892
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 986545891}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd33fe6e19f401d468b16ce30788cd01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  categoryName: Metal
-  lightToggleButton: {fileID: 1736986104}
-  SongMenuPanel: {fileID: 278133962}
-  HallPanel: {fileID: 1035634458}
-  MusicScreenPanel: {fileID: 885365922}
-  petAnimator: {fileID: 2144841301}
-  petPosition: {fileID: 2144841300}
-  musicPlayer: {fileID: 63834873}
-  reactionText: {fileID: 217348069}
-  happinessBar: {fileID: 255022664}
-  rockMusic: {fileID: 8300000, guid: 5f793a8cca5171c4cafee1df6e39f3ff, type: 3}
-  rapMusic: {fileID: 8300000, guid: 41fe5b9352c26dc458a1a939dc84db7c, type: 3}
-  reggaeMusic: {fileID: 8300000, guid: 14457907bf76d63429218a0579809f04, type: 3}
-  countryMusic: {fileID: 8300000, guid: c361abb9f25ceb9408dcdb5f6415d14f, type: 3}
-  jazzMusic: {fileID: 8300000, guid: 37673213464010b429195711b1e09be1, type: 3}
-  metalMusic: {fileID: 8300000, guid: eb537ba88ec477c43b7eb5bb6c292f90, type: 3}
---- !u!4 &986545893
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 986545891}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1681957396}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &993073663
 GameObject:
   m_ObjectHideFlags: 0
@@ -5849,6 +5729,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1681957400}
         m_TargetAssemblyTypeName: OpenDigitalAlbum, Assembly-CSharp
         m_MethodName: ToggleAlbum
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1681957401}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: playAudio
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6451,66 +6343,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1165590359}
   m_CullTransparentMesh: 1
---- !u!1 &1186763084
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1186763085}
-  - component: {fileID: 1186763086}
-  m_Layer: 0
-  m_Name: CountryManage
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1186763085
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1186763084}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1681957396}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1186763086
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1186763084}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd33fe6e19f401d468b16ce30788cd01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  categoryName: Country
-  lightToggleButton: {fileID: 1736986104}
-  SongMenuPanel: {fileID: 278133962}
-  HallPanel: {fileID: 1035634458}
-  MusicScreenPanel: {fileID: 885365922}
-  petAnimator: {fileID: 2144841301}
-  petPosition: {fileID: 2144841300}
-  musicPlayer: {fileID: 63834873}
-  reactionText: {fileID: 217348069}
-  happinessBar: {fileID: 255022664}
-  rockMusic: {fileID: 8300000, guid: 5f793a8cca5171c4cafee1df6e39f3ff, type: 3}
-  rapMusic: {fileID: 8300000, guid: 41fe5b9352c26dc458a1a939dc84db7c, type: 3}
-  reggaeMusic: {fileID: 8300000, guid: 14457907bf76d63429218a0579809f04, type: 3}
-  countryMusic: {fileID: 8300000, guid: c361abb9f25ceb9408dcdb5f6415d14f, type: 3}
-  jazzMusic: {fileID: 8300000, guid: 37673213464010b429195711b1e09be1, type: 3}
-  metalMusic: {fileID: 8300000, guid: eb537ba88ec477c43b7eb5bb6c292f90, type: 3}
 --- !u!1 &1208604406
 GameObject:
   m_ObjectHideFlags: 0
@@ -6631,9 +6463,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 174843805}
+      - m_Target: {fileID: 1681957399}
         m_TargetAssemblyTypeName: SongCategoryButton, Assembly-CSharp
-        m_MethodName: ChangeToMusicScreen
+        m_MethodName: playJazz
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7475,6 +7307,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1386146538}
   - component: {fileID: 1386146539}
+  - component: {fileID: 1386146541}
+  - component: {fileID: 1386146540}
   m_Layer: 0
   m_Name: LyingSpotSpawn
   m_TagString: Untagged
@@ -7543,6 +7377,115 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.27165446, y: 0.084330365}
   m_EdgeRadius: 0
+--- !u!114 &1386146540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1386146537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb2bb3292d6e37243b0ac480dbe08dd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!82 &1386146541
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1386146537}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 4c5704974975c6142a828b8ea7fe8aec, type: 3}
+  m_Resource: {fileID: 8300000, guid: 4c5704974975c6142a828b8ea7fe8aec, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.2
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1462886902
 GameObject:
   m_ObjectHideFlags: 0
@@ -7775,6 +7718,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1681957398}
         m_TargetAssemblyTypeName: RadioMenuController, Assembly-CSharp
         m_MethodName: ToggleSongMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1681957401}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: playAudio
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8081,9 +8036,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 986545892}
+      - m_Target: {fileID: 1681957399}
         m_TargetAssemblyTypeName: SongCategoryButton, Assembly-CSharp
-        m_MethodName: ChangeToMusicScreen
+        m_MethodName: playMetal
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8450,66 +8405,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1615036139}
   m_CullTransparentMesh: 1
---- !u!1 &1616287944
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1616287946}
-  - component: {fileID: 1616287945}
-  m_Layer: 0
-  m_Name: RockManage
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1616287945
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1616287944}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd33fe6e19f401d468b16ce30788cd01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  categoryName: Rock
-  lightToggleButton: {fileID: 1736986104}
-  SongMenuPanel: {fileID: 278133962}
-  HallPanel: {fileID: 1035634458}
-  MusicScreenPanel: {fileID: 885365922}
-  petAnimator: {fileID: 2144841301}
-  petPosition: {fileID: 2144841300}
-  musicPlayer: {fileID: 63834873}
-  reactionText: {fileID: 217348069}
-  happinessBar: {fileID: 255022664}
-  rockMusic: {fileID: 8300000, guid: 5f793a8cca5171c4cafee1df6e39f3ff, type: 3}
-  rapMusic: {fileID: 8300000, guid: 41fe5b9352c26dc458a1a939dc84db7c, type: 3}
-  reggaeMusic: {fileID: 8300000, guid: 14457907bf76d63429218a0579809f04, type: 3}
-  countryMusic: {fileID: 8300000, guid: c361abb9f25ceb9408dcdb5f6415d14f, type: 3}
-  jazzMusic: {fileID: 8300000, guid: 37673213464010b429195711b1e09be1, type: 3}
-  metalMusic: {fileID: 8300000, guid: eb537ba88ec477c43b7eb5bb6c292f90, type: 3}
---- !u!4 &1616287946
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1616287944}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1681957396}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1620205268
 GameObject:
   m_ObjectHideFlags: 0
@@ -8660,6 +8555,148 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1625277757}
   m_CullTransparentMesh: 1
+--- !u!1 &1633575549
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1633575552}
+  - component: {fileID: 1633575551}
+  - component: {fileID: 1633575550}
+  m_Layer: 0
+  m_Name: GameBGM
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1633575550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1633575549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e247c34145f446468de13353b5fefb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!82 &1633575551
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1633575549}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: c84afdabc20a6ab4c8e7b93b0812ef75, type: 3}
+  m_Resource: {fileID: 8300000, guid: c84afdabc20a6ab4c8e7b93b0812ef75, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1633575552
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1633575549}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.4635553, y: -0.23678465, z: 52.146496}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1635414629
 GameObject:
   m_ObjectHideFlags: 0
@@ -8724,6 +8761,7 @@ MonoBehaviour:
   statusTitle: {fileID: 439220278}
   stageText: {fileID: 1257753967}
   stats: {fileID: 255022664}
+  loader: {fileID: 0}
   panelOpen: 0
 --- !u!114 &1635414632
 MonoBehaviour:
@@ -9064,6 +9102,8 @@ GameObject:
   - component: {fileID: 1681957400}
   - component: {fileID: 1681957401}
   - component: {fileID: 1681957402}
+  - component: {fileID: 1681957403}
+  - component: {fileID: 1681957404}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -9083,13 +9123,7 @@ Transform:
   m_LocalPosition: {x: -1.783336, y: -0.30607182, z: 0.048106838}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1186763085}
-  - {fileID: 1616287946}
-  - {fileID: 986545893}
-  - {fileID: 174843806}
-  - {fileID: 506722391}
-  - {fileID: 1732747460}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1681957397
@@ -9109,6 +9143,7 @@ MonoBehaviour:
   HallDarkScreen: {fileID: 946203367}
   petAnimator: {fileID: 2144841301}
   energyBar: {fileID: 255022664}
+  audio: {fileID: 1681957404}
 --- !u!114 &1681957398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9135,6 +9170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   categoryName: 
+  bgm: {fileID: 1633575550}
   lightToggleButton: {fileID: 1736986104}
   SongMenuPanel: {fileID: 278133962}
   HallPanel: {fileID: 1035634458}
@@ -9144,12 +9180,12 @@ MonoBehaviour:
   musicPlayer: {fileID: 63834873}
   reactionText: {fileID: 217348069}
   happinessBar: {fileID: 255022664}
-  rockMusic: {fileID: 0}
-  rapMusic: {fileID: 0}
-  reggaeMusic: {fileID: 0}
-  countryMusic: {fileID: 0}
-  jazzMusic: {fileID: 0}
-  metalMusic: {fileID: 0}
+  rockMusic: {fileID: 8300000, guid: 5f793a8cca5171c4cafee1df6e39f3ff, type: 3}
+  rapMusic: {fileID: 8300000, guid: 41fe5b9352c26dc458a1a939dc84db7c, type: 3}
+  reggaeMusic: {fileID: 8300000, guid: 14457907bf76d63429218a0579809f04, type: 3}
+  countryMusic: {fileID: 8300000, guid: c361abb9f25ceb9408dcdb5f6415d14f, type: 3}
+  jazzMusic: {fileID: 8300000, guid: 37673213464010b429195711b1e09be1, type: 3}
+  metalMusic: {fileID: 8300000, guid: eb537ba88ec477c43b7eb5bb6c292f90, type: 3}
 --- !u!114 &1681957400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9175,6 +9211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3435e9f082ff2f44ba2cbefda3f64032, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioClip: {fileID: 1681957403}
   energy: {fileID: 255022664}
 --- !u!114 &1681957402
 MonoBehaviour:
@@ -9204,6 +9241,200 @@ MonoBehaviour:
   energy: {fileID: 0}
   spawnArea: {fileID: 1386146539}
   spawnAreaLying: {fileID: 1386146539}
+--- !u!82 &1681957403
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681957395}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 7ad208749aa41884b95e0758cd79a818, type: 3}
+  m_Resource: {fileID: 8300000, guid: 7ad208749aa41884b95e0758cd79a818, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!82 &1681957404
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681957395}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 18f7052d9538c2e47b6db0e6664d0288, type: 3}
+  m_Resource: {fileID: 8300000, guid: 18f7052d9538c2e47b6db0e6664d0288, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1708636769
 GameObject:
   m_ObjectHideFlags: 0
@@ -9354,66 +9585,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1710644961}
   m_CullTransparentMesh: 1
---- !u!1 &1732747458
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1732747460}
-  - component: {fileID: 1732747459}
-  m_Layer: 0
-  m_Name: RapManage
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1732747459
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1732747458}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd33fe6e19f401d468b16ce30788cd01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  categoryName: Rap
-  lightToggleButton: {fileID: 1736986104}
-  SongMenuPanel: {fileID: 278133962}
-  HallPanel: {fileID: 1035634458}
-  MusicScreenPanel: {fileID: 885365922}
-  petAnimator: {fileID: 2144841301}
-  petPosition: {fileID: 2144841300}
-  musicPlayer: {fileID: 63834873}
-  reactionText: {fileID: 217348069}
-  happinessBar: {fileID: 255022664}
-  rockMusic: {fileID: 8300000, guid: 5f793a8cca5171c4cafee1df6e39f3ff, type: 3}
-  rapMusic: {fileID: 8300000, guid: 41fe5b9352c26dc458a1a939dc84db7c, type: 3}
-  reggaeMusic: {fileID: 8300000, guid: 14457907bf76d63429218a0579809f04, type: 3}
-  countryMusic: {fileID: 8300000, guid: c361abb9f25ceb9408dcdb5f6415d14f, type: 3}
-  jazzMusic: {fileID: 8300000, guid: 37673213464010b429195711b1e09be1, type: 3}
-  metalMusic: {fileID: 8300000, guid: eb537ba88ec477c43b7eb5bb6c292f90, type: 3}
---- !u!4 &1732747460
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1732747458}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1681957396}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1736986100
 GameObject:
   m_ObjectHideFlags: 0
@@ -9537,6 +9708,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1681957397}
         m_TargetAssemblyTypeName: LightToggle, Assembly-CSharp
         m_MethodName: ToggleLight
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1681957397}
+        m_TargetAssemblyTypeName: LightToggle, Assembly-CSharp
+        m_MethodName: playAudio
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10283,9 +10466,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1732747459}
+      - m_Target: {fileID: 1681957399}
         m_TargetAssemblyTypeName: SongCategoryButton, Assembly-CSharp
-        m_MethodName: ChangeToMusicScreen
+        m_MethodName: playRap
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11139,9 +11322,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1186763086}
+      - m_Target: {fileID: 1681957399}
         m_TargetAssemblyTypeName: SongCategoryButton, Assembly-CSharp
-        m_MethodName: ChangeToMusicScreen
+        m_MethodName: playCountry
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11992,6 +12175,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1681957401}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: playAudio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2146525022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12140,3 +12335,4 @@ SceneRoots:
   - {fileID: 2097942609}
   - {fileID: 924305472}
   - {fileID: 584908869}
+  - {fileID: 1633575552}

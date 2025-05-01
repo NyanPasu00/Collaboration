@@ -19,6 +19,12 @@ public class StartGame : MonoBehaviour
         else
         {
             energyBarCheck.GamePlayEnergyNeed();
+            energyBarCheck.happiness_current += 30;
+            if(energyBarCheck.happiness_current >= 100)
+            {
+                energyBarCheck.happiness_current = 100;
+            }
+            energyBarCheck.SavePetData();
             SceneManager.LoadScene("PlayBallScene"); // <- your scene name here!
         }
     }

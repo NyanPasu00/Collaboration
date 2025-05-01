@@ -34,6 +34,12 @@ public class FadeWhenHitByWater : MonoBehaviour
 
             if (lifeTimer >= fadeTime)
             {
+                if (catDirtyManager != null)
+                {
+                    catDirtyManager.dirty = 0f;
+                    catDirtyManager.HandleFullyCleaned();
+                }
+
                 Destroy(gameObject);
             }
 

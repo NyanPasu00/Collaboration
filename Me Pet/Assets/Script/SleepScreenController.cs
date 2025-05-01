@@ -11,6 +11,8 @@ public class LightToggle : MonoBehaviour
     private Coroutine regenEnergyCoroutine;
     private bool isLightOn = true;
 
+    public AudioSource audio;
+
     public void ToggleLight()
     {
         isLightOn = !isLightOn;
@@ -67,6 +69,9 @@ public class LightToggle : MonoBehaviour
         regenEnergyCoroutine = null; // Reset reference after fully regenerated
     }
 
-
+    public void playAudio()
+    {
+        audio.Play();
+    }
 
 }
