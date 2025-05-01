@@ -15,6 +15,7 @@ public class SoapBubbleSpawner : MonoBehaviour
 
     private float lastBubbleTime = 0f;
     private List<GameObject> activeBubbles = new List<GameObject>();
+    public AudioSource audio;
 
 
     private void Start()
@@ -22,6 +23,20 @@ public class SoapBubbleSpawner : MonoBehaviour
         water.SetActive(false);
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Pet")){
+            audio.Play();
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Pet"))
+        {
+            audio.Stop();
+        }
+    }
     void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("Pet"))
