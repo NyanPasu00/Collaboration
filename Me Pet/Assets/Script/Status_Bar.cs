@@ -1,0 +1,547 @@
+using UnityEngine;
+using UnityEngine.UI;
+using System.Collections;
+using TMPro;
+
+public class Energy_Bar : MonoBehaviour
+{
+    public bool firstTimePlay = true;
+    [System.Serializable]
+    public class PetData
+    {
+        public float dirty;
+        public int energy;
+        public int hunger;
+        public int happiness;
+        public int health;
+        public int progress;
+        public PetStage stage;
+        public PetStage represent;
+        public string lastSavedTime; // Store as string to serialize easily
+        public bool firstTime;
+        public float lastEnergySecond;
+        public float lastHealthSecond;
+        public float lastProgressSecond;
+        public float lastHappinessSecond;
+        public float lastHungerSecond;
+    }
+
+    public CatDirtyManager dirtyManager;
+
+    [SerializeField]
+    [Header("Energy")]
+    public int energy_max = 100;
+    public int energy_current;
+    public Slider energy_Slider;
+    public Slider energyDetail_Slider;
+    public float energy_deduct_time = 60f;
+
+    [Header("Hunger")]
+    public int hunger_max = 100;
+    public int hunger_current;
+    public Slider hunger_Slider;
+    public Slider hungerDetail_Slider;
+    public float hunger_deduct_time = 60f;
+
+    [Header("Happiness")]
+    public int happiness_max = 100;
+    public int happiness_current;
+    public Slider happiness_Slider;
+    public Slider happinessDetail_Slider;
+    public float happiness_deduct_time = 60f;
+
+    [Header("Health")]
+    public int health_max = 100;
+    public int health_current;
+    public Slider health_Slider;
+    public Slider healthDetail_Slider;
+    public float health_deduct_time = 60f;
+
+    [Header("Progress")]
+    public int progress_max = 100;
+    public int progress_current;
+    public Image progress_Image;
+    public Slider progressDetail_Slider;
+    public float progress_increase_time = 60f;
+
+    private Coroutine energyDeductCoroutine;
+    private Coroutine happinessDeductCoroutine;
+    public enum PetStage
+    {
+        Kid,
+        Teen,
+        Adult,
+        Old
+    }
+
+    public enum PetStageRepresent
+    {
+        K,
+        T,
+        A,
+        O
+    }
+
+    public PetStage currentStage = PetStage.Kid;
+    public TextMeshProUGUI stageRepresent;
+
+
+    private float lastEnergyTime = 0f;
+    private float lastHungerTime = 0f;
+    private float lastHappinessTime = 0f;
+    private float lastHealthTime = 0f;
+    private float lastProgressTime = 0f;
+
+    void Start()
+    {
+        LoadPetData();
+        UpdateAllUI();
+
+
+        energyDeductCoroutine = StartCoroutine(DeductEnergyOverTime());
+        StartCoroutine(DeductHungerOverTime());
+        happinessDeductCoroutine = StartCoroutine(DeductHappinessOverTime());
+        StartCoroutine(IncreaseProgressOverTime());
+
+        if (currentStage == PetStage.Old)
+        {
+            StartCoroutine(DeductHealthOverTime());
+        }
+
+       
+    }
+
+    IEnumerator DeductEnergyOverTime()
+    {
+        while (energy_current > 0)
+        {
+            while (lastEnergyTime < energy_deduct_time)
+            {
+                lastEnergyTime += Time.deltaTime;
+                yield return null;
+            }
+
+            DeductEnergy(1);
+            lastEnergyTime = 0f;
+        }
+    }
+
+    IEnumerator DeductHungerOverTime()
+    {
+        while (hunger_current > 0)
+        {
+            while (lastHungerTime < hunger_deduct_time)
+            {
+                lastHungerTime += Time.deltaTime;
+                yield return null;
+            }
+
+            DeductHunger(1);
+            lastHungerTime = 0f;
+        }
+    }
+
+    IEnumerator DeductHappinessOverTime()
+    {
+        
+        while (happiness_current > 0)
+        {
+            while (lastHappinessTime < happiness_deduct_time)
+            {
+                lastHappinessTime += Time.deltaTime;
+                yield return null;
+            }
+
+            DeductHappiness(1);
+            lastHappinessTime = 0f;
+        }
+    }
+
+    IEnumerator DeductHealthOverTime()
+    {
+        
+        while (health_current > 0)
+        {
+            while (lastHealthTime < health_deduct_time)
+            {
+                lastHealthTime += Time.deltaTime;
+                yield return null;
+            }
+
+            DeductHealth(1);
+            lastHealthTime = 0f;
+        }
+    }
+
+    IEnumerator IncreaseProgressOverTime()
+    {
+            
+        while (progress_current <= 100)
+        {
+            while (lastProgressTime < progress_increase_time)
+            {
+                lastProgressTime += Time.deltaTime;
+                yield return null;
+            }
+
+            IncreaseProgress(1);
+            lastProgressTime = 0f;
+        }
+    }
+
+    public void IncreaseHealth()
+    {
+        health_current = health_current + 10;
+        if(health_current >= 100)
+        {
+            health_current = 100;
+        }
+        GetHealthFill();
+    }
+
+    public void IncreaseFood()
+    {
+        hunger_current = hunger_current + 10;
+        if (hunger_current >= 100)
+        {
+            hunger_current = 100;
+        }
+        GetHungerFill();
+    }
+
+    public void GamePlayEnergyNeed()
+    {
+        
+        if (energy_current <= 30)
+        {
+            GetEnergyFill();
+        }
+        else
+        {
+            energy_current = energy_current - 15;
+            GetEnergyFill();
+        }
+    }
+
+    public void increaseHappiness(int happiness)
+    {
+        happiness_current = happiness_current + happiness;
+        if (hunger_current >= 100)
+        {
+            hunger_current = 100;
+        }
+        GetHappinessFill();
+    }
+
+    void DeductEnergy(int percent)
+    {
+        int amountToDeduct = Mathf.CeilToInt((percent / 100f) * energy_max);
+        energy_current = Mathf.Max(0, energy_current - amountToDeduct);
+        GetEnergyFill();
+    }
+
+    void DeductHunger(int percent)
+    {
+        int amountToDeduct = Mathf.CeilToInt((percent / 100f) * hunger_max);
+        hunger_current = Mathf.Max(0, hunger_current - amountToDeduct);
+        GetHungerFill();
+    }
+
+    void DeductHappiness(int percent)
+    {
+        int amountToDeduct = Mathf.CeilToInt((percent / 100f) * happiness_max);
+        happiness_current = Mathf.Max(0, happiness_current - amountToDeduct);
+        GetHappinessFill();
+    }
+
+    void DeductHealth(int percent)
+    {
+        int amountToDeduct = Mathf.CeilToInt((percent / 100f) * health_max);
+        health_current = Mathf.Max(0, health_current - amountToDeduct);
+        GetHealthFill();
+    }
+
+    void GetEnergyFill()
+    {
+        energy_Slider.value = (float)energy_current / energy_max;
+        energyDetail_Slider.value = (float)energy_current / energy_max;
+    }
+    void GetHungerFill()
+    {
+        hunger_Slider.value = (float)hunger_current / hunger_max;
+        hungerDetail_Slider.value = (float)hunger_current / hunger_max;
+    }
+    void GetHappinessFill()
+    {
+        happiness_Slider.value = (float)happiness_current / happiness_max;
+        happinessDetail_Slider.value = (float)happiness_current / happiness_max;
+    }
+    void GetHealthFill()
+    {
+        health_Slider.value = (float)health_current / health_max;
+        healthDetail_Slider.value = (float)health_current / health_max;
+    }
+
+    void GetProgressFill()
+    {
+        progress_Image.fillAmount = (float)progress_current / progress_max;
+        progressDetail_Slider.value = (float)progress_current / progress_max;
+    }
+    public void IncreaseProgress(int value)
+    {
+        progress_current += value;
+        GetProgressFill();
+        if (currentStage == PetStage.Kid)
+            stageRepresent.text = $"{PetStageRepresent.K}\n";
+    
+        if (progress_current >= progress_max)
+        {
+            AdvanceStage();
+        }
+    }
+
+    void AdvanceStage()
+    {
+        if (currentStage == PetStage.Kid)
+        {
+            currentStage = PetStage.Teen;
+            stageRepresent.text = $"{PetStageRepresent.T}\n";
+            progress_current = 0;
+            progress_Image.fillAmount = 0f;
+            progressDetail_Slider.value = 0f;
+        }
+        else if (currentStage == PetStage.Teen)
+        {
+            currentStage = PetStage.Adult;
+            stageRepresent.text = $"{PetStageRepresent.A}\n";
+            progress_current = 0;
+            progress_Image.fillAmount = 0f;
+            progressDetail_Slider.value = 0f;
+        }
+        else if (currentStage == PetStage.Adult)
+        {
+            currentStage = PetStage.Old;
+            stageRepresent.text = $"{PetStageRepresent.O}\n";
+            progress_current = 0;
+            progress_Image.fillAmount = 0f;
+            progressDetail_Slider.value = 0f;
+            StartCoroutine(DeductHealthOverTime());
+        }
+           
+        // If already Old, you can decide whether to do nothing or show "Passed Away"
+    }
+
+    void OnApplicationQuit()
+    {
+        SavePetData();
+    }
+
+    void OnApplicationPause(bool pause)
+    {
+        if (pause)
+        {
+            SavePetData();
+        }
+    }
+    
+    public void newPetData()
+    {
+        PetData data = new PetData();
+        data.dirty = 0;
+        data.energy = 100;
+        data.hunger = 100;
+        data.happiness = 100;
+        data.health = 100;
+        data.progress = 0;
+        data.stage = PetStage.Kid;
+        data.lastSavedTime = System.DateTime.Now.ToString();
+        data.firstTime = true;
+        data.lastEnergySecond = 0f;
+        data.lastHappinessSecond = 0f;
+        data.lastHealthSecond = 0f;
+        data.lastProgressSecond = 0f;
+        data.lastHungerSecond = 0f;
+        string json = JsonUtility.ToJson(data);
+        PlayerPrefs.SetString("PetData", json);
+        PlayerPrefs.Save();
+    }
+
+    public void SavePetData()
+    {
+        PetData data = new PetData();
+        data.dirty = dirtyManager.dirty;
+        data.energy = energy_current;
+        data.hunger = hunger_current;
+        data.happiness = happiness_current;
+        data.health = health_current;
+        data.progress = progress_current;
+        data.stage = currentStage;
+        data.lastSavedTime = System.DateTime.Now.ToString();
+        data.firstTime = false;
+        data.lastEnergySecond = lastEnergyTime;
+        data.lastHappinessSecond = lastHappinessTime;
+        data.lastHealthSecond = lastHealthTime;
+        data.lastProgressSecond = lastProgressTime;
+        data.lastHungerSecond = lastHungerTime;
+
+        string json = JsonUtility.ToJson(data);
+        PlayerPrefs.SetString("PetData", json);
+        PlayerPrefs.Save();
+        Debug.Log("Save folder: " + Application.persistentDataPath);
+        Debug.Log("dirty : " + data.dirty);
+    }
+
+    void LoadPetData()
+    {
+        if (PlayerPrefs.HasKey("PetData"))
+        {
+            string json = PlayerPrefs.GetString("PetData");
+            PetData data = JsonUtility.FromJson<PetData>(json);
+
+            firstTimePlay = data.firstTime;
+            if (firstTimePlay == false)
+            {
+                // Calculate time difference
+                System.DateTime lastTime = System.DateTime.Parse(data.lastSavedTime);
+                System.TimeSpan timeDiff = System.DateTime.Now - lastTime;
+                double secondsPassed = timeDiff.TotalSeconds;
+
+                // ENERGY
+                int energyLost = Mathf.FloorToInt((float)((secondsPassed + data.lastEnergySecond) / energy_deduct_time * energy_max * 0.01f));
+                float fullEnergyCycles = Mathf.Floor((float)((secondsPassed + data.lastEnergySecond) / energy_deduct_time));
+                lastEnergyTime = (float)((secondsPassed + data.lastEnergySecond) - fullEnergyCycles * energy_deduct_time);
+                energy_current = Mathf.Max(0, data.energy - energyLost);
+
+                // HUNGER
+                int hungerLost = Mathf.FloorToInt((float)((secondsPassed + data.lastHungerSecond) / hunger_deduct_time * hunger_max * 0.01f));
+                float fullHungerCycles = Mathf.Floor((float)((secondsPassed + data.lastHungerSecond) / hunger_deduct_time));
+                lastHungerTime = (float)((secondsPassed + data.lastHungerSecond) - fullHungerCycles * hunger_deduct_time);
+                hunger_current = Mathf.Max(0, data.hunger - hungerLost);
+
+                // HAPPINESS
+                int happinessLost = Mathf.FloorToInt((float)((secondsPassed + data.lastHappinessSecond) / happiness_deduct_time * happiness_max * 0.01f));
+                float fullHappinessCycles = Mathf.Floor((float)((secondsPassed + data.lastHappinessSecond) / happiness_deduct_time));
+                lastHappinessTime = (float)((secondsPassed + data.lastHappinessSecond) - fullHappinessCycles * happiness_deduct_time);
+                happiness_current = Mathf.Max(0, data.happiness - happinessLost);
+
+                // PROGRESS
+                int progressIncrease = Mathf.FloorToInt((float)((secondsPassed + data.lastProgressSecond) / progress_increase_time * progress_max * 0.01f));
+                float fullProgressCycles = Mathf.Floor((float)((secondsPassed + data.lastProgressSecond) / progress_increase_time));
+                lastProgressTime = (float)((secondsPassed + data.lastProgressSecond) - fullProgressCycles * progress_increase_time);
+                progress_current = Mathf.Max(0, data.progress + progressIncrease);
+                currentStage = data.stage;
+
+                // DIRTY (no leftover logic needed, always starts at 0 per session)
+                int dirtyIncrease = Mathf.FloorToInt((float)(secondsPassed / 60f * 100 * 0.01f));
+                dirtyManager.dirty = Mathf.Max(0, data.dirty + dirtyIncrease);
+
+                // HEALTH (Only if Old stage)
+                if (currentStage == PetStage.Old)
+                {
+                    int healthLost = Mathf.FloorToInt((float)((secondsPassed + data.lastHealthSecond) / health_deduct_time * health_max * 0.01f));
+                    float fullHealthCycles = Mathf.Floor((float)((secondsPassed + data.lastHealthSecond) / health_deduct_time));
+                    lastHealthTime = (float)((secondsPassed + data.lastHealthSecond) - fullHealthCycles * health_deduct_time);
+                    health_current = Mathf.Max(0, data.health - healthLost);
+                }
+                else
+                {
+                    health_current = data.health;
+                }
+
+                if (progress_current > 99)
+                {
+                    progress_current = 99;
+                }
+
+                if (currentStage == PetStage.Kid)
+                {
+                    stageRepresent.text = $"{PetStageRepresent.K}\n";
+
+                }
+                else if (currentStage == PetStage.Teen)
+                {
+
+                    stageRepresent.text = $"{PetStageRepresent.T}\n";
+
+                }
+                else if (currentStage == PetStage.Adult)
+                {
+
+                    stageRepresent.text = $"{PetStageRepresent.A}\n";
+
+                }
+                else if (currentStage == PetStage.Old)
+                {
+
+                    stageRepresent.text = $"{PetStageRepresent.O}\n";
+
+                }
+
+            }
+            else if (firstTimePlay == true)
+            {
+                energy_current = data.energy;
+                hunger_current = data.hunger;
+                happiness_current = data.happiness;
+                health_current = data.health;
+                progress_current = data.progress;
+                currentStage = data.stage;
+                dirtyManager.dirty = data.dirty;
+
+            }
+
+        }
+        else
+        {
+            Debug.Log("No saved pet data found.");
+        }
+    }
+
+    void UpdateAllUI()
+    {
+        GetProgressFill();
+        GetHealthFill();
+        GetEnergyFill();
+        GetHungerFill();
+        GetHappinessFill();
+    }
+
+    public void PauseEnergyDeduction()
+    {
+        if (energyDeductCoroutine != null)
+        {
+            StopCoroutine(energyDeductCoroutine);
+            energyDeductCoroutine = null;
+        }
+    }
+
+    public void ResumeEnergyDeduction()
+    {
+        if (energyDeductCoroutine == null)
+        {
+            energyDeductCoroutine = StartCoroutine(DeductEnergyOverTime());
+        }
+    }
+
+    public void PauseHappinessDeduction()
+    {
+        if (happinessDeductCoroutine != null)
+        {
+            StopCoroutine(happinessDeductCoroutine);
+            happinessDeductCoroutine = null;
+        }
+    }
+
+    public void ResumeHappinessDeduction()
+    {
+        if (happinessDeductCoroutine == null)
+        {
+            happinessDeductCoroutine = StartCoroutine(DeductHappinessOverTime());
+        }
+    }
+
+    public void stopAllCoroutine()
+    {
+
+    }
+}
