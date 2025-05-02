@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class Energy_Bar : MonoBehaviour
 {
     public bool firstTimePlay = true;
+
     [System.Serializable]
     public class PetData
     {
@@ -95,7 +96,7 @@ public class Energy_Bar : MonoBehaviour
 
     void Start()
     {
-        LoadPetData();
+        //LoadPetData();
         UpdateAllUI();
 
 
@@ -351,6 +352,8 @@ public class Energy_Bar : MonoBehaviour
 
     void AdvanceStage()
     {
+        string currentScene = SceneManager.GetActiveScene().name;
+        
         if (currentStage == PetStage.Kid)
         {
             currentStage = PetStage.Teen;
@@ -359,7 +362,8 @@ public class Energy_Bar : MonoBehaviour
             progress_Image.fillAmount = 0f;
             progressDetail_Slider.value = 0f;
             SavePetData();
-            UnityEngine.SceneManagement.SceneManager.LoadScene("KidtoTeen");
+    
+            UnityEngine.SceneManagement.SceneManager.LoadScene("KidToTeen");
 
         }
         else if (currentStage == PetStage.Teen)
@@ -369,6 +373,10 @@ public class Energy_Bar : MonoBehaviour
             progress_current = 0;
             progress_Image.fillAmount = 0f;
             progressDetail_Slider.value = 0f;
+
+            SavePetData();
+
+            UnityEngine.SceneManagement.SceneManager.LoadScene("TeenToAdult");
         }
         else if (currentStage == PetStage.Adult)
         {
@@ -378,6 +386,9 @@ public class Energy_Bar : MonoBehaviour
             progress_Image.fillAmount = 0f;
             progressDetail_Slider.value = 0f;
             StartCoroutine(DeductHealthOverTime());
+            SavePetData();
+
+            UnityEngine.SceneManagement.SceneManager.LoadScene("AdultToOld");
         }
            
         // If already Old, you can decide whether to do nothing or show "Passed Away"
@@ -639,7 +650,16 @@ public class Energy_Bar : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene("AdultStressEvent");
     }
 
-
+    //public void CheckWhichScene(string currentScene)
+    //{
+    //    if(currentScene == "HallScene" ||  currentScene == "TeenHallScene" || currentScene == "AdultHallScene" || currentScene == "OldHallScene")
+    //    {
+    //        InHallScene = true;
+    //    }else if (currentScene == "KitchenScene" || currentScene == "TeenKitchenScene" || currentScene == "AdultKitchenScene" || currentScene == "OldKitchenScene")
+    //    {
+    //        InKitchenScene = true;
+    //    }
+    //}
     public static class GameState
     {
         public static bool hasReachedTeenHalf = false;

@@ -1854,10 +1854,10 @@ MonoBehaviour:
   healthDetail_Slider: {fileID: 1021599756}
   health_deduct_time: 60
   progress_max: 100
-  progress_current: 80
+  progress_current: 90
   progress_Image: {fileID: 1165590361}
   progressDetail_Slider: {fileID: 965522107}
-  progress_increase_time: 2
+  progress_increase_time: 1
   currentStage: 0
   stageRepresent: {fileID: 1888166904}
 --- !u!1 &259933053
@@ -9564,7 +9564,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3435e9f082ff2f44ba2cbefda3f64032, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 1633575551}
+  audioClip: {fileID: 1681957403}
   energy: {fileID: 255022664}
 --- !u!114 &1681957402
 MonoBehaviour:

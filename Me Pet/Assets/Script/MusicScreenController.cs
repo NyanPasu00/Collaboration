@@ -84,7 +84,7 @@ public class SongCategoryButton : MonoBehaviour
     {
         if (bgm != null)
         {
-            bgm.StopMusic();
+            FindFirstObjectByType<BGMScript>().StopMusic();
         }
         switch (categoryName)
         {
@@ -125,7 +125,7 @@ public class SongCategoryButton : MonoBehaviour
         if (musicPlayer.isPlaying)
         {
             musicPlayer.Stop();
-            bgm.PlayMusic();
+            FindFirstObjectByType<BGMScript>().PlayMusic();
         }
            
             
@@ -134,7 +134,22 @@ public class SongCategoryButton : MonoBehaviour
         petAnimator.SetBool("Dance", false);
         petAnimator.SetBool("Sad", false);
         petAnimator.SetBool("Laydown", true);
-        petPosition.localPosition = new Vector3(-2.09765f, -2.680398f, 0f);
+        if(happinessBar.currentStage == Energy_Bar.PetStage.Kid)
+        {
+         petPosition.localPosition = new Vector3(-1.25f, -2.4f, 0f);
+        }
+        else if(happinessBar.currentStage == Energy_Bar.PetStage.Teen)
+        {
+            petPosition.localPosition = new Vector3(-1.83f, -2.65f, 0f);
+
+        }else if(happinessBar.currentStage == Energy_Bar.PetStage.Adult)
+        {
+            petPosition.localPosition = new Vector3(-2.38f, -2.7f, 0f);
+        }
+        else if (happinessBar.currentStage == Energy_Bar.PetStage.Old)
+        {
+            petPosition.localPosition = new Vector3(-2.42f, -2.75f, 0f);
+        }
 
         if (regenHappinessCoroutine != null)
         {

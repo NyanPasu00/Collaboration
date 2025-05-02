@@ -1456,10 +1456,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   petAnimator: {fileID: 52697691}
-  kidPet: {fileID: 52697690}
-  teenPet: {fileID: 1878819007}
+  oldStagePet: {fileID: 52697690}
+  newStagePet: {fileID: 1878819007}
   backButton: {fileID: 1291690929}
-  SceneLoader: {fileID: 388585453}
+  stageText: {fileID: 1487209946}
   loopCount: 5
 --- !u!1 &403241863
 GameObject:
@@ -5293,7 +5293,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -1482439441878466386, guid: 6bee73d608cb61843ae5de828beeb070, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5357,7 +5357,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 388585455}
         m_TargetAssemblyTypeName: EvolutionManager, Assembly-CSharp
-        m_MethodName: BackToGame
+        m_MethodName: BackToTeenStageGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
