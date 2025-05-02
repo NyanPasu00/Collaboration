@@ -184,7 +184,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bathroom-removebg-preview_0: 6969470990948969185
+      bathroom-removebg-preview_1: -458358399932587646
+      bathroom-removebg-preview_2: 2600697117947944790
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

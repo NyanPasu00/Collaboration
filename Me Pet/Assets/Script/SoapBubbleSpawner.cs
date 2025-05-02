@@ -21,6 +21,22 @@ public class SoapBubbleSpawner : MonoBehaviour
     private void Start()
     {
         water.SetActive(false);
+        if (FindFirstObjectByType<Energy_Bar>().currentStage == Energy_Bar.PetStage.Kid)
+        {
+            maxBubbles = 5;
+        }
+        else if (FindFirstObjectByType<Energy_Bar>().currentStage == Energy_Bar.PetStage.Teen)
+        {
+            maxBubbles = 8;
+        }
+        else if (FindFirstObjectByType<Energy_Bar>().currentStage == Energy_Bar.PetStage.Adult)
+        {
+            maxBubbles = 10;
+        }
+        else if (FindFirstObjectByType<Energy_Bar>().currentStage == Energy_Bar.PetStage.Old)
+        {
+            maxBubbles = 10;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -77,8 +93,6 @@ public class SoapBubbleSpawner : MonoBehaviour
                     activeBubbles.Add(newBubble);
                     lastBubbleTime = Time.time;
 
-                    //catManager.hasUsedSoap = true;
-                    //catManager.HideCloudMessage();
                     catManager.OnSoapUsed();
 
                 }

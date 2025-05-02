@@ -3554,7 +3554,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1771371946}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: BackToBathRoomScene
+        m_MethodName: BackToMedicationScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

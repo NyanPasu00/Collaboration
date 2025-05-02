@@ -25,6 +25,7 @@ public class StartGame : MonoBehaviour
                 energyBarCheck.happiness_current = 100;
             }
             energyBarCheck.SavePetData();
+            FindFirstObjectByType<BGMScript>().StopMusic();
             SceneManager.LoadScene("PlayBallScene"); // <- your scene name here!
         }
     }

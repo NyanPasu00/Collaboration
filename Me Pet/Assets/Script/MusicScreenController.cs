@@ -84,7 +84,7 @@ public class SongCategoryButton : MonoBehaviour
     {
         if (bgm != null)
         {
-            bgm.StopMusic();
+            FindFirstObjectByType<BGMScript>().StopMusic();
         }
         switch (categoryName)
         {
@@ -125,7 +125,7 @@ public class SongCategoryButton : MonoBehaviour
         if (musicPlayer.isPlaying)
         {
             musicPlayer.Stop();
-            bgm.PlayMusic();
+            FindFirstObjectByType<BGMScript>().PlayMusic();
         }
            
             

@@ -76,6 +76,7 @@ public class BallMissed : MonoBehaviour
     public void QuitGame()
     {
         Time.timeScale = 1f; // Just in case
+        FindFirstObjectByType<BGMScript>().PlayMusic();
         SceneManager.LoadScene("GameRoomScene");
     }
 }

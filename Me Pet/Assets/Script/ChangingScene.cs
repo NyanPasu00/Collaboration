@@ -64,38 +64,100 @@ public class SceneLoader : MonoBehaviour
     // Optional: Scene-specific wrappers for buttons
     public void LoadPetNameScene()
     {
-        energy?.newPetData();
+        FindFirstObjectByType<Energy_Bar>()?.newPetData();
         PlayAndLoad("PetNameScene");
     }
 
     public void BackToHallScene()
     {
-        energy?.SavePetData();
-        PlayAndLoad("HallScene");
+
+        FindFirstObjectByType<Energy_Bar>()?.SavePetData();
+
+        if (energy.currentStage == Energy_Bar.PetStage.Kid)
+        { 
+            PlayAndLoad("HallScene");
+        }else if (energy.currentStage == Energy_Bar.PetStage.Teen)
+        {
+            PlayAndLoad("TeenHallScene");
+        }
+        else if (energy.currentStage == Energy_Bar.PetStage.Adult)
+        {
+            PlayAndLoad("AdultHallScene");
+        }
+        else if(energy.currentStage == Energy_Bar.PetStage.Old)
+        {
+            PlayAndLoad("OldHallScene");
+        }
     }
 
     public void BackToKitchenScene()
     {
-        energy?.SavePetData();
-        PlayAndLoad("KitchenScene");
+        FindFirstObjectByType<Energy_Bar>()?.SavePetData();
+        if (energy.currentStage == Energy_Bar.PetStage.Kid)
+        {
+            PlayAndLoad("KitchenScene");
+        }
+        else if (energy.currentStage == Energy_Bar.PetStage.Teen)
+        {
+            PlayAndLoad("TeenKitchenScene");
+        }
+        else if (energy.currentStage == Energy_Bar.PetStage.Adult)
+        {
+            PlayAndLoad("AdultKitchenScene");
+        }
+        else if (energy.currentStage == Energy_Bar.PetStage.Old)
+        {
+            PlayAndLoad("OldKitchenScene");
+        }
     }
 
     public void BackToMedicationScene()
     {
-        energy?.SavePetData();
+        FindFirstObjectByType<Energy_Bar>()?.SavePetData();
         PlayAndLoad("MedicationScene");
     }
 
     public void BackToBathRoomScene()
     {
-        energy?.SavePetData();
-        PlayAndLoad("BathRoomScene");
+        FindFirstObjectByType<Energy_Bar>()?.SavePetData();
+
+        if (energy.currentStage == Energy_Bar.PetStage.Kid)
+        {
+            PlayAndLoad("BathRoomScene");
+        }
+        else if (energy.currentStage == Energy_Bar.PetStage.Teen)
+        {
+            PlayAndLoad("TeenBathRoomScene");
+        }
+        else if (energy.currentStage == Energy_Bar.PetStage.Adult)
+        {
+            PlayAndLoad("AdultBathRoomScene");
+        }
+        else if (energy.currentStage == Energy_Bar.PetStage.Old)
+        {
+            PlayAndLoad("OldBathRoomScene");
+        }
     }
 
     public void BackToGameRoomScene()
     {
-        energy?.SavePetData();
-        PlayAndLoad("GameRoomScene");
+        FindFirstObjectByType<Energy_Bar>()?.SavePetData();
+        if (energy.currentStage == Energy_Bar.PetStage.Kid)
+        {
+            PlayAndLoad("GameRoomScene");
+        }
+        else if (energy.currentStage == Energy_Bar.PetStage.Teen)
+        {
+            PlayAndLoad("TeenGameRoomScene");
+        }
+        else if (energy.currentStage == Energy_Bar.PetStage.Adult)
+        {
+            PlayAndLoad("AdultGameRoomScene");
+        }
+        else if (energy.currentStage == Energy_Bar.PetStage.Old)
+        {
+            PlayAndLoad("OldGameRoomScene");
+        }
     }
 
     public void playAudio()
