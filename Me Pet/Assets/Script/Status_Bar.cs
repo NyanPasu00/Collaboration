@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Energy_Bar : MonoBehaviour
 {
@@ -226,9 +227,19 @@ public class Energy_Bar : MonoBehaviour
     public void increaseHappiness(int happiness)
     {
         happiness_current = happiness_current + happiness;
-        if (hunger_current >= 100)
+        if (happiness_current >= 100)
         {
-            hunger_current = 100;
+            happiness_current = 100;
+        }
+        GetHappinessFill();
+    }
+
+    public void decreaseHappiness(int happiness)
+    {
+        happiness_current = happiness_current - happiness;
+        if (happiness_current <= 0)
+        {
+            happiness_current = 0;
         }
         GetHappinessFill();
     }
@@ -289,6 +300,44 @@ public class Energy_Bar : MonoBehaviour
     }
     public void IncreaseProgress(int value)
     {
+        string currentScene = SceneManager.GetActiveScene().name;
+        if (currentScene == "TeenStressEvent")
+        {
+            StopAllCoroutines();
+
+        }
+        if (currentScene == "AdultStressEvent")
+        {
+            StopAllCoroutines();
+
+        }
+        if (currentScene == "FindFriendSceneTest")
+        {
+            StopAllCoroutines();
+
+        }
+
+        if (progress_current >= 50)
+        {
+            if (currentStage == PetStage.Teen && !GameState.hasReachedTeenHalf)
+            {
+                GameState.hasReachedTeenHalf = true;
+                HandleTeenHalfProgressEvent();
+            }
+            else if (currentStage == PetStage.Adult && !GameState.hasReachedAdultHalf)
+            {
+                GameState.hasReachedAdultHalf = true;
+                HandleAdultHalfProgressEvent();
+            }
+            else if (currentStage == PetStage.Old && !GameState.hasReachedOldHalf)
+            {
+                GameState.hasReachedOldHalf = true;
+                HandleOldHalfProgressEvent();
+            }
+        }
+
+        
+
         progress_current += value;
         GetProgressFill();
         if (currentStage == PetStage.Kid)
@@ -309,6 +358,9 @@ public class Energy_Bar : MonoBehaviour
             progress_current = 0;
             progress_Image.fillAmount = 0f;
             progressDetail_Slider.value = 0f;
+            SavePetData();
+            UnityEngine.SceneManagement.SceneManager.LoadScene("KidtoTeen");
+
         }
         else if (currentStage == PetStage.Teen)
         {
@@ -543,5 +595,55 @@ public class Energy_Bar : MonoBehaviour
     public void stopAllCoroutine()
     {
 
+    }
+
+    private void HandleOldHalfProgressEvent()
+    {
+        Debug.Log("Progress reached 50%, switching scene.");
+        StopAllCoroutines();
+        // Optional: Save before switching
+        SavePetData();
+
+        // Prevent GameObject from being destroyed so you can do work in next scene
+        DontDestroyOnLoad(this.gameObject);
+
+        // Load next scene (you can also use a loading scene or fade-out effect)
+        UnityEngine.SceneManagement.SceneManager.LoadScene("FindFriendSceneTest");
+    }
+
+    private void HandleTeenHalfProgressEvent()
+    {
+        Debug.Log("Progress reached 50%, switching scene.");
+        StopAllCoroutines();
+        // Optional: Save before switching
+        SavePetData();
+
+        // Prevent GameObject from being destroyed so you can do work in next scene
+        DontDestroyOnLoad(this.gameObject);
+
+        // Load next scene (you can also use a loading scene or fade-out effect)
+        UnityEngine.SceneManagement.SceneManager.LoadScene("TeenStressEvent");
+    }
+
+    private void HandleAdultHalfProgressEvent()
+    {
+        Debug.Log("Progress reached 50%, switching scene.");
+        StopAllCoroutines();
+        // Optional: Save before switching
+        SavePetData();
+
+        // Prevent GameObject from being destroyed so you can do work in next scene
+        DontDestroyOnLoad(this.gameObject);
+
+        // Load next scene (you can also use a loading scene or fade-out effect)
+        UnityEngine.SceneManagement.SceneManager.LoadScene("AdultStressEvent");
+    }
+
+
+    public static class GameState
+    {
+        public static bool hasReachedTeenHalf = false;
+        public static bool hasReachedAdultHalf = false;
+        public static bool hasReachedOldHalf = false;
     }
 }

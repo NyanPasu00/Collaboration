@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -7,7 +8,8 @@ public class ScoreManager : MonoBehaviour
 
     public TextMeshProUGUI scoreText;
     private int score = 0;
-
+    public AudioClip catchSound;
+    public AudioSource audioSource;
 
     void Awake()
     {
@@ -17,6 +19,7 @@ public class ScoreManager : MonoBehaviour
 
     public void AddScore(int points)
     {
+        audioSource.PlayOneShot(catchSound);
         score += points;
         scoreText.text = "Score: " + score.ToString();
     }

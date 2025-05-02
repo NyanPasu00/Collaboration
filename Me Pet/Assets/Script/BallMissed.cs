@@ -11,14 +11,19 @@ public class BallMissed : MonoBehaviour
     public GameObject pausePanel;
     public TextMeshProUGUI currentScoreText;
     public TextMeshProUGUI highScoreText;
-
+    public AudioClip missSound;       // Assign in Inspector
+    public AudioSource audioSource;
     private int misscount = 0;
     private int highScore = 0;
 
     void Awake()
     {
+        
+
         if (instance == null)
             instance = this;
+
+
     }
 
     public void PauseGame()
@@ -31,6 +36,8 @@ public class BallMissed : MonoBehaviour
     {
         misscount += 1;
         missed.text = "Missed: " + misscount.ToString() + "/8";
+
+        audioSource.PlayOneShot(missSound);
 
         if (misscount >= 8)
         {
@@ -69,6 +76,7 @@ public class BallMissed : MonoBehaviour
     public void QuitGame()
     {
         Time.timeScale = 1f; // Just in case
+        FindFirstObjectByType<BGMScript>().PlayMusic();
         SceneManager.LoadScene("GameRoomScene");
     }
 }

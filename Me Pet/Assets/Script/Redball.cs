@@ -1,12 +1,13 @@
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using System.Collections;
+using UnityEngine.Audio;
 
 public class RedBall : MonoBehaviour
 {
     public int pointValue = 10;
     public Animator cat;
-
+    
     void Start()
 {
     if (cat == null)
@@ -17,6 +18,7 @@ public class RedBall : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Cat"))
         {
+            
             ScoreManager.instance.AddScore(pointValue);
             collision.gameObject.GetComponent<CatMovement>()?.PlayCatchAnimation();
             Destroy(gameObject);

@@ -25,10 +25,6 @@ public class SceneLoader : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        energy = FindFirstObjectByType<Energy_Bar>();
-    }
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -42,7 +38,7 @@ public class SceneLoader : MonoBehaviour
     // Reconnect Energy_Bar after scene changes
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        energy = FindFirstObjectByType<Energy_Bar>();
+        energy = FindObjectOfType<Energy_Bar>();
     }
 
     // Public function to use in button OnClick
@@ -63,13 +59,6 @@ public class SceneLoader : MonoBehaviour
         audioClip.Play();
         yield return new WaitForSeconds(0.4f); // wait short delay (or audioClip.clip.length)
         SceneManager.LoadScene(sceneName);
-
-        yield return null;
-
-        // Wait for Energy_Bar to be findable
-        yield return new WaitUntil(() => FindFirstObjectByType<Energy_Bar>() != null);
-
-        energy = FindFirstObjectByType<Energy_Bar>();
     }
 
     // Optional: Scene-specific wrappers for buttons
@@ -79,21 +68,47 @@ public class SceneLoader : MonoBehaviour
         PlayAndLoad("PetNameScene");
     }
 
-    public void NewToHallScene()
-    {
-        PlayAndLoad("HallScene");
-    }
-
     public void BackToHallScene()
     {
+
         FindFirstObjectByType<Energy_Bar>()?.SavePetData();
-        PlayAndLoad("HallScene");
+
+        if (energy.currentStage == Energy_Bar.PetStage.Kid)
+        { 
+            PlayAndLoad("HallScene");
+        }else if (energy.currentStage == Energy_Bar.PetStage.Teen)
+        {
+            PlayAndLoad("TeenHallScene");
+        }
+        else if (energy.currentStage == Energy_Bar.PetStage.Adult)
+        {
+            PlayAndLoad("AdultHallScene");
+        }
+        else if(energy.currentStage == Energy_Bar.PetStage.Old)
+        {
+            PlayAndLoad("OldHallScene");
+        }
     }
 
     public void BackToKitchenScene()
     {
         FindFirstObjectByType<Energy_Bar>()?.SavePetData();
-        PlayAndLoad("KitchenScene");
+        if (energy.currentStage == Energy_Bar.PetStage.Kid)
+        {
+            PlayAndLoad("KitchenScene");
+        }
+        else if (energy.currentStage == Energy_Bar.PetStage.Teen)
+        {
+            PlayAndLoad("TeenKitchenScene");
+        }
+        else if (energy.currentStage == Energy_Bar.PetStage.Adult)
+        {
+            PlayAndLoad("AdultKitchenScene");
+        }
+        else if (energy.currentStage == Energy_Bar.PetStage.Old)
+        {
+            PlayAndLoad("OldKitchenScene");
+        }
     }
 
     public void BackToMedicationScene()
@@ -105,13 +120,44 @@ public class SceneLoader : MonoBehaviour
     public void BackToBathRoomScene()
     {
         FindFirstObjectByType<Energy_Bar>()?.SavePetData();
-        PlayAndLoad("BathRoomScene");
+
+        if (energy.currentStage == Energy_Bar.PetStage.Kid)
+        {
+            PlayAndLoad("BathRoomScene");
+        }
+        else if (energy.currentStage == Energy_Bar.PetStage.Teen)
+        {
+            PlayAndLoad("TeenBathRoomScene");
+        }
+        else if (energy.currentStage == Energy_Bar.PetStage.Adult)
+        {
+            PlayAndLoad("AdultBathRoomScene");
+        }
+        else if (energy.currentStage == Energy_Bar.PetStage.Old)
+        {
+            PlayAndLoad("OldBathRoomScene");
+        }
     }
 
     public void BackToGameRoomScene()
     {
         FindFirstObjectByType<Energy_Bar>()?.SavePetData();
-        PlayAndLoad("GameRoomScene");
+        if (energy.currentStage == Energy_Bar.PetStage.Kid)
+        {
+            PlayAndLoad("GameRoomScene");
+        }
+        else if (energy.currentStage == Energy_Bar.PetStage.Teen)
+        {
+            PlayAndLoad("TeenGameRoomScene");
+        }
+        else if (energy.currentStage == Energy_Bar.PetStage.Adult)
+        {
+            PlayAndLoad("AdultGameRoomScene");
+        }
+        else if (energy.currentStage == Energy_Bar.PetStage.Old)
+        {
+            PlayAndLoad("OldGameRoomScene");
+        }
     }
 
     public void playAudio()
