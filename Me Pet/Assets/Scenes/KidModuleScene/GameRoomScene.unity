@@ -152,7 +152,7 @@ RectTransform:
   m_Father: {fileID: 1521775975}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 106860, y: -57937}
   m_SizeDelta: {x: 0, y: 5583.6}
   m_Pivot: {x: 0.5, y: 0}
@@ -1464,7 +1464,7 @@ RectTransform:
   m_Father: {fileID: 2047823959}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 15728, y: 64240}
   m_SizeDelta: {x: 0, y: 5583.6}
   m_Pivot: {x: 0.5, y: 0}
@@ -2221,7 +2221,7 @@ RectTransform:
   m_Father: {fileID: 830938709}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 106860, y: -10512}
   m_SizeDelta: {x: 0, y: 5583.6}
   m_Pivot: {x: 0.5, y: 0}
@@ -2920,7 +2920,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &813203750
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3274,7 +3274,7 @@ RectTransform:
   m_Father: {fileID: 1128171807}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 106860, y: -151783}
   m_SizeDelta: {x: 0, y: 5583.6}
   m_Pivot: {x: 0.5, y: 0}
@@ -5464,7 +5464,7 @@ RectTransform:
   m_Father: {fileID: 157821240}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 106860, y: -105025}
   m_SizeDelta: {x: 0, y: 5583.6}
   m_Pivot: {x: 0.5, y: 0}
@@ -5737,7 +5737,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.523, y: 0.56}
-  m_AnchoredPosition: {x: -49.15065, y: 19.291702}
+  m_AnchoredPosition: {x: -9, y: 43}
   m_SizeDelta: {x: 301.6987, y: 74.1172}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1538306341
@@ -5763,13 +5763,13 @@ MonoBehaviour:
   m_text: I NEED TO BATH !!!!!!!!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 94aec477f2c9127489a7fb07f498277e, type: 2}
-  m_sharedMaterial: {fileID: -1118073565571878047, guid: bbdef87b398c0d94ab18715a13f750c7, type: 2}
+  m_sharedMaterial: {fileID: -2286773819468506100, guid: 94aec477f2c9127489a7fb07f498277e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4289733408
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -6477,7 +6477,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1709976188
 RectTransform:
   m_ObjectHideFlags: 0

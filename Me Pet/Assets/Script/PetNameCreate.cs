@@ -20,8 +20,6 @@ public class PetNameManager : MonoBehaviour
         PlayerPrefs.SetString("PetName", petName); // Save pet name
         PlayerPrefs.Save();
 
-        // Load your main game scene
-        SceneManager.LoadScene("HallScene");
     }
 }
 

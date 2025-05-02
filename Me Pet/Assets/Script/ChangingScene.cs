@@ -25,6 +25,10 @@ public class SceneLoader : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        energy = FindFirstObjectByType<Energy_Bar>();
+    }
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -38,7 +42,7 @@ public class SceneLoader : MonoBehaviour
     // Reconnect Energy_Bar after scene changes
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        energy = FindObjectOfType<Energy_Bar>();
+        energy = FindFirstObjectByType<Energy_Bar>();
     }
 
     // Public function to use in button OnClick
@@ -59,42 +63,54 @@ public class SceneLoader : MonoBehaviour
         audioClip.Play();
         yield return new WaitForSeconds(0.4f); // wait short delay (or audioClip.clip.length)
         SceneManager.LoadScene(sceneName);
+
+        yield return null;
+
+        // Wait for Energy_Bar to be findable
+        yield return new WaitUntil(() => FindFirstObjectByType<Energy_Bar>() != null);
+
+        energy = FindFirstObjectByType<Energy_Bar>();
     }
 
     // Optional: Scene-specific wrappers for buttons
     public void LoadPetNameScene()
     {
-        energy?.newPetData();
+        FindFirstObjectByType<Energy_Bar>()?.newPetData();
         PlayAndLoad("PetNameScene");
+    }
+
+    public void NewToHallScene()
+    {
+        PlayAndLoad("HallScene");
     }
 
     public void BackToHallScene()
     {
-        energy?.SavePetData();
+        FindFirstObjectByType<Energy_Bar>()?.SavePetData();
         PlayAndLoad("HallScene");
     }
 
     public void BackToKitchenScene()
     {
-        energy?.SavePetData();
+        FindFirstObjectByType<Energy_Bar>()?.SavePetData();
         PlayAndLoad("KitchenScene");
     }
 
     public void BackToMedicationScene()
     {
-        energy?.SavePetData();
+        FindFirstObjectByType<Energy_Bar>()?.SavePetData();
         PlayAndLoad("MedicationScene");
     }
 
     public void BackToBathRoomScene()
     {
-        energy?.SavePetData();
+        FindFirstObjectByType<Energy_Bar>()?.SavePetData();
         PlayAndLoad("BathRoomScene");
     }
 
     public void BackToGameRoomScene()
     {
-        energy?.SavePetData();
+        FindFirstObjectByType<Energy_Bar>()?.SavePetData();
         PlayAndLoad("GameRoomScene");
     }
 
