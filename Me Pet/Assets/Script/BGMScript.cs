@@ -42,9 +42,9 @@ public class BGMScript : MonoBehaviour
         audioSource.volume = volume;
     }
 
-    public void ChangeClip(AudioClip newClip, bool playImmediately = true)
+    public void ChangeClip(AudioSource newClip, bool playImmediately = true)
     {
-        audioSource.clip = newClip;
+        audioSource = newClip;
         if (playImmediately)
         {
             PlayMusic();

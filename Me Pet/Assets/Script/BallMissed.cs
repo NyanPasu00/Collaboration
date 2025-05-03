@@ -26,6 +26,11 @@ public class BallMissed : MonoBehaviour
 
     }
 
+    private void Start()
+    {
+        highScore = PlayerPrefs.GetInt("HighScore", 0);
+    }
+
     public void PauseGame()
     {
         Time.timeScale = 0f;
@@ -54,9 +59,11 @@ public class BallMissed : MonoBehaviour
 
         currentScoreText.text = "" + currentScore;
 
-        if (currentScore > highScore)
+        if (currentScore > PlayerPrefs.GetInt("HighScore", 0))
         {
             highScore = currentScore;
+            PlayerPrefs.SetInt("HighScore", currentScore);
+            PlayerPrefs.Save();
         }
 
         highScoreText.text = "" + highScore;

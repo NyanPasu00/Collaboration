@@ -247,9 +247,20 @@ public class Energy_Bar : MonoBehaviour
 
     void DeductEnergy(int percent)
     {
+        
         int amountToDeduct = Mathf.CeilToInt((percent / 100f) * energy_max);
         energy_current = Mathf.Max(0, energy_current - amountToDeduct);
         GetEnergyFill();
+
+        if (energy_current == 0)
+        {
+            PlayerPrefs.SetInt("CauseOfDeath", 2); // 5 = Energy death (you can define it)
+            PlayerPrefs.SetString("CurrentStage", currentStage.ToString()); // assume you have this variable
+            PlayerPrefs.Save();
+
+            // Load the 1LastWord scene
+            SceneManager.LoadScene("1LastWord");
+        }
     }
 
     void DeductHunger(int percent)
@@ -257,6 +268,16 @@ public class Energy_Bar : MonoBehaviour
         int amountToDeduct = Mathf.CeilToInt((percent / 100f) * hunger_max);
         hunger_current = Mathf.Max(0, hunger_current - amountToDeduct);
         GetHungerFill();
+
+        if (hunger_current == 0)
+        {
+            PlayerPrefs.SetInt("CauseOfDeath", 0); // 5 = Energy death (you can define it)
+            PlayerPrefs.SetString("CurrentStage", currentStage.ToString()); // assume you have this variable
+            PlayerPrefs.Save();
+
+            // Load the 1LastWord scene
+            SceneManager.LoadScene("1LastWord");
+        }
     }
 
     void DeductHappiness(int percent)
@@ -264,6 +285,16 @@ public class Energy_Bar : MonoBehaviour
         int amountToDeduct = Mathf.CeilToInt((percent / 100f) * happiness_max);
         happiness_current = Mathf.Max(0, happiness_current - amountToDeduct);
         GetHappinessFill();
+
+        if (happiness_current == 0)
+        {
+            PlayerPrefs.SetInt("CauseOfDeath", 1); // 5 = Energy death (you can define it)
+            PlayerPrefs.SetString("CurrentStage", currentStage.ToString()); // assume you have this variable
+            PlayerPrefs.Save();
+
+            // Load the 1LastWord scene
+            SceneManager.LoadScene("1LastWord");
+        }
     }
 
     void DeductHealth(int percent)
@@ -271,6 +302,16 @@ public class Energy_Bar : MonoBehaviour
         int amountToDeduct = Mathf.CeilToInt((percent / 100f) * health_max);
         health_current = Mathf.Max(0, health_current - amountToDeduct);
         GetHealthFill();
+
+        if (health_current == 0)
+        {
+            PlayerPrefs.SetInt("CauseOfDeath", 3); // 5 = Energy death (you can define it)
+            PlayerPrefs.SetString("CurrentStage", currentStage.ToString()); // assume you have this variable
+            PlayerPrefs.Save();
+
+            // Load the 1LastWord scene
+            SceneManager.LoadScene("1LastWord");
+        }
     }
 
     void GetEnergyFill()
@@ -389,6 +430,15 @@ public class Energy_Bar : MonoBehaviour
             SavePetData();
 
             UnityEngine.SceneManagement.SceneManager.LoadScene("AdultToOld");
+        }else
+        {
+             PlayerPrefs.SetInt("CauseOfDeath", 4); // 5 = Energy death (you can define it)
+             PlayerPrefs.SetString("CurrentStage", currentStage.ToString()); // assume you have this variable
+             PlayerPrefs.Save();
+
+             // Load the 1LastWord scene
+             SceneManager.LoadScene("1LastWord");
+            
         }
            
         // If already Old, you can decide whether to do nothing or show "Passed Away"
