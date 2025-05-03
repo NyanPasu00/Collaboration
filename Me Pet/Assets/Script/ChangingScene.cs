@@ -160,6 +160,11 @@ public class SceneLoader : MonoBehaviour
         }
     }
 
+    public void LoadPlayBallScene()
+    {
+        PlayAndLoad("PlayBallScene");
+    }
+
     public void playAudio()
     {
         if (audioClip != null)

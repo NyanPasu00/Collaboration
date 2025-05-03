@@ -8,6 +8,7 @@ public class BGMScript : MonoBehaviour
 
     void Awake()
     {
+        
         if (Instance == null)
         {
             Instance = this;
@@ -19,6 +20,7 @@ public class BGMScript : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        FindFirstObjectByType<BGMScript>().PlayMusic();
     }
 
     public void PlayMusic()
@@ -42,9 +44,9 @@ public class BGMScript : MonoBehaviour
         audioSource.volume = volume;
     }
 
-    public void ChangeClip(AudioClip newClip, bool playImmediately = true)
+    public void ChangeClip(AudioSource newClip, bool playImmediately = true)
     {
-        audioSource.clip = newClip;
+        audioSource = newClip;
         if (playImmediately)
         {
             PlayMusic();

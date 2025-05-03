@@ -83,6 +83,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StageTransaction/TeenToAdult.unity
     guid: 26caf16110db08f49a9e57790b0f321f
+  - enabled: 1
+    path: Assets/Scenes/DieModuleScene/1LastWord.unity
+    guid: e255467f60b634f48bbb8f854af1bf69
+  - enabled: 1
+    path: Assets/Scenes/DieModuleScene/2Heartfelt.unity
+    guid: e8b206695b00fc74780ccbf2fb645214
+  - enabled: 1
+    path: Assets/Scenes/DieModuleScene/3Cause.unity
+    guid: 0b6d918b8a40a604a8aef7de801bcc4b
   m_configObjects:
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 7ce01ab533dc43d4b93271488de3d6e4, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

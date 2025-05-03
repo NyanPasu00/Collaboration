@@ -23,15 +23,15 @@ public class SoapBubbleSpawner : MonoBehaviour
         water.SetActive(false);
         if (FindFirstObjectByType<Energy_Bar>().currentStage == Energy_Bar.PetStage.Kid)
         {
-            maxBubbles = 5;
+            maxBubbles = 4;
         }
         else if (FindFirstObjectByType<Energy_Bar>().currentStage == Energy_Bar.PetStage.Teen)
         {
-            maxBubbles = 8;
+            maxBubbles = 6;
         }
         else if (FindFirstObjectByType<Energy_Bar>().currentStage == Energy_Bar.PetStage.Adult)
         {
-            maxBubbles = 10;
+            maxBubbles = 8;
         }
         else if (FindFirstObjectByType<Energy_Bar>().currentStage == Energy_Bar.PetStage.Old)
         {

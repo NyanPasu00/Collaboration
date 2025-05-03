@@ -130,7 +130,7 @@ public class CatDirtyManager : MonoBehaviour
         if (catAnimator != null)
         {
             
-            cat.transform.position = new Vector3(0.62f, -1.5f, 0f);
+            cat.transform.position = new Vector3(0.197f, -1.5f, 0f);
             catAnimator.SetBool("isClean", false);
             leftButton.interactable = true;
             rightButton.interactable = true;

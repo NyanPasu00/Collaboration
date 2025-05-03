@@ -180,7 +180,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1566040433
-  m_SortingLayer: 3
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: -2799692873189853672, guid: 0da2cbc64529b5548b4d70670e5080ff, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2726,7 +2726,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Score :'
+  m_text: 'Score : 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 94aec477f2c9127489a7fb07f498277e, type: 2}
   m_sharedMaterial: {fileID: -2286773819468506100, guid: 94aec477f2c9127489a7fb07f498277e, type: 2}
@@ -4448,7 +4448,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1566040433
-  m_SortingLayer: 3
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: -2799692873189853672, guid: 0da2cbc64529b5548b4d70670e5080ff, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
