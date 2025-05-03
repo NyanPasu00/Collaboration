@@ -1366,6 +1366,7 @@ GameObject:
   - component: {fileID: 388585453}
   - component: {fileID: 388585454}
   - component: {fileID: 388585455}
+  - component: {fileID: 388585456}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -1456,11 +1457,108 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   petAnimator: {fileID: 52697691}
-  kidPet: {fileID: 52697690}
-  teenPet: {fileID: 1878819007}
+  oldStagePet: {fileID: 52697690}
+  newStagePet: {fileID: 1878819007}
   backButton: {fileID: 1291690929}
-  SceneLoader: {fileID: 388585453}
+  stageText: {fileID: 1487209946}
   loopCount: 5
+--- !u!82 &388585456
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388585450}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 63eb710a9559ad74188ad9d78eaa63b1, type: 3}
+  m_Resource: {fileID: 8300000, guid: 63eb710a9559ad74188ad9d78eaa63b1, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &403241863
 GameObject:
   m_ObjectHideFlags: 0
@@ -5293,7 +5391,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -1482439441878466386, guid: 6bee73d608cb61843ae5de828beeb070, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5357,7 +5455,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 388585455}
         m_TargetAssemblyTypeName: EvolutionManager, Assembly-CSharp
-        m_MethodName: BackToGame
+        m_MethodName: BackToTeenStageGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

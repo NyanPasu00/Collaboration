@@ -6396,11 +6396,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9057847366603887012, guid: dde047afb0b15bc43b41531e603af947, type: 3}
       propertyPath: m_LocalScale.x
-      value: 12.57537
+      value: 11.33664
       objectReference: {fileID: 0}
     - target: {fileID: 9057847366603887012, guid: dde047afb0b15bc43b41531e603af947, type: 3}
       propertyPath: m_LocalScale.y
-      value: 12.1778
+      value: 10.29394
       objectReference: {fileID: 0}
     - target: {fileID: 9057847366603887012, guid: dde047afb0b15bc43b41531e603af947, type: 3}
       propertyPath: m_LocalPosition.x
