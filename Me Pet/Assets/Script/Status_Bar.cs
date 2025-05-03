@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class Energy_Bar : MonoBehaviour
 {
     public bool firstTimePlay = true;
+
     [System.Serializable]
     public class PetData
     {
@@ -95,7 +96,7 @@ public class Energy_Bar : MonoBehaviour
 
     void Start()
     {
-        //LoadPetData();
+        LoadPetData();
         UpdateAllUI();
 
 
@@ -246,9 +247,20 @@ public class Energy_Bar : MonoBehaviour
 
     void DeductEnergy(int percent)
     {
+        
         int amountToDeduct = Mathf.CeilToInt((percent / 100f) * energy_max);
         energy_current = Mathf.Max(0, energy_current - amountToDeduct);
         GetEnergyFill();
+
+        if (energy_current == 0)
+        {
+            PlayerPrefs.SetInt("CauseOfDeath", 2); // 5 = Energy death (you can define it)
+            PlayerPrefs.SetString("CurrentStage", currentStage.ToString()); // assume you have this variable
+            PlayerPrefs.Save();
+
+            // Load the 1LastWord scene
+            SceneManager.LoadScene("1LastWord");
+        }
     }
 
     void DeductHunger(int percent)
@@ -256,6 +268,16 @@ public class Energy_Bar : MonoBehaviour
         int amountToDeduct = Mathf.CeilToInt((percent / 100f) * hunger_max);
         hunger_current = Mathf.Max(0, hunger_current - amountToDeduct);
         GetHungerFill();
+
+        if (hunger_current == 0)
+        {
+            PlayerPrefs.SetInt("CauseOfDeath", 0); // 5 = Energy death (you can define it)
+            PlayerPrefs.SetString("CurrentStage", currentStage.ToString()); // assume you have this variable
+            PlayerPrefs.Save();
+
+            // Load the 1LastWord scene
+            SceneManager.LoadScene("1LastWord");
+        }
     }
 
     void DeductHappiness(int percent)
@@ -263,6 +285,16 @@ public class Energy_Bar : MonoBehaviour
         int amountToDeduct = Mathf.CeilToInt((percent / 100f) * happiness_max);
         happiness_current = Mathf.Max(0, happiness_current - amountToDeduct);
         GetHappinessFill();
+
+        if (happiness_current == 0)
+        {
+            PlayerPrefs.SetInt("CauseOfDeath", 1); // 5 = Energy death (you can define it)
+            PlayerPrefs.SetString("CurrentStage", currentStage.ToString()); // assume you have this variable
+            PlayerPrefs.Save();
+
+            // Load the 1LastWord scene
+            SceneManager.LoadScene("1LastWord");
+        }
     }
 
     void DeductHealth(int percent)
@@ -270,6 +302,16 @@ public class Energy_Bar : MonoBehaviour
         int amountToDeduct = Mathf.CeilToInt((percent / 100f) * health_max);
         health_current = Mathf.Max(0, health_current - amountToDeduct);
         GetHealthFill();
+
+        if (health_current == 0)
+        {
+            PlayerPrefs.SetInt("CauseOfDeath", 3); // 5 = Energy death (you can define it)
+            PlayerPrefs.SetString("CurrentStage", currentStage.ToString()); // assume you have this variable
+            PlayerPrefs.Save();
+
+            // Load the 1LastWord scene
+            SceneManager.LoadScene("1LastWord");
+        }
     }
 
     void GetEnergyFill()
@@ -351,6 +393,8 @@ public class Energy_Bar : MonoBehaviour
 
     void AdvanceStage()
     {
+        string currentScene = SceneManager.GetActiveScene().name;
+        
         if (currentStage == PetStage.Kid)
         {
             currentStage = PetStage.Teen;
@@ -359,7 +403,8 @@ public class Energy_Bar : MonoBehaviour
             progress_Image.fillAmount = 0f;
             progressDetail_Slider.value = 0f;
             SavePetData();
-            UnityEngine.SceneManagement.SceneManager.LoadScene("KidtoTeen");
+    
+            UnityEngine.SceneManagement.SceneManager.LoadScene("KidToTeen");
 
         }
         else if (currentStage == PetStage.Teen)
@@ -369,6 +414,10 @@ public class Energy_Bar : MonoBehaviour
             progress_current = 0;
             progress_Image.fillAmount = 0f;
             progressDetail_Slider.value = 0f;
+
+            SavePetData();
+
+            UnityEngine.SceneManagement.SceneManager.LoadScene("TeenToAdult");
         }
         else if (currentStage == PetStage.Adult)
         {
@@ -378,6 +427,18 @@ public class Energy_Bar : MonoBehaviour
             progress_Image.fillAmount = 0f;
             progressDetail_Slider.value = 0f;
             StartCoroutine(DeductHealthOverTime());
+            SavePetData();
+
+            UnityEngine.SceneManagement.SceneManager.LoadScene("AdultToOld");
+        }else
+        {
+             PlayerPrefs.SetInt("CauseOfDeath", 4); // 5 = Energy death (you can define it)
+             PlayerPrefs.SetString("CurrentStage", currentStage.ToString()); // assume you have this variable
+             PlayerPrefs.Save();
+
+             // Load the 1LastWord scene
+             SceneManager.LoadScene("1LastWord");
+            
         }
            
         // If already Old, you can decide whether to do nothing or show "Passed Away"
@@ -639,7 +700,16 @@ public class Energy_Bar : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene("AdultStressEvent");
     }
 
-
+    //public void CheckWhichScene(string currentScene)
+    //{
+    //    if(currentScene == "HallScene" ||  currentScene == "TeenHallScene" || currentScene == "AdultHallScene" || currentScene == "OldHallScene")
+    //    {
+    //        InHallScene = true;
+    //    }else if (currentScene == "KitchenScene" || currentScene == "TeenKitchenScene" || currentScene == "AdultKitchenScene" || currentScene == "OldKitchenScene")
+    //    {
+    //        InKitchenScene = true;
+    //    }
+    //}
     public static class GameState
     {
         public static bool hasReachedTeenHalf = false;
