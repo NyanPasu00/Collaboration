@@ -216,7 +216,7 @@ MonoBehaviour:
   m_CharacterValidation: 0
   m_RegexValue: 
   m_GlobalPointSize: 14
-  m_CharacterLimit: 12
+  m_CharacterLimit: 6
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls: []
@@ -555,6 +555,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioClip: {fileID: 712692425}
   energy: {fileID: 712692424}
+  hall: 0
+  kitchen: 0
+  bathroom: 0
+  gameroom: 0
+  currentStage: 0
 --- !u!114 &712692424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -568,6 +573,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstTimePlay: 1
+  petDead: 0
+  isEating: 0
+  isDancing: 0
+  isSleeping: 0
+  isBathing: 0
+  isAlbumOpen: 0
+  progressStop: 0
   dirtyManager: {fileID: 0}
   energy_max: 100
   energy_current: 0

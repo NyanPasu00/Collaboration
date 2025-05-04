@@ -136,7 +136,7 @@ public class DraggableFood : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
             FeedSuccessDialogue.SetActive(false);
 
         isEating = false;
-        PlayerPrefs.SetInt("isEating", isEating ? 1 : 0);
+        PlayerPrefs.SetInt("IsEating", isEating ? 1 : 0);
         PlayerPrefs.Save();
     }
 

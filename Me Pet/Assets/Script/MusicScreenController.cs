@@ -60,6 +60,7 @@ public class SongCategoryButton : MonoBehaviour
             isDancing = true;
             PlayerPrefs.SetInt("IsDancing", isDancing ? 1 : 0);
             PlayerPrefs.Save();
+
         }
         else
         {
@@ -92,7 +93,7 @@ public class SongCategoryButton : MonoBehaviour
                 StopCoroutine(regenHappinessCoroutine);
                 regenHappinessCoroutine = null;
             }
-            isDancing = false;
+            isDancing = true;
             PlayerPrefs.SetInt("IsDancing", isDancing ? 1 : 0);
             PlayerPrefs.Save();
             happinessBar.ResumeHappinessDeduction();
@@ -145,6 +146,9 @@ public class SongCategoryButton : MonoBehaviour
         SongMenuPanel.SetActive(false);
         HallPanel.SetActive(true);
         lightToggleButton.gameObject.SetActive(true);
+        isDancing = false;
+        PlayerPrefs.SetInt("IsDancing", isDancing ? 1 : 0);
+        PlayerPrefs.Save();
         // Stop the music
         if (musicPlayer.isPlaying)
         {
