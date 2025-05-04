@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
@@ -7,6 +8,10 @@ public class SceneLoader : MonoBehaviour
 
     public AudioSource audioClip; // click sound
     public Energy_Bar energy;
+    public bool hall = false;
+    public bool kitchen = false;
+    public bool bathroom = false;
+    public bool gameroom = false;
 
     private void Awake()
     {
@@ -73,6 +78,11 @@ public class SceneLoader : MonoBehaviour
 
         FindFirstObjectByType<Energy_Bar>()?.SavePetData();
 
+        hall = true;
+        kitchen = false;
+        gameroom = false;
+        bathroom = false;
+
         if (energy.currentStage == Energy_Bar.PetStage.Kid)
         { 
             PlayAndLoad("HallScene");
@@ -93,6 +103,12 @@ public class SceneLoader : MonoBehaviour
     public void BackToKitchenScene()
     {
         FindFirstObjectByType<Energy_Bar>()?.SavePetData();
+
+        hall = false;
+        kitchen = true;
+        gameroom = false;
+        bathroom = false;
+
         if (energy.currentStage == Energy_Bar.PetStage.Kid)
         {
             PlayAndLoad("KitchenScene");
@@ -121,6 +137,11 @@ public class SceneLoader : MonoBehaviour
     {
         FindFirstObjectByType<Energy_Bar>()?.SavePetData();
 
+        hall = false;
+        kitchen = false;
+        gameroom = false;
+        bathroom = true;
+
         if (energy.currentStage == Energy_Bar.PetStage.Kid)
         {
             PlayAndLoad("BathRoomScene");
@@ -142,6 +163,12 @@ public class SceneLoader : MonoBehaviour
     public void BackToGameRoomScene()
     {
         FindFirstObjectByType<Energy_Bar>()?.SavePetData();
+
+        hall = false;
+        kitchen = false;
+        gameroom = true;
+        bathroom = false;
+
         if (energy.currentStage == Energy_Bar.PetStage.Kid)
         {
             PlayAndLoad("GameRoomScene");
@@ -170,6 +197,26 @@ public class SceneLoader : MonoBehaviour
         if (audioClip != null)
         {
             audioClip.Play();
+        }
+    }
+
+    public void eventBackScene()
+    {
+        if(hall == true)
+        {
+            BackToHallScene();
+        }
+        else if (kitchen == true)
+        {
+            BackToKitchenScene();
+        }
+        else if (gameroom == true)
+        {
+            BackToGameRoomScene();
+        }
+        else if (bathroom == true)
+        {
+            BackToBathRoomScene();
         }
     }
 

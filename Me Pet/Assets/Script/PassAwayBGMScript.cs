@@ -1,14 +1,13 @@
 using UnityEngine;
 
-public class BGMScript : MonoBehaviour
+public class PassAwayBGMScript : MonoBehaviour
 {
-    public static BGMScript Instance;
+    public static PassAwayBGMScript Instance;
 
     private AudioSource audioSource;
 
     void Awake()
     {
-        
         if (Instance == null)
         {
             Instance = this;
@@ -20,7 +19,7 @@ public class BGMScript : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        FindFirstObjectByType<BGMScript>().PlayMusic();
+        FindFirstObjectByType<PassAwayBGMScript>().PlayMusic();
     }
 
     public void PlayMusic()

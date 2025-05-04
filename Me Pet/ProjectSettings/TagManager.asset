@@ -56,6 +56,9 @@ TagManager:
   - name: Dirty
     uniqueID: 1521540487
     locked: 0
+  - name: Ditry UI
+    uniqueID: 861439107
+    locked: 0
   - name: Food
     uniqueID: 2233343023
     locked: 0

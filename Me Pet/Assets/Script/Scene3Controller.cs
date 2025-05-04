@@ -20,6 +20,7 @@ public class Scene3Controller : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             // You can change this to any scene you want to go next
+            FindFirstObjectByType<PassAwayBGMScript>().StopMusic();
             SceneManager.LoadScene("StartScene");
         }
     }
