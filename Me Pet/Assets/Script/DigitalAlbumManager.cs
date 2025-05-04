@@ -66,6 +66,8 @@ public class DigitalAlbumManager : MonoBehaviour
     {
         isAlbumOpen = !isAlbumOpen;
         gameObject.SetActive(isAlbumOpen);
+        PlayerPrefs.SetInt("IsAlbumOpen", isAlbumOpen ? 1 : 0);
+        PlayerPrefs.Save();
 
         if (isAlbumOpen) ShowDigitalAlbum();
     }

@@ -9,6 +9,12 @@ public class Energy_Bar : MonoBehaviour
     public bool firstTimePlay = true;
     public bool petDead;
 
+    public bool isEating;
+    public bool isDancing;
+    public bool isSleeping;
+    public bool isBathing;
+    public bool isAlbumOpen;
+
     [System.Serializable]
     public class PetData
     {

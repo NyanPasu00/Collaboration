@@ -10,6 +10,7 @@ public class LightToggle : MonoBehaviour
     public Energy_Bar energyBar; // Drag your Energy_Bar GameObject here in the Inspector
     private Coroutine regenEnergyCoroutine;
     private bool isLightOn = true;
+    public bool isSleeping = true;
 
     public AudioSource audio;
 
@@ -32,6 +33,9 @@ public class LightToggle : MonoBehaviour
                 StopCoroutine(regenEnergyCoroutine);
                 regenEnergyCoroutine = null;
             }
+            isSleeping = false;
+            PlayerPrefs.SetInt("IsSleeping", isSleeping ? 1 : 0);
+            PlayerPrefs.Save();
             energyBar.ResumeEnergyDeduction();
         }
         else
@@ -45,7 +49,9 @@ public class LightToggle : MonoBehaviour
             {
                 regenEnergyCoroutine = StartCoroutine(RegenerateEnergy());
             }
-
+            isSleeping = true;
+            PlayerPrefs.SetInt("IsSleeping", isSleeping ? 1 : 0);
+            PlayerPrefs.Save();
             energyBar.PauseEnergyDeduction();
         }
 

@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections;
+using System;
+
 public class SongCategoryButton : MonoBehaviour
 {
     public string categoryName; // e.g., "Rock", "Rap"
@@ -26,6 +28,8 @@ public class SongCategoryButton : MonoBehaviour
     public AudioClip countryMusic;
     public AudioClip jazzMusic;
     public AudioClip metalMusic;
+
+    public bool isDancing;
 
     public void ChangeToMusicScreen()
     {
@@ -53,7 +57,9 @@ public class SongCategoryButton : MonoBehaviour
                 regenHappinessCoroutine = StartCoroutine(RegenerateHappiness());
             }
             happinessBar.PauseHappinessDeduction();
-
+            isDancing = true;
+            PlayerPrefs.SetInt("IsDancing", isDancing ? 1 : 0);
+            PlayerPrefs.Save();
         }
         else
         {
@@ -61,7 +67,23 @@ public class SongCategoryButton : MonoBehaviour
             petAnimator.SetBool("Dance", false);
             petAnimator.SetBool("Laydown", false);
             petAnimator.SetBool("Sad", true);
-            petPosition.localPosition = new Vector3(-1.97f, -3.81f, 0f);
+            if (happinessBar.currentStage == Energy_Bar.PetStage.Kid)
+            {
+                petPosition.localPosition = new Vector3(-1.14f, -3.78f, 0f);
+            }
+            else if (happinessBar.currentStage == Energy_Bar.PetStage.Teen)
+            {
+                petPosition.localPosition = new Vector3(-1.68f, -3.82f, 0f);
+
+            }
+            else if (happinessBar.currentStage == Energy_Bar.PetStage.Adult)
+            {
+                petPosition.localPosition = new Vector3(-2.08f, -3.91f, 0f);
+            }
+            else if (happinessBar.currentStage == Energy_Bar.PetStage.Old)
+            {
+                petPosition.localPosition = new Vector3(-2.08f, -3.91f, 0f);
+            }
             reactionText.text = "I hate this song...";
 
 
@@ -70,7 +92,9 @@ public class SongCategoryButton : MonoBehaviour
                 StopCoroutine(regenHappinessCoroutine);
                 regenHappinessCoroutine = null;
             }
-
+            isDancing = false;
+            PlayerPrefs.SetInt("IsDancing", isDancing ? 1 : 0);
+            PlayerPrefs.Save();
             happinessBar.ResumeHappinessDeduction();
         }
     }

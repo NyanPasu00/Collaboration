@@ -4041,7 +4041,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1681957401}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: eventBackScene
+        m_MethodName: BackToHallScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4930,8 +4930,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: I Already So Stress , Why Still want me to studying. I Hate you!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: dec0a102400429946b0d8305bbdadef7, type: 2}
+  m_sharedMaterial: {fileID: -2286773819468506100, guid: dec0a102400429946b0d8305bbdadef7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4961,7 +4961,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -5786,7 +5786,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1566040433
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 4959150648537483080, guid: 84742df66bfac1d4890c6cb05b2d0854, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -7505,7 +7505,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1566040433
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: -8187443777088593718, guid: 49ab66f87c49cf840b66e1e2b44b11b3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -7923,7 +7923,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1566040433
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: -1438510544462665488, guid: b1bceaeada907ca46a65b34c1ca0ee16, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -8248,7 +8248,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1566040433
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: -692680249235833449, guid: 0bac8688a22e2fa49a6454f4da46ddd1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -8880,7 +8880,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1681957401}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: eventBackScene
+        m_MethodName: BackToHallScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10302,8 +10302,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -41, y: 96.9}
-  m_SizeDelta: {x: 484, y: 296.7}
+  m_AnchoredPosition: {x: -15, y: 81}
+  m_SizeDelta: {x: 536.2, y: 299.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1316257329
 MonoBehaviour:
@@ -10327,8 +10327,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Thank you to Play with Me , \nNow i Not feeling depressed already"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: dec0a102400429946b0d8305bbdadef7, type: 2}
+  m_sharedMaterial: {fileID: -2286773819468506100, guid: dec0a102400429946b0d8305bbdadef7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -10358,7 +10358,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -11308,7 +11308,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1681957401}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: eventBackScene
+        m_MethodName: BackToHallScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11864,7 +11864,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1566040433
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 8981333840325473314, guid: ce3df88584a44f544af60e7de216c7c2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -13376,6 +13376,7 @@ MonoBehaviour:
   kitchen: 0
   bathroom: 0
   gameroom: 0
+  currentStage: 0
 --- !u!114 &1681957402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15034,8 +15035,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -41, y: 96.9}
-  m_SizeDelta: {x: 484, y: 296.7}
+  m_AnchoredPosition: {x: -23.6, y: 101.2}
+  m_SizeDelta: {x: 518.8, y: 305.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1912353240
 MonoBehaviour:
@@ -15060,8 +15061,8 @@ MonoBehaviour:
   m_text: "I Like the Drink !!, Thank You drink with me . \nI feel more energy to
     study . "
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: dec0a102400429946b0d8305bbdadef7, type: 2}
+  m_sharedMaterial: {fileID: -2286773819468506100, guid: dec0a102400429946b0d8305bbdadef7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -15091,7 +15092,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -17081,7 +17082,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1566040433
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 3
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

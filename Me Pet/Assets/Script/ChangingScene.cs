@@ -1,18 +1,43 @@
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
+using static Energy_Bar;
 
 public class SceneLoader : MonoBehaviour
 {
+    public class PetData
+    {
+        public float dirty;
+        public int energy;
+        public int hunger;
+        public int happiness;
+        public int health;
+        public int progress;
+        public PetStage stage;
+        public PetStage represent;
+        public string lastSavedTime; // Store as string to serialize easily
+        public bool firstTime;
+        public float lastEnergySecond;
+        public float lastHealthSecond;
+        public float lastProgressSecond;
+        public float lastHappinessSecond;
+        public float lastHungerSecond;
+    }
+    public enum PetStage
+    {
+        Kid,
+        Teen,
+        Adult,
+        Old
+    }
     public static SceneLoader Instance;
-
     public AudioSource audioClip; // click sound
     public Energy_Bar energy;
     public bool hall = false;
     public bool kitchen = false;
     public bool bathroom = false;
     public bool gameroom = false;
-
+    public PetStage currentStage;
     private void Awake()
     {
         if (Instance == null)
@@ -83,6 +108,8 @@ public class SceneLoader : MonoBehaviour
         gameroom = false;
         bathroom = false;
 
+        SaveCurrentRoom();
+
         if (energy.currentStage == Energy_Bar.PetStage.Kid)
         { 
             PlayAndLoad("HallScene");
@@ -108,6 +135,8 @@ public class SceneLoader : MonoBehaviour
         kitchen = true;
         gameroom = false;
         bathroom = false;
+
+        SaveCurrentRoom();
 
         if (energy.currentStage == Energy_Bar.PetStage.Kid)
         {
@@ -142,6 +171,8 @@ public class SceneLoader : MonoBehaviour
         gameroom = false;
         bathroom = true;
 
+        SaveCurrentRoom();
+
         if (energy.currentStage == Energy_Bar.PetStage.Kid)
         {
             PlayAndLoad("BathRoomScene");
@@ -168,6 +199,8 @@ public class SceneLoader : MonoBehaviour
         kitchen = false;
         gameroom = true;
         bathroom = false;
+
+        SaveCurrentRoom();
 
         if (energy.currentStage == Energy_Bar.PetStage.Kid)
         {
@@ -202,22 +235,177 @@ public class SceneLoader : MonoBehaviour
 
     public void eventBackScene()
     {
-        if(hall == true)
+        LoadCurrentStage();
+        LoadCurrentRoom();
+        Debug.Log(hall);
+        Debug.Log(kitchen);
+        if (hall == true)
         {
-            BackToHallScene();
+            stageToHallScene();
         }
         else if (kitchen == true)
         {
-            BackToKitchenScene();
+            stageToKitchenScene();
         }
         else if (gameroom == true)
         {
-            BackToGameRoomScene();
+            stageToGameRoomScene();
         }
         else if (bathroom == true)
         {
-            BackToBathRoomScene();
+            stageToBathRoomScene();
         }
     }
 
+    public void gameBackScene()
+    {
+        LoadCurrentStage();
+
+        stageToGameRoomScene();
+       
+    }
+
+    private void SaveCurrentRoom()
+    {
+        PlayerPrefs.SetInt("hall", hall ? 1 : 0);
+        PlayerPrefs.SetInt("kitchen", kitchen ? 1 : 0);
+        PlayerPrefs.SetInt("gameroom", gameroom ? 1 : 0);
+        PlayerPrefs.SetInt("bathroom", bathroom ? 1 : 0);
+        PlayerPrefs.Save(); // Make sure it's written
+    }
+
+    private void LoadCurrentRoom()
+    {
+        hall = PlayerPrefs.GetInt("hall", 0) == 1;
+        kitchen = PlayerPrefs.GetInt("kitchen", 0) == 1;
+        gameroom = PlayerPrefs.GetInt("gameroom", 0) == 1;
+        bathroom = PlayerPrefs.GetInt("bathroom", 0) == 1;
+    }
+
+    public void LoadCurrentStage()
+    {
+        string json = PlayerPrefs.GetString("PetData");
+        PetData data = JsonUtility.FromJson<PetData>(json);
+
+        currentStage = data.stage;
+
+        Debug.Log(currentStage);
+    }
+
+    public void stageToHallScene()
+    {
+
+        FindFirstObjectByType<Energy_Bar>()?.SavePetData();
+
+        hall = true;
+        kitchen = false;
+        gameroom = false;
+        bathroom = false;
+
+        SaveCurrentRoom();
+
+        if (currentStage == PetStage.Kid)
+        {
+            PlayAndLoad("HallScene");
+        }
+        else if (currentStage == PetStage.Teen)
+        {
+            PlayAndLoad("TeenHallScene");
+        }
+        else if (currentStage == PetStage.Adult)
+        {
+            PlayAndLoad("AdultHallScene");
+        }
+        else if (currentStage == PetStage.Old)
+        {
+            PlayAndLoad("OldHallScene");
+        }
+    }
+
+    public void stageToKitchenScene()
+    {
+        FindFirstObjectByType<Energy_Bar>()?.SavePetData();
+
+        hall = false;
+        kitchen = true;
+        gameroom = false;
+        bathroom = false;
+
+        SaveCurrentRoom();
+
+        if (currentStage == PetStage.Kid)
+        {
+            PlayAndLoad("KitchenScene");
+        }
+        else if (currentStage == PetStage.Teen)
+        {
+            PlayAndLoad("TeenKitchenScene");
+        }
+        else if (currentStage == PetStage.Adult)
+        {
+            PlayAndLoad("AdultKitchenScene");
+        }
+        else if (currentStage == PetStage.Old)
+        {
+            PlayAndLoad("OldKitchenScene");
+        }
+    }
+
+    public void stageToBathRoomScene()
+    {
+        FindFirstObjectByType<Energy_Bar>()?.SavePetData();
+
+        hall = false;
+        kitchen = false;
+        gameroom = false;
+        bathroom = true;
+
+        SaveCurrentRoom();
+
+        if (currentStage == PetStage.Kid)
+        {
+            PlayAndLoad("BathRoomScene");
+        }
+        else if (currentStage == PetStage.Teen)
+        {
+            PlayAndLoad("TeenBathRoomScene");
+        }
+        else if (currentStage == PetStage.Adult)
+        {
+            PlayAndLoad("AdultBathRoomScene");
+        }
+        else if (currentStage == PetStage.Old)
+        {
+            PlayAndLoad("OldBathRoomScene");
+        }
+    }
+
+    public void stageToGameRoomScene()
+    {
+        FindFirstObjectByType<Energy_Bar>()?.SavePetData();
+
+        hall = false;
+        kitchen = false;
+        gameroom = true;
+        bathroom = false;
+
+        SaveCurrentRoom();
+
+        if (currentStage == PetStage.Kid)
+        {
+            PlayAndLoad("GameRoomScene");
+        }
+        else if (currentStage == PetStage.Teen)
+        {
+            PlayAndLoad("TeenGameRoomScene");
+        }
+        else if (currentStage == PetStage.Adult)
+        {
+            PlayAndLoad("AdultGameRoomScene");
+        }
+        else if (currentStage == PetStage.Old)
+        {
+            PlayAndLoad("OldGameRoomScene");
+        }
+    }
 }

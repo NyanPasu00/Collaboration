@@ -789,7 +789,7 @@ RectTransform:
   m_Father: {fileID: 1021599755}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 106860, y: -151783}
   m_SizeDelta: {x: 0, y: 5583.6}
   m_Pivot: {x: 0.5, y: 0}
@@ -1306,7 +1306,7 @@ MonoBehaviour:
   m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1690, y: 0}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -1603,7 +1603,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 315, y: 304}
+  m_AnchoredPosition: {x: -282, y: -35}
   m_SizeDelta: {x: 336.1, y: 112.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &217348069
@@ -2508,14 +2508,14 @@ RectTransform:
   m_GameObject: {fileID: 328250557}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 700632623}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 278, y: 234}
+  m_AnchoredPosition: {x: -301.6, y: -105}
   m_SizeDelta: {x: 461.2, y: 487.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &328250559
@@ -3270,7 +3270,7 @@ RectTransform:
   m_Father: {fileID: 1798379590}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 106860, y: -10512}
   m_SizeDelta: {x: 0, y: 5583.6}
   m_Pivot: {x: 0.5, y: 0}
@@ -6562,7 +6562,7 @@ RectTransform:
   m_Father: {fileID: 1322222150}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -272, y: 951}
   m_SizeDelta: {x: -7.52, y: 1.1}
   m_Pivot: {x: 0, y: 0}
@@ -7887,7 +7887,7 @@ RectTransform:
   m_Father: {fileID: 1974423868}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 80.9, y: 950.04596}
   m_SizeDelta: {x: 2.03, y: 0}
   m_Pivot: {x: 0, y: 0}
@@ -8434,7 +8434,7 @@ RectTransform:
   m_Father: {fileID: 1536039295}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 106860, y: -57937}
   m_SizeDelta: {x: 0, y: 5583.6}
   m_Pivot: {x: 0.5, y: 0}
@@ -9586,7 +9586,7 @@ RectTransform:
   m_Father: {fileID: 2133073181}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 106860, y: -105025}
   m_SizeDelta: {x: 0, y: 5583.6}
   m_Pivot: {x: 0.5, y: 0}
@@ -10143,7 +10143,7 @@ RectTransform:
   m_Father: {fileID: 403095714}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 266.02, y: 952.44}
   m_SizeDelta: {x: -6.76, y: 0}
   m_Pivot: {x: 0, y: 0}
@@ -10672,7 +10672,7 @@ RectTransform:
   m_Father: {fileID: 96501345}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -93.72, y: 950.1001}
   m_SizeDelta: {x: -7.31, y: 2.8}
   m_Pivot: {x: 0, y: 0}
@@ -10983,6 +10983,7 @@ MonoBehaviour:
   HallDarkScreen: {fileID: 946203367}
   petAnimator: {fileID: 2144841301}
   energyBar: {fileID: 255022664}
+  isSleeping: 1
   audio: {fileID: 1681957404}
 --- !u!114 &1681957398
 MonoBehaviour:
@@ -11026,6 +11027,7 @@ MonoBehaviour:
   countryMusic: {fileID: 8300000, guid: c361abb9f25ceb9408dcdb5f6415d14f, type: 3}
   jazzMusic: {fileID: 8300000, guid: 37673213464010b429195711b1e09be1, type: 3}
   metalMusic: {fileID: 8300000, guid: eb537ba88ec477c43b7eb5bb6c292f90, type: 3}
+  isDancing: 0
 --- !u!114 &1681957400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11057,6 +11059,7 @@ MonoBehaviour:
   kitchen: 0
   bathroom: 0
   gameroom: 0
+  currentStage: 0
 --- !u!114 &1681957402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11082,6 +11085,7 @@ MonoBehaviour:
   dirtyInterval: 50
   currentShower: {fileID: 0}
   catAnimator: {fileID: 2144841301}
+  isBathing: 0
   energy: {fileID: 0}
   spawnArea: {fileID: 1386146539}
   spawnAreaLying: {fileID: 1386146539}
@@ -13091,7 +13095,7 @@ RectTransform:
   m_Father: {fileID: 965522106}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 15728, y: 64240}
   m_SizeDelta: {x: 0, y: 5583.6}
   m_Pivot: {x: 0.5, y: 0}
@@ -13705,7 +13709,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2001295005
 Transform:
   m_ObjectHideFlags: 0
