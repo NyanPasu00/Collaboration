@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections;
+using System;
+
 public class SongCategoryButton : MonoBehaviour
 {
     public string categoryName; // e.g., "Rock", "Rap"
@@ -26,6 +28,8 @@ public class SongCategoryButton : MonoBehaviour
     public AudioClip countryMusic;
     public AudioClip jazzMusic;
     public AudioClip metalMusic;
+
+    public bool isDancing;
 
     public void ChangeToMusicScreen()
     {
@@ -53,6 +57,9 @@ public class SongCategoryButton : MonoBehaviour
                 regenHappinessCoroutine = StartCoroutine(RegenerateHappiness());
             }
             happinessBar.PauseHappinessDeduction();
+            isDancing = true;
+            PlayerPrefs.SetInt("IsDancing", isDancing ? 1 : 0);
+            PlayerPrefs.Save();
 
         }
         else
@@ -86,7 +93,9 @@ public class SongCategoryButton : MonoBehaviour
                 StopCoroutine(regenHappinessCoroutine);
                 regenHappinessCoroutine = null;
             }
-
+            isDancing = true;
+            PlayerPrefs.SetInt("IsDancing", isDancing ? 1 : 0);
+            PlayerPrefs.Save();
             happinessBar.ResumeHappinessDeduction();
         }
     }
@@ -137,6 +146,9 @@ public class SongCategoryButton : MonoBehaviour
         SongMenuPanel.SetActive(false);
         HallPanel.SetActive(true);
         lightToggleButton.gameObject.SetActive(true);
+        isDancing = false;
+        PlayerPrefs.SetInt("IsDancing", isDancing ? 1 : 0);
+        PlayerPrefs.Save();
         // Stop the music
         if (musicPlayer.isPlaying)
         {

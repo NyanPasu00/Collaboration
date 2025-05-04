@@ -17,6 +17,7 @@ public class BackButtonHandler : MonoBehaviour
         else if (petListPanel.activeSelf)
         {
             // If already on pet list, close the digital album
+            FindFirstObjectByType<DigitalAlbumManager>().ToggleDigitalAlbum();
             digitalAlbumParent.SetActive(false);
         }
     }

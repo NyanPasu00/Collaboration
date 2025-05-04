@@ -12,6 +12,7 @@ public class SoapBubbleSpawner : MonoBehaviour
     public int maxBubbles = 5;
     public float minDistanceBetweenBubbles = 20.5f;
     private bool hasShownHalfCleanMessage = false;
+    private bool isBathing;
 
     private float lastBubbleTime = 0f;
     private List<GameObject> activeBubbles = new List<GameObject>();
@@ -41,8 +42,19 @@ public class SoapBubbleSpawner : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        
         if (collision.CompareTag("Pet")){
-            audio.Play();
+            CatDirtyManager catManager = FindAnyObjectByType<CatDirtyManager>();
+
+            if (catManager == null)
+            {
+                return;
+            }
+            if (catManager.dirty >= 20)
+            {
+                audio.Play();
+            }
+           
         }
     }
 
@@ -73,6 +85,9 @@ public class SoapBubbleSpawner : MonoBehaviour
             // ✅ Dirty enough: apply soap
             if (Time.time - lastBubbleTime > bubbleDelay && activeBubbles.Count < maxBubbles)
             {
+                isBathing = true;
+                PlayerPrefs.SetInt("IsBathing", isBathing ? 1 : 0);
+                PlayerPrefs.Save();
                 rightButton.interactable = false;
                 leftButton.interactable = false;
                 Vector3 spawnPos = other.ClosestPoint(transform.position);

@@ -22,6 +22,7 @@ public class CatDirtyManager : MonoBehaviour
     private float lastMilestone = 0;
     public ShowerController currentShower;
     public Animator catAnimator;
+    public bool isBathing;
 
     public Energy_Bar energy;
     public BoxCollider2D spawnArea;
@@ -135,6 +136,9 @@ public class CatDirtyManager : MonoBehaviour
             leftButton.interactable = true;
             rightButton.interactable = true;
             hasUsedSoap = false;
+            isBathing = false;
+            PlayerPrefs.SetInt("IsBathing", isBathing ? 1 : 0);
+            PlayerPrefs.Save();
         }
     }
 

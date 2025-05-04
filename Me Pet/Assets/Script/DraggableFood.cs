@@ -20,7 +20,7 @@ public class DraggableFood : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     private Transform originalParent;
     private Vector2 originalAnchoredPosition;
 
-
+    public bool isEating;
 
 
     void Start()
@@ -69,6 +69,9 @@ public class DraggableFood : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
             }
             else
             {
+                isEating = true;
+                PlayerPrefs.SetInt("IsEating", isEating ? 1 : 0);
+                PlayerPrefs.Save();
                 // Temporarily set parent to plate
                 transform.SetParent(hovered.transform);
                 rectTransform.anchoredPosition = new Vector2(0, 35);
@@ -131,6 +134,10 @@ public class DraggableFood : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
         if (FeedSuccessDialogue != null)
             FeedSuccessDialogue.SetActive(false);
+
+        isEating = false;
+        PlayerPrefs.SetInt("IsEating", isEating ? 1 : 0);
+        PlayerPrefs.Save();
     }
 
     public void EndEatingAnimation()
