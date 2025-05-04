@@ -572,6 +572,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstTimePlay: 1
+  petDead: 0
   dirtyManager: {fileID: 388585454}
   energy_max: 100
   energy_current: 0
@@ -1416,6 +1417,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioClip: {fileID: 0}
   energy: {fileID: 117622424}
+  hall: 0
+  kitchen: 0
+  bathroom: 0
+  gameroom: 0
 --- !u!114 &388585454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5453,9 +5458,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 388585455}
-        m_TargetAssemblyTypeName: EvolutionManager, Assembly-CSharp
-        m_MethodName: BackToAdultStageGame
+      - m_Target: {fileID: 388585453}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: eventBackScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -1,9 +1,11 @@
 using TMPro;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class BallMissed : MonoBehaviour
 {
+
     public static BallMissed instance;
 
     public TextMeshProUGUI missed;
@@ -15,7 +17,7 @@ public class BallMissed : MonoBehaviour
     public AudioSource audioSource;
     private int misscount = 0;
     private int highScore = 0;
-
+   
     void Awake()
     {
         
@@ -84,6 +86,10 @@ public class BallMissed : MonoBehaviour
     {
         Time.timeScale = 1f; // Just in case
         FindFirstObjectByType<BGMScript>().PlayMusic();
-        SceneManager.LoadScene("GameRoomScene");
+
+        SceneLoader.Instance.gameBackScene();
+
     }
+
+  
 }

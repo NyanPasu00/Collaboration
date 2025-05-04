@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Loading Scene.unity
+    guid: e5206d2eabdee294fbe9c63d7f4dbc6b
+  - enabled: 1
     path: Assets/Scenes/StartScene.unity
     guid: c743abf8798fe59498db1bb1ff6e950d
   - enabled: 1
@@ -15,55 +18,55 @@ EditorBuildSettings:
     path: Assets/Scenes/PlayBallScene.unity
     guid: e5f04253c2590fb4788c6deac2d39b7e
   - enabled: 1
-    path: Assets/Scenes/KidModuleScene/KitchenScene.unity
+    path: Assets/Scenes/1 KidModuleScene/KitchenScene.unity
     guid: 266351c0574d07b43aac92a06c9e38bd
   - enabled: 1
-    path: Assets/Scenes/KidModuleScene/BathRoomScene.unity
+    path: Assets/Scenes/1 KidModuleScene/BathRoomScene.unity
     guid: 4f8283c909939f1429cf60a54a4e5e79
   - enabled: 1
-    path: Assets/Scenes/KidModuleScene/GameRoomScene.unity
+    path: Assets/Scenes/1 KidModuleScene/GameRoomScene.unity
     guid: 67feeac8f401f8d45ad5c47f580a2939
   - enabled: 1
-    path: Assets/Scenes/KidModuleScene/HallScene.unity
+    path: Assets/Scenes/1 KidModuleScene/HallScene.unity
     guid: b6dd4360579cd7349a665a6bb47b0fa8
   - enabled: 1
-    path: Assets/Scenes/TeenModuleScene/TeenHallScene.unity
+    path: Assets/Scenes/2 TeenModuleScene/TeenHallScene.unity
     guid: 556fefa55786e8841b4165d704d7e1d5
   - enabled: 1
-    path: Assets/Scenes/TeenModuleScene/TeenKitchenScene.unity
+    path: Assets/Scenes/2 TeenModuleScene/TeenKitchenScene.unity
     guid: b280b7e05de541445ab5310b3dfafaa7
   - enabled: 1
-    path: Assets/Scenes/TeenModuleScene/TeenGameRoomScene.unity
+    path: Assets/Scenes/2 TeenModuleScene/TeenGameRoomScene.unity
     guid: 8d135656d580c5e4a84a7eb555bd00ae
   - enabled: 1
-    path: Assets/Scenes/TeenModuleScene/TeenBathRoomScene.unity
+    path: Assets/Scenes/2 TeenModuleScene/TeenBathRoomScene.unity
     guid: 0c0d6b093b0b51d4d82de13089952a23
   - enabled: 1
-    path: Assets/Scenes/AdultModuleScene/AdultHallScene.unity
+    path: Assets/Scenes/3 AdultModuleScene/AdultHallScene.unity
     guid: 5dbca92b46841fc4584c5abdb67c4e52
   - enabled: 1
-    path: Assets/Scenes/AdultModuleScene/AdultKitchenScene.unity
+    path: Assets/Scenes/3 AdultModuleScene/AdultKitchenScene.unity
     guid: 39efe915a9b5cbb43a76971b7dd3856d
   - enabled: 1
-    path: Assets/Scenes/AdultModuleScene/AdultGameRoomScene.unity
+    path: Assets/Scenes/3 AdultModuleScene/AdultGameRoomScene.unity
     guid: c9e4d5a4022e1974ea0afe5c4ace8be8
   - enabled: 1
-    path: Assets/Scenes/AdultModuleScene/AdultBathRoomScene.unity
+    path: Assets/Scenes/3 AdultModuleScene/AdultBathRoomScene.unity
     guid: a2ca01d48e653d1478a5fce3f460c5dd
   - enabled: 1
-    path: Assets/Scenes/OldModuleScene/MedicationScene.unity
+    path: Assets/Scenes/4 OldModuleScene/MedicationScene.unity
     guid: 20d5a2c1c328b9548ba2ec6cd17b7a32
   - enabled: 1
-    path: Assets/Scenes/OldModuleScene/OldHallScene.unity
+    path: Assets/Scenes/4 OldModuleScene/OldHallScene.unity
     guid: 96dbb35761bfd224c9f58e23fdeece4d
   - enabled: 1
-    path: Assets/Scenes/OldModuleScene/OldKitchenScene.unity
+    path: Assets/Scenes/4 OldModuleScene/OldKitchenScene.unity
     guid: 35d490c58da83b84fa7db85c13d8adfe
   - enabled: 1
-    path: Assets/Scenes/OldModuleScene/OldGameRoomScene.unity
+    path: Assets/Scenes/4 OldModuleScene/OldGameRoomScene.unity
     guid: e331c929f458b054fb005153f1622745
   - enabled: 1
-    path: Assets/Scenes/OldModuleScene/OldBathRoomScene.unity
+    path: Assets/Scenes/4 OldModuleScene/OldBathRoomScene.unity
     guid: e706a374e173a6e4dbf8efde1e35fa0f
   - enabled: 1
     path: Assets/Scenes/EventScene/TeenStressEvent.unity

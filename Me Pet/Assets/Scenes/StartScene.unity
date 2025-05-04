@@ -2472,6 +2472,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstTimePlay: 1
+  petDead: 0
   dirtyManager: {fileID: 0}
   energy_max: 100
   energy_current: 0
@@ -2510,8 +2511,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 92a3da5457ef43a49a924ede8d66472f, type: 3}
-  m_Resource: {fileID: 8300000, guid: 92a3da5457ef43a49a924ede8d66472f, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 7ad208749aa41884b95e0758cd79a818, type: 3}
+  m_Resource: {fileID: 8300000, guid: 7ad208749aa41884b95e0758cd79a818, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

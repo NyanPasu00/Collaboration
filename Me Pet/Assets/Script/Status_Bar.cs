@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class Energy_Bar : MonoBehaviour
 {
     public bool firstTimePlay = true;
+    public bool petDead;
 
     [System.Serializable]
     public class PetData
@@ -252,16 +253,6 @@ public class Energy_Bar : MonoBehaviour
         energy_current = Mathf.Max(0, energy_current - amountToDeduct);
         GetEnergyFill();
 
-        if (energy_current == 0)
-        {
-            PlayerPrefs.SetInt("CauseOfDeath", 2); // 5 = Energy death (you can define it)
-            PlayerPrefs.SetString("CurrentStage", currentStage.ToString()); // assume you have this variable
-            PlayerPrefs.Save();
-
-            FindFirstObjectByType<BGMScript>().StopMusic();
-            // Load the 1LastWord scene
-            SceneManager.LoadScene("1LastWord");
-        }
     }
 
     void DeductHunger(int percent)
@@ -270,16 +261,7 @@ public class Energy_Bar : MonoBehaviour
         hunger_current = Mathf.Max(0, hunger_current - amountToDeduct);
         GetHungerFill();
 
-        if (hunger_current == 0)
-        {
-            PlayerPrefs.SetInt("CauseOfDeath", 0); // 5 = Energy death (you can define it)
-            PlayerPrefs.SetString("CurrentStage", currentStage.ToString()); // assume you have this variable
-            PlayerPrefs.Save();
-
-            FindFirstObjectByType<BGMScript>().StopMusic();
-            // Load the 1LastWord scene
-            SceneManager.LoadScene("1LastWord");
-        }
+        
     }
 
     void DeductHappiness(int percent)
@@ -288,34 +270,15 @@ public class Energy_Bar : MonoBehaviour
         happiness_current = Mathf.Max(0, happiness_current - amountToDeduct);
         GetHappinessFill();
 
-        if (happiness_current == 0)
-        {
-            PlayerPrefs.SetInt("CauseOfDeath", 1); // 5 = Energy death (you can define it)
-            PlayerPrefs.SetString("CurrentStage", currentStage.ToString()); // assume you have this variable
-            PlayerPrefs.Save();
 
-            FindFirstObjectByType<BGMScript>().StopMusic();
-            // Load the 1LastWord scene
-            SceneManager.LoadScene("1LastWord");
-        }
     }
-
-    void DeductHealth(int percent)
+void DeductHealth(int percent)
     {
         int amountToDeduct = Mathf.CeilToInt((percent / 100f) * health_max);
         health_current = Mathf.Max(0, health_current - amountToDeduct);
         GetHealthFill();
 
-        if (health_current == 0)
-        {
-            PlayerPrefs.SetInt("CauseOfDeath", 3); // 5 = Energy death (you can define it)
-            PlayerPrefs.SetString("CurrentStage", currentStage.ToString()); // assume you have this variable
-            PlayerPrefs.Save();
-
-            FindFirstObjectByType<BGMScript>().StopMusic();
-            // Load the 1LastWord scene
-            SceneManager.LoadScene("1LastWord");
-        }
+        
     }
 
     void GetEnergyFill()
@@ -441,6 +404,9 @@ public class Energy_Bar : MonoBehaviour
              PlayerPrefs.Save();
 
             // Load the 1LastWord scene
+            petDead = true;
+            PlayerPrefs.SetInt("PetDead", petDead ? 1 : 0);
+            PlayerPrefs.Save();
             FindFirstObjectByType<BGMScript>().StopMusic();
             SceneManager.LoadScene("1LastWord");
             
@@ -481,6 +447,9 @@ public class Energy_Bar : MonoBehaviour
         data.lastHungerSecond = 0f;
         string json = JsonUtility.ToJson(data);
         PlayerPrefs.SetString("PetData", json);
+        PlayerPrefs.Save();
+        petDead = false;
+        PlayerPrefs.SetInt("PetDead",petDead ? 1 : 0);
         PlayerPrefs.Save();
     }
 
@@ -720,5 +689,64 @@ public class Energy_Bar : MonoBehaviour
         public static bool hasReachedTeenHalf = false;
         public static bool hasReachedAdultHalf = false;
         public static bool hasReachedOldHalf = false;
+    }
+
+    private void Update()
+    {
+        if (energy_current == 0)
+        {
+            PlayerPrefs.SetInt("CauseOfDeath", 2); // 5 = Energy death (you can define it)
+            PlayerPrefs.SetString("CurrentStage", currentStage.ToString()); // assume you have this variable
+            PlayerPrefs.Save();
+
+            FindFirstObjectByType<BGMScript>().StopMusic();
+            // Load the 1LastWord scene
+            petDead = true;
+            PlayerPrefs.SetInt("PetDead", petDead ? 1 : 0);
+            PlayerPrefs.Save();
+            SceneManager.LoadScene("1LastWord");
+        }
+
+        if (hunger_current == 0)
+        {
+            PlayerPrefs.SetInt("CauseOfDeath", 0); // 5 = Energy death (you can define it)
+            PlayerPrefs.SetString("CurrentStage", currentStage.ToString()); // assume you have this variable
+            PlayerPrefs.Save();
+
+            FindFirstObjectByType<BGMScript>().StopMusic();
+            // Load the 1LastWord scene
+            petDead = true;
+            PlayerPrefs.SetInt("PetDead", petDead ? 1 : 0);
+            PlayerPrefs.Save();
+            SceneManager.LoadScene("1LastWord");
+        }
+
+        if (happiness_current == 0)
+        {
+            PlayerPrefs.SetInt("CauseOfDeath", 1); // 5 = Energy death (you can define it)
+            PlayerPrefs.SetString("CurrentStage", currentStage.ToString()); // assume you have this variable
+            PlayerPrefs.Save();
+
+            FindFirstObjectByType<BGMScript>().StopMusic();
+            // Load the 1LastWord scene
+            petDead = true;
+            PlayerPrefs.SetInt("PetDead", petDead ? 1 : 0);
+            PlayerPrefs.Save();
+            SceneManager.LoadScene("1LastWord");
+        }
+
+        if (health_current == 0)
+        {
+            PlayerPrefs.SetInt("CauseOfDeath", 3); // 5 = Energy death (you can define it)
+            PlayerPrefs.SetString("CurrentStage", currentStage.ToString()); // assume you have this variable
+            PlayerPrefs.Save();
+
+            FindFirstObjectByType<BGMScript>().StopMusic();
+            // Load the 1LastWord scene
+            petDead = true;
+            PlayerPrefs.SetInt("PetDead", petDead ? 1 : 0);
+            PlayerPrefs.Save();
+            SceneManager.LoadScene("1LastWord");
+        }
     }
 }

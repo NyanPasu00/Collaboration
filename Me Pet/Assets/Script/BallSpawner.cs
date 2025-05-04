@@ -22,7 +22,7 @@ public class BallSpawner : MonoBehaviour
         timeElapsed += Time.deltaTime;
 
         // Increase difficulty every 60 seconds
-        if (timeElapsed >= 60f)
+        if (timeElapsed >= 30f)
         {
             gravityScale += 0.1f; // balls fall faster
             timeElapsed = 0f;

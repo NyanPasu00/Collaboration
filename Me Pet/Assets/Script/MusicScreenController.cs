@@ -61,7 +61,23 @@ public class SongCategoryButton : MonoBehaviour
             petAnimator.SetBool("Dance", false);
             petAnimator.SetBool("Laydown", false);
             petAnimator.SetBool("Sad", true);
-            petPosition.localPosition = new Vector3(-1.97f, -3.81f, 0f);
+            if (happinessBar.currentStage == Energy_Bar.PetStage.Kid)
+            {
+                petPosition.localPosition = new Vector3(-1.14f, -3.78f, 0f);
+            }
+            else if (happinessBar.currentStage == Energy_Bar.PetStage.Teen)
+            {
+                petPosition.localPosition = new Vector3(-1.68f, -3.82f, 0f);
+
+            }
+            else if (happinessBar.currentStage == Energy_Bar.PetStage.Adult)
+            {
+                petPosition.localPosition = new Vector3(-2.08f, -3.91f, 0f);
+            }
+            else if (happinessBar.currentStage == Energy_Bar.PetStage.Old)
+            {
+                petPosition.localPosition = new Vector3(-2.08f, -3.91f, 0f);
+            }
             reactionText.text = "I hate this song...";
 
 

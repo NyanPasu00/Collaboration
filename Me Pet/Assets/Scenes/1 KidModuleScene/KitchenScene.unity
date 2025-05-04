@@ -1549,7 +1549,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -293, y: 658}
+  m_AnchoredPosition: {x: -91, y: 658}
   m_SizeDelta: {x: 137, y: 137}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &261129861
@@ -1760,6 +1760,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstTimePlay: 1
+  petDead: 0
   dirtyManager: {fileID: 1771371949}
   energy_max: 100
   energy_current: 0
@@ -2343,7 +2344,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1566040433
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 8981333840325473314, guid: ce3df88584a44f544af60e7de216c7c2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2647,8 +2648,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -84}
-  m_SizeDelta: {x: 0, y: -103.64001}
+  m_AnchoredPosition: {x: 0, y: -84.00001}
+  m_SizeDelta: {x: 33.7, y: -103.640015}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &396730293
 MonoBehaviour:
@@ -2697,8 +2698,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3253,8 +3254,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3545,7 +3546,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -263, y: -136.7}
+  m_AnchoredPosition: {x: -250, y: -169}
   m_SizeDelta: {x: 400, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &544741416
@@ -4422,7 +4423,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -92, y: 657}
+  m_AnchoredPosition: {x: 113, y: 658}
   m_SizeDelta: {x: 137, y: 137}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &640037325
@@ -5355,7 +5356,7 @@ RectTransform:
   m_Father: {fileID: 213583248}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 106860, y: -57937}
   m_SizeDelta: {x: 0, y: 5583.6}
   m_Pivot: {x: 0.5, y: 0}
@@ -6213,7 +6214,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 308.00006, y: 64}
+  m_AnchoredPosition: {x: -293, y: 658.00006}
   m_SizeDelta: {x: 137, y: 137}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &949019524
@@ -6340,7 +6341,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1013784833
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6967,7 +6968,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1566040433
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: -1438510544462665488, guid: b1bceaeada907ca46a65b34c1ca0ee16, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -7697,7 +7698,7 @@ RectTransform:
   m_Father: {fileID: 1381487337}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 15728, y: 64240}
   m_SizeDelta: {x: 0, y: 5583.6}
   m_Pivot: {x: 0.5, y: 0}
@@ -7818,7 +7819,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: -1566040433
+  m_SortingLayerID: 861439107
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &1191086793
@@ -7876,7 +7877,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -263, y: -136.7}
+  m_AnchoredPosition: {x: -250, y: -169}
   m_SizeDelta: {x: 400, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1234644208
@@ -9248,7 +9249,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -263, y: -136.7}
+  m_AnchoredPosition: {x: -250, y: -169}
   m_SizeDelta: {x: 400, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1443660193
@@ -9363,7 +9364,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1566040433
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 4959150648537483080, guid: 84742df66bfac1d4890c6cb05b2d0854, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -10615,8 +10616,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -11318,6 +11319,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioClip: {fileID: 1771371950}
   energy: {fileID: 277346829}
+  hall: 0
+  kitchen: 0
+  bathroom: 0
+  gameroom: 0
 --- !u!4 &1771371947
 Transform:
   m_ObjectHideFlags: 0
@@ -11719,7 +11724,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1566040433
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: -8187443777088593718, guid: 49ab66f87c49cf840b66e1e2b44b11b3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -11908,7 +11913,7 @@ RectTransform:
   m_Father: {fileID: 2094898715}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 106860, y: -105025}
   m_SizeDelta: {x: 0, y: 5583.6}
   m_Pivot: {x: 0.5, y: 0}
@@ -11983,7 +11988,7 @@ RectTransform:
   m_Father: {fileID: 1268084502}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 106860, y: -151783}
   m_SizeDelta: {x: 0, y: 5583.6}
   m_Pivot: {x: 0.5, y: 0}
@@ -12422,7 +12427,7 @@ RectTransform:
   m_Father: {fileID: 608295316}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 106860, y: -10512}
   m_SizeDelta: {x: 0, y: 5583.6}
   m_Pivot: {x: 0.5, y: 0}
@@ -12599,38 +12604,12 @@ MonoBehaviour:
   audioSource: {fileID: 1033324431}
   hungerWarningClip: {fileID: 8300000, guid: 7e258b4e5ce9bff48a8f5c06173b64ee, type: 3}
   foodList:
-  - foodName: apple
-    foodSprite: {fileID: -7832214784768987486, guid: dab0f218206e2184ea44c6bd47fb059f, type: 3}
-  - foodName: avacado
-    foodSprite: {fileID: -3437114875299840621, guid: d86cfe7041bb50945b1755cb7e76a863, type: 3}
-  - foodName: broccoli
-    foodSprite: {fileID: -6693019930522712741, guid: 06842ed30f7d35543b876d53144efda4, type: 3}
-  - foodName: burger
-    foodSprite: {fileID: 6234330970754847308, guid: dbf66677b28e96a43950dc0bddcd70d1, type: 3}
-  - foodName: cake
-    foodSprite: {fileID: 8732635013323328055, guid: 25010ad8e323e10498922e2f4b835945, type: 3}
-  - foodName: cinnamon roll
-    foodSprite: {fileID: 1732006181834797791, guid: 03fb9bde0464cae428abd1b8657b25b8, type: 3}
-  - foodName: cola
-    foodSprite: {fileID: 2138416828236337748, guid: ee2bf9524257fbb469d724ca2ed81c55, type: 3}
-  - foodName: donut
-    foodSprite: {fileID: 1352961961597019730, guid: 6fd3dfb92205ac342a47eb764b2a2e1b, type: 3}
-  - foodName: fish
-    foodSprite: {fileID: 8966945178157639174, guid: a72d23ea153c66a46b2f57d6e7c3b20e, type: 3}
-  - foodName: kiwi
-    foodSprite: {fileID: -6462202804630979062, guid: c9a99924cce706347a0cfe233b3b9b63, type: 3}
   - foodName: milk
     foodSprite: {fileID: -5110731548806032159, guid: 2a42a3efa63f1e0478d5609daa430f1a, type: 3}
-  - foodName: noodle
-    foodSprite: {fileID: 1118559602085323590, guid: bcffd4df8c6523a42af39b6d19ae9f10, type: 3}
-  - foodName: orange
-    foodSprite: {fileID: -6410442598547967069, guid: f4972731ccf8cb544ae0574cf09f7b30, type: 3}
-  - foodName: potato
-    foodSprite: {fileID: 5720276103968338487, guid: 386c4801b2a285d478d3e2c88f2420c0, type: 3}
-  - foodName: rise
-    foodSprite: {fileID: 5142264139618278623, guid: ba66bff01ad554046b323057915c6b56, type: 3}
-  - foodName: watermelon
-    foodSprite: {fileID: 8532703672136922592, guid: 0a31b4695f06bc24d8d89004ac7a7d58, type: 3}
+  - foodName: water
+    foodSprite: {fileID: 8509550459451208454, guid: cb124e533f854ff4c935565226859bc4, type: 3}
+  - foodName: porridge
+    foodSprite: {fileID: 235821408484891339, guid: e9e1c7b652e3e734ca205819e661b3bf, type: 3}
 --- !u!4 &1965428818
 Transform:
   m_ObjectHideFlags: 0
