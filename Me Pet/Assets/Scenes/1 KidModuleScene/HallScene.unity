@@ -402,7 +402,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.523, y: 0.56}
-  m_AnchoredPosition: {x: -49.15065, y: 19.291702}
+  m_AnchoredPosition: {x: -7.2393, y: 47}
   m_SizeDelta: {x: 301.6987, y: 74.1172}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &49846114
@@ -428,14 +428,14 @@ MonoBehaviour:
   m_text: I NEED TO BATH !!!!!!!!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 94aec477f2c9127489a7fb07f498277e, type: 2}
-  m_sharedMaterial: {fileID: -1118073565571878047, guid: bbdef87b398c0d94ab18715a13f750c7, type: 2}
+  m_sharedMaterial: {fileID: -2286773819468506100, guid: 94aec477f2c9127489a7fb07f498277e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4289733408
-  m_fontColor: {r: 0.1254902, g: 0.13725491, b: 0.6901961, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -493,7 +493,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &49846115
@@ -1825,7 +1825,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 295, y: 352}
+  m_AnchoredPosition: {x: 231.3, y: 90}
   m_SizeDelta: {x: 336.1, y: 112.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &217348069
@@ -1850,15 +1850,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: I Hate This Song !!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 94aec477f2c9127489a7fb07f498277e, type: 2}
+  m_sharedMaterial: {fileID: -2286773819468506100, guid: 94aec477f2c9127489a7fb07f498277e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2133,6 +2133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstTimePlay: 1
+  petDead: 0
   dirtyManager: {fileID: 1681957402}
   energy_max: 100
   energy_current: 10
@@ -2298,7 +2299,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 261.8, y: 232.6}
+  m_AnchoredPosition: {x: 244, y: 136}
   m_SizeDelta: {x: 629.5, y: 647.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &259933055
@@ -2751,7 +2752,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 258, y: 282}
+  m_AnchoredPosition: {x: 203, y: 22.999985}
   m_SizeDelta: {x: 461.2, y: 487.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &328250559
@@ -4474,7 +4475,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -4484,7 +4485,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: 861439107
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &584908869
@@ -4916,7 +4917,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1566040433
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 4959150648537483080, guid: 84742df66bfac1d4890c6cb05b2d0854, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5169,7 +5170,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -1566040433
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!1 &711633178
@@ -6470,7 +6471,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1566040433
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: -8187443777088593718, guid: 49ab66f87c49cf840b66e1e2b44b11b3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -6721,7 +6722,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1566040433
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: -1438510544462665488, guid: b1bceaeada907ca46a65b34c1ca0ee16, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -9910,7 +9911,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1566040433
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 8981333840325473314, guid: ce3df88584a44f544af60e7de216c7c2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -11498,6 +11499,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioClip: {fileID: 1681957403}
   energy: {fileID: 255022664}
+  hall: 0
+  kitchen: 0
+  bathroom: 0
+  gameroom: 0
 --- !u!114 &1681957402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14626,7 +14631,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1566040433
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 3
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
