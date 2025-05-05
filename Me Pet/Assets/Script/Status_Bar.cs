@@ -339,12 +339,22 @@ public class Energy_Bar : MonoBehaviour
 
         }
 
+        
+
+
+
+        progress_current += value;
+        GetProgressFill();
+        if (currentStage == PetStage.Kid)
+            stageRepresent.text = $"{PetStageRepresent.K}\n";
+
         if (progress_current >= 50)
         {
             if (isBathing == false && isAlbumOpen == false && isDancing == false && isSleeping == false && isEating == false)
             {
                 if (currentStage == PetStage.Teen && !hasReachedTeenHalf)
                 {
+                    progress_increase_time = 60f;
                     hasReachedTeenHalf = true;
                     PlayerPrefs.SetInt("hasReachedTeenHalf", hasReachedTeenHalf ? 1 : 0);
                     PlayerPrefs.Save();
@@ -352,6 +362,7 @@ public class Energy_Bar : MonoBehaviour
                 }
                 else if (currentStage == PetStage.Adult && !hasReachedAdultHalf)
                 {
+                    progress_increase_time = 60f;
                     hasReachedAdultHalf = true;
                     PlayerPrefs.SetInt("hasReachedAdultHalf", hasReachedAdultHalf ? 1 : 0);
                     PlayerPrefs.Save();
@@ -359,6 +370,7 @@ public class Energy_Bar : MonoBehaviour
                 }
                 else if (currentStage == PetStage.Old && !hasReachedOldHalf)
                 {
+                    progress_increase_time = 60f;
                     hasReachedOldHalf = true;
                     PlayerPrefs.SetInt("hasReachedOldHalf", hasReachedOldHalf ? 1 : 0);
                     PlayerPrefs.Save();
@@ -367,18 +379,24 @@ public class Energy_Bar : MonoBehaviour
             }
             else if (isBathing == true || isAlbumOpen == true || isDancing == true || isSleeping == true || isEating == true)
             {
-                StopCoroutine(IncreaseProgressOverTime());
+                progress_increase_time = 1;
+                if (currentStage == PetStage.Teen && !hasReachedTeenHalf)
+                {
+                    progress_current = 50;
+                }
+                else if (currentStage == PetStage.Adult && !hasReachedAdultHalf)
+                {
+                    progress_current = 50;
+                }
+                else if (currentStage == PetStage.Old && !hasReachedOldHalf)
+                {
+                    progress_current = 50;
+                }
+
                 progressStop = true;
             }
 
         }
-
-
-
-        progress_current += value;
-        GetProgressFill();
-        if (currentStage == PetStage.Kid)
-            stageRepresent.text = $"{PetStageRepresent.K}\n";
 
         if (progress_current >= progress_max)
         {
@@ -389,7 +407,7 @@ public class Energy_Bar : MonoBehaviour
             }
             else
             {
-                StopCoroutine(IncreaseProgressOverTime());
+                progress_increase_time = 1;
                 progressStop = true;
             }
         }
@@ -400,7 +418,7 @@ public class Energy_Bar : MonoBehaviour
     void AdvanceStage()
     {
         string currentScene = SceneManager.GetActiveScene().name;
-
+        progress_increase_time = 60f;
         if (currentStage == PetStage.Kid)
         {
             progressStop = false;
@@ -456,7 +474,7 @@ public class Energy_Bar : MonoBehaviour
             PlayerPrefs.Save();
             PlayerPrefs.SetInt("hasReachedAdultHalf", hasReachedAdultHalf ? 1 : 0);
             PlayerPrefs.Save();
-            PlayerPrefs.SetInt("hasReachedTeenHalf", hasReachedTeenHalf ? 1 : 0);
+            PlayerPrefs.SetInt("hasReachedOldHalf", hasReachedTeenHalf ? 1 : 0);
             PlayerPrefs.Save();
             PlayerPrefs.SetInt("PetDead", petDead ? 1 : 0);
             PlayerPrefs.Save();
@@ -696,11 +714,6 @@ public class Energy_Bar : MonoBehaviour
         }
     }
 
-    public void stopAllCoroutine()
-    {
-
-    }
-
     private void HandleOldHalfProgressEvent()
     {
         progressStop = false;
@@ -831,7 +844,7 @@ public class Energy_Bar : MonoBehaviour
                 PlayerPrefs.Save();
                 PlayerPrefs.SetInt("hasReachedAdultHalf", hasReachedAdultHalf ? 1 : 0);
                 PlayerPrefs.Save();
-                PlayerPrefs.SetInt("hasReachedTeenHalf", hasReachedTeenHalf ? 1 : 0);
+                PlayerPrefs.SetInt("hasReachedOldHalf", hasReachedTeenHalf ? 1 : 0);
                 PlayerPrefs.Save();
                 PlayerPrefs.SetInt("PetDead", petDead ? 1 : 0);
                 PlayerPrefs.Save();
@@ -854,7 +867,7 @@ public class Energy_Bar : MonoBehaviour
                 PlayerPrefs.Save();
                 PlayerPrefs.SetInt("hasReachedAdultHalf", hasReachedAdultHalf ? 1 : 0);
                 PlayerPrefs.Save();
-                PlayerPrefs.SetInt("hasReachedTeenHalf", hasReachedTeenHalf ? 1 : 0);
+                PlayerPrefs.SetInt("hasReachedOldHalf", hasReachedTeenHalf ? 1 : 0);
                 PlayerPrefs.Save();
                 PlayerPrefs.SetInt("PetDead", petDead ? 1 : 0);
                 PlayerPrefs.Save();
@@ -877,7 +890,7 @@ public class Energy_Bar : MonoBehaviour
                 PlayerPrefs.Save();
                 PlayerPrefs.SetInt("hasReachedAdultHalf", hasReachedAdultHalf ? 1 : 0);
                 PlayerPrefs.Save();
-                PlayerPrefs.SetInt("hasReachedTeenHalf", hasReachedTeenHalf ? 1 : 0);
+                PlayerPrefs.SetInt("hasReachedOldHalf", hasReachedTeenHalf ? 1 : 0);
                 PlayerPrefs.Save();
                 PlayerPrefs.SetInt("PetDead", petDead ? 1 : 0);
                 PlayerPrefs.Save();
@@ -900,7 +913,7 @@ public class Energy_Bar : MonoBehaviour
                 PlayerPrefs.Save();
                 PlayerPrefs.SetInt("hasReachedAdultHalf", hasReachedAdultHalf ? 1 : 0);
                 PlayerPrefs.Save();
-                PlayerPrefs.SetInt("hasReachedTeenHalf", hasReachedTeenHalf ? 1 : 0);
+                PlayerPrefs.SetInt("hasReachedOldHalf", hasReachedTeenHalf ? 1 : 0);
                 PlayerPrefs.Save();
                 PlayerPrefs.SetInt("PetDead", petDead ? 1 : 0);
                 PlayerPrefs.Save();

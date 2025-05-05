@@ -1103,7 +1103,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 160, y: 219}
+  m_AnchoredPosition: {x: -294, y: 150}
   m_SizeDelta: {x: 400, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &259658229
@@ -2148,6 +2148,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 668408382764934556, guid: dde047afb0b15bc43b41531e603af947, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 9c7504dee3a069c499f2b109f6d5a36a, type: 2}
     - target: {fileID: 2262169225891608259, guid: dde047afb0b15bc43b41531e603af947, type: 3}
       propertyPath: m_FlipX
       value: 0
@@ -2449,6 +2453,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c7d96763a0f1314fbd1b9f7d2c3c632, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isEating: 0
   catAnimator: {fileID: 957184035}
   mouthPointObject: {fileID: 1509086411}
   MedicationDialogue: {fileID: 2100234982}
@@ -2909,7 +2914,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &570778333
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3070,27 +3075,27 @@ MonoBehaviour:
   energy_current: 0
   energy_Slider: {fileID: 992716956}
   energyDetail_Slider: {fileID: 84379903}
-  energy_deduct_time: 2
+  energy_deduct_time: 60
   hunger_max: 100
   hunger_current: 0
   hunger_Slider: {fileID: 1275130164}
   hungerDetail_Slider: {fileID: 1175636661}
-  hunger_deduct_time: 2
+  hunger_deduct_time: 60
   happiness_max: 100
   happiness_current: 0
   happiness_Slider: {fileID: 2021443270}
   happinessDetail_Slider: {fileID: 401031208}
-  happiness_deduct_time: 2
+  happiness_deduct_time: 60
   health_max: 100
   health_current: 0
   health_Slider: {fileID: 1451041340}
   healthDetail_Slider: {fileID: 227914550}
-  health_deduct_time: 2
+  health_deduct_time: 60
   progress_max: 100
   progress_current: 0
   progress_Image: {fileID: 2114482622}
   progressDetail_Slider: {fileID: 302110971}
-  progress_increase_time: 2
+  progress_increase_time: 60
   currentStage: 0
   stageRepresent: {fileID: 1749039129}
 --- !u!224 &578909568
@@ -3942,7 +3947,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.20713258, y: -2.433212}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -3952,7 +3957,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.7198272, y: 1.6912551}
   m_EdgeRadius: 0
 --- !u!1 &893362759
 GameObject:
@@ -5121,7 +5126,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 160, y: 219}
+  m_AnchoredPosition: {x: -294, y: 150}
   m_SizeDelta: {x: 400, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1079923885
@@ -7905,7 +7910,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.0044142604, y: 2.1997848}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -7915,7 +7920,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.5674013, y: 1.6076766}
   m_EdgeRadius: 0
 --- !u!1 &1526257963
 GameObject:
@@ -8506,7 +8511,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4c5704974975c6142a828b8ea7fe8aec, type: 3}
   m_Resource: {fileID: 8300000, guid: 4c5704974975c6142a828b8ea7fe8aec, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -10430,9 +10435,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 536776}
-        m_TargetAssemblyTypeName: BackButtonHandler, Assembly-CSharp
-        m_MethodName: OnBackButtonClicked
+      - m_Target: {fileID: 536777}
+        m_TargetAssemblyTypeName: DigitalAlbumManager, Assembly-CSharp
+        m_MethodName: ToggleDigitalAlbum
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11043,7 +11048,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 160, y: 219}
+  m_AnchoredPosition: {x: -294, y: 150}
   m_SizeDelta: {x: 400, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2100234984
