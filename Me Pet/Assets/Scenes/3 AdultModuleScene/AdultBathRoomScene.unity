@@ -404,9 +404,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 659285452}
-        m_TargetAssemblyTypeName: BackButtonHandler, Assembly-CSharp
-        m_MethodName: OnBackButtonClicked
+      - m_Target: {fileID: 659285453}
+        m_TargetAssemblyTypeName: DigitalAlbumManager, Assembly-CSharp
+        m_MethodName: ToggleDigitalAlbum
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3440,7 +3440,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 0000000049811cd5b598063a87ddb05a2f1c1e85b974c0148f1ea8a2517c212a231f0f2d1b45aea8
+  m_ApplyToSortingLayers: 0000000049811cd5b598063a87ddb05a838458332f1c1e85b974c0148f1ea8a207660afe517c212a231f0f2d1b45aea8
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
