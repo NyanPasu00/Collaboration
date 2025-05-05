@@ -9082,9 +9082,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1350873960}
-        m_TargetAssemblyTypeName: BackButtonHandler, Assembly-CSharp
-        m_MethodName: OnBackButtonClicked
+      - m_Target: {fileID: 1350873961}
+        m_TargetAssemblyTypeName: DigitalAlbumManager, Assembly-CSharp
+        m_MethodName: ToggleDigitalAlbum
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
