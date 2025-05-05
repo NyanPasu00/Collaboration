@@ -2323,6 +2323,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstTimePlay: 1
   petDead: 0
+  isEating: 0
+  isDancing: 0
+  isSleeping: 0
+  isBathing: 0
+  isAlbumOpen: 0
+  progressStop: 0
   dirtyManager: {fileID: 1681957402}
   energy_max: 100
   energy_current: 100
@@ -3089,7 +3095,7 @@ RectTransform:
   m_Children:
   - {fileID: 470426651}
   - {fileID: 2074297598}
-  - {fileID: 802792731}
+  - {fileID: 1438540006}
   m_Father: {fileID: 55045120}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -5684,6 +5690,73 @@ Canvas:
   m_SortingLayerID: -1566040433
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &722300162
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 722300163}
+  - component: {fileID: 722300164}
+  m_Layer: 5
+  m_Name: Scroll back
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &722300163
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 722300162}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 802792731}
+  m_Father: {fileID: 1438540006}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.000035763, y: 0.00015259}
+  m_SizeDelta: {x: 1080, y: 1820.6}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &722300164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 722300162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa08ab6e0800fa44ae55d278d1423e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Content: {fileID: 802792731}
+  m_Horizontal: 0
+  m_Vertical: 1
+  m_MovementType: 1
+  m_Elasticity: 0.1
+  m_Inertia: 1
+  m_DecelerationRate: 0.135
+  m_ScrollSensitivity: 1
+  m_Viewport: {fileID: 0}
+  m_HorizontalScrollbar: {fileID: 0}
+  m_VerticalScrollbar: {fileID: 0}
+  m_HorizontalScrollbarVisibility: 0
+  m_VerticalScrollbarVisibility: 0
+  m_HorizontalScrollbarSpacing: 0
+  m_VerticalScrollbarSpacing: 0
+  m_OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &750647267
 GameObject:
   m_ObjectHideFlags: 0
@@ -6222,6 +6295,7 @@ GameObject:
   m_Component:
   - component: {fileID: 802792731}
   - component: {fileID: 802792732}
+  - component: {fileID: 802792733}
   m_Layer: 5
   m_Name: petListContent
   m_TagString: Untagged
@@ -6236,18 +6310,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 802792730}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 326691529}
+  m_Father: {fileID: 722300163}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -215, y: 295}
-  m_SizeDelta: {x: -550, y: -1590}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -205, y: -0.00030517578}
+  m_SizeDelta: {x: -570, y: 170}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &802792732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6264,7 +6338,7 @@ MonoBehaviour:
     m_Left: 0
     m_Right: 0
     m_Top: 0
-    m_Bottom: 0
+    m_Bottom: 200
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
@@ -6272,6 +6346,20 @@ MonoBehaviour:
   m_Spacing: {x: 50, y: 30}
   m_Constraint: 1
   m_ConstraintCount: 2
+--- !u!114 &802792733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 802792730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 0
+  m_VerticalFit: 2
 --- !u!1 &853824294
 GameObject:
   m_ObjectHideFlags: 0
@@ -9394,6 +9482,57 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1438540005
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1438540006}
+  - component: {fileID: 1438540007}
+  m_Layer: 5
+  m_Name: Scroll area
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1438540006
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438540005}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 722300163}
+  m_Father: {fileID: 326691529}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -229.7}
+  m_SizeDelta: {x: 1080, y: 1820.6}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1438540007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438540005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3312d7739989d2b4e91e6319e9a96d76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding: {x: 0, y: 0, z: 0, w: 0}
+  m_Softness: {x: 0, y: 0}
 --- !u!1 &1457415111
 GameObject:
   m_ObjectHideFlags: 0
@@ -11391,6 +11530,7 @@ MonoBehaviour:
   HallDarkScreen: {fileID: 946203367}
   petAnimator: {fileID: 2144841301}
   energyBar: {fileID: 255022664}
+  isSleeping: 1
   audio: {fileID: 1681957404}
 --- !u!114 &1681957398
 MonoBehaviour:
@@ -11434,6 +11574,7 @@ MonoBehaviour:
   countryMusic: {fileID: 8300000, guid: c361abb9f25ceb9408dcdb5f6415d14f, type: 3}
   jazzMusic: {fileID: 8300000, guid: 37673213464010b429195711b1e09be1, type: 3}
   metalMusic: {fileID: 8300000, guid: eb537ba88ec477c43b7eb5bb6c292f90, type: 3}
+  isDancing: 0
 --- !u!114 &1681957400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11465,6 +11606,7 @@ MonoBehaviour:
   kitchen: 0
   bathroom: 0
   gameroom: 0
+  currentStage: 0
 --- !u!114 &1681957402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11490,6 +11632,7 @@ MonoBehaviour:
   dirtyInterval: 50
   currentShower: {fileID: 0}
   catAnimator: {fileID: 2144841301}
+  isBathing: 0
   energy: {fileID: 0}
   spawnArea: {fileID: 1386146539}
   spawnAreaLying: {fileID: 1386146539}

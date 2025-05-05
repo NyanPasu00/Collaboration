@@ -946,7 +946,7 @@ RectTransform:
   m_Father: {fileID: 1021599755}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 106860, y: -151783}
   m_SizeDelta: {x: 0, y: 5583.6}
   m_Pivot: {x: 0.5, y: 0}
@@ -1942,6 +1942,7 @@ MonoBehaviour:
   countryMusic: {fileID: 8300000, guid: c361abb9f25ceb9408dcdb5f6415d14f, type: 3}
   jazzMusic: {fileID: 8300000, guid: 37673213464010b429195711b1e09be1, type: 3}
   metalMusic: {fileID: 8300000, guid: eb537ba88ec477c43b7eb5bb6c292f90, type: 3}
+  isDancing: 0
 --- !u!4 &174843806
 Transform:
   m_ObjectHideFlags: 0
@@ -2661,32 +2662,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstTimePlay: 1
   petDead: 0
+  isEating: 0
+  isDancing: 0
+  isSleeping: 0
+  isBathing: 0
+  isAlbumOpen: 0
+  progressStop: 0
   dirtyManager: {fileID: 1681957402}
   energy_max: 100
   energy_current: 100
   energy_Slider: {fileID: 1322222151}
   energyDetail_Slider: {fileID: 1798379591}
-  energy_deduct_time: 2
+  energy_deduct_time: 60
   hunger_max: 100
   hunger_current: 100
   hunger_Slider: {fileID: 96501346}
   hungerDetail_Slider: {fileID: 1536039296}
-  hunger_deduct_time: 2
+  hunger_deduct_time: 60
   happiness_max: 100
   happiness_current: 100
   happiness_Slider: {fileID: 1974423869}
   happinessDetail_Slider: {fileID: 2133073182}
-  happiness_deduct_time: 2
+  happiness_deduct_time: 60
   health_max: 100
   health_current: 100
   health_Slider: {fileID: 403095715}
   healthDetail_Slider: {fileID: 1021599756}
-  health_deduct_time: 2
+  health_deduct_time: 60
   progress_max: 100
   progress_current: 0
   progress_Image: {fileID: 1165590361}
   progressDetail_Slider: {fileID: 965522107}
-  progress_increase_time: 2
+  progress_increase_time: 60
   currentStage: 0
   stageRepresent: {fileID: 1888166904}
 --- !u!1 &259933053
@@ -3579,7 +3586,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &353523587
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4212,7 +4219,7 @@ RectTransform:
   m_Father: {fileID: 1798379590}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 106860, y: -10512}
   m_SizeDelta: {x: 0, y: 5583.6}
   m_Pivot: {x: 0.5, y: 0}
@@ -4644,6 +4651,7 @@ MonoBehaviour:
   countryMusic: {fileID: 8300000, guid: c361abb9f25ceb9408dcdb5f6415d14f, type: 3}
   jazzMusic: {fileID: 8300000, guid: 37673213464010b429195711b1e09be1, type: 3}
   metalMusic: {fileID: 8300000, guid: eb537ba88ec477c43b7eb5bb6c292f90, type: 3}
+  isDancing: 0
 --- !u!4 &506722391
 Transform:
   m_ObjectHideFlags: 0
@@ -7759,6 +7767,7 @@ MonoBehaviour:
   countryMusic: {fileID: 8300000, guid: c361abb9f25ceb9408dcdb5f6415d14f, type: 3}
   jazzMusic: {fileID: 8300000, guid: 37673213464010b429195711b1e09be1, type: 3}
   metalMusic: {fileID: 8300000, guid: eb537ba88ec477c43b7eb5bb6c292f90, type: 3}
+  isDancing: 0
 --- !u!4 &986545893
 Transform:
   m_ObjectHideFlags: 0
@@ -9461,6 +9470,7 @@ MonoBehaviour:
   countryMusic: {fileID: 8300000, guid: c361abb9f25ceb9408dcdb5f6415d14f, type: 3}
   jazzMusic: {fileID: 8300000, guid: 37673213464010b429195711b1e09be1, type: 3}
   metalMusic: {fileID: 8300000, guid: eb537ba88ec477c43b7eb5bb6c292f90, type: 3}
+  isDancing: 0
 --- !u!1 &1208604406
 GameObject:
   m_ObjectHideFlags: 0
@@ -10848,7 +10858,7 @@ RectTransform:
   m_Father: {fileID: 1536039295}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 106860, y: -57937}
   m_SizeDelta: {x: 0, y: 5583.6}
   m_Pivot: {x: 0.5, y: 0}
@@ -12042,7 +12052,7 @@ RectTransform:
   m_Father: {fileID: 2133073181}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 106860, y: -105025}
   m_SizeDelta: {x: 0, y: 5583.6}
   m_Pivot: {x: 0.5, y: 0}
@@ -12487,6 +12497,7 @@ MonoBehaviour:
   countryMusic: {fileID: 8300000, guid: c361abb9f25ceb9408dcdb5f6415d14f, type: 3}
   jazzMusic: {fileID: 8300000, guid: 37673213464010b429195711b1e09be1, type: 3}
   metalMusic: {fileID: 8300000, guid: eb537ba88ec477c43b7eb5bb6c292f90, type: 3}
+  isDancing: 0
 --- !u!4 &1616287946
 Transform:
   m_ObjectHideFlags: 0
@@ -13302,6 +13313,7 @@ MonoBehaviour:
   HallDarkScreen: {fileID: 946203367}
   petAnimator: {fileID: 2144841301}
   energyBar: {fileID: 255022664}
+  isSleeping: 1
   audio: {fileID: 0}
 --- !u!114 &1681957398
 MonoBehaviour:
@@ -13345,6 +13357,7 @@ MonoBehaviour:
   countryMusic: {fileID: 0}
   jazzMusic: {fileID: 0}
   metalMusic: {fileID: 0}
+  isDancing: 0
 --- !u!114 &1681957400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13402,6 +13415,7 @@ MonoBehaviour:
   dirtyInterval: 50
   currentShower: {fileID: 0}
   catAnimator: {fileID: 2144841301}
+  isBathing: 0
   energy: {fileID: 0}
   spawnArea: {fileID: 1386146539}
   spawnAreaLying: {fileID: 1386146539}
@@ -13698,6 +13712,7 @@ MonoBehaviour:
   countryMusic: {fileID: 8300000, guid: c361abb9f25ceb9408dcdb5f6415d14f, type: 3}
   jazzMusic: {fileID: 8300000, guid: 37673213464010b429195711b1e09be1, type: 3}
   metalMusic: {fileID: 8300000, guid: eb537ba88ec477c43b7eb5bb6c292f90, type: 3}
+  isDancing: 0
 --- !u!4 &1732747460
 Transform:
   m_ObjectHideFlags: 0
@@ -15303,7 +15318,7 @@ RectTransform:
   m_Father: {fileID: 965522106}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 15728, y: 64240}
   m_SizeDelta: {x: 0, y: 5583.6}
   m_Pivot: {x: 0.5, y: 0}

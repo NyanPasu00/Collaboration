@@ -9,6 +9,8 @@ public class DragPotion : MonoBehaviour
     private bool isDrinking = false;
     private bool isOverMouth = false;
 
+    public bool isEating;
+
     public Animator catAnimator; 
 
 
@@ -101,13 +103,16 @@ public class DragPotion : MonoBehaviour
             if (isOverMouth)
             {
                 if (energyBarScript.health_current >= 100)
-                {
+                {                  
                     HealthFullDialogue.SetActive(true);
                     // Return potion to original position
                     transform.position = originalPosition;
                 }
                 else
                 {
+                    isEating = true;
+                    PlayerPrefs.SetInt("IsEating", isEating ? 1 : 0);
+                    PlayerPrefs.Save();
                     StartCoroutine(DrinkPotion());
                 }
             }
@@ -176,6 +181,9 @@ public class DragPotion : MonoBehaviour
         if (FeedSuccessDialogue != null)
             FeedSuccessDialogue.SetActive(false);
         isDrinking = false;
+        isEating = false;
+        PlayerPrefs.SetInt("IsEating", isEating ? 1 : 0);
+        PlayerPrefs.Save();
     }
 
     public void EndEatingAnimation()

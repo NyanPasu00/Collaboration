@@ -1342,6 +1342,7 @@ GameObject:
   m_Component:
   - component: {fileID: 152940532}
   - component: {fileID: 152940533}
+  - component: {fileID: 152940534}
   m_Layer: 5
   m_Name: petListContent
   m_TagString: Untagged
@@ -1356,18 +1357,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 152940531}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 563310245}
+  m_Father: {fileID: 1500720110}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -215, y: 295}
-  m_SizeDelta: {x: -550, y: -1590}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -205, y: -0.00012207031}
+  m_SizeDelta: {x: -570, y: 170}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &152940533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1384,7 +1385,7 @@ MonoBehaviour:
     m_Left: 0
     m_Right: 0
     m_Top: 0
-    m_Bottom: 0
+    m_Bottom: 200
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
@@ -1392,6 +1393,20 @@ MonoBehaviour:
   m_Spacing: {x: 50, y: 30}
   m_Constraint: 1
   m_ConstraintCount: 2
+--- !u!114 &152940534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152940531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 0
+  m_VerticalFit: 2
 --- !u!1 &159806015
 GameObject:
   m_ObjectHideFlags: 0
@@ -2414,6 +2429,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstTimePlay: 1
   petDead: 0
+  isEating: 0
+  isDancing: 0
+  isSleeping: 0
+  isBathing: 0
+  isAlbumOpen: 0
+  progressStop: 0
   dirtyManager: {fileID: 1771371949}
   energy_max: 100
   energy_current: 0
@@ -4644,6 +4665,57 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 544741414}
   m_CullTransparentMesh: 1
+--- !u!1 &554279452
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 554279453}
+  - component: {fileID: 554279454}
+  m_Layer: 5
+  m_Name: Scroll area
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &554279453
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554279452}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1500720110}
+  m_Father: {fileID: 563310245}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -229.7}
+  m_SizeDelta: {x: 1080, y: 1820.6}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &554279454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554279452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3312d7739989d2b4e91e6319e9a96d76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding: {x: 0, y: 0, z: 0, w: 0}
+  m_Softness: {x: 0, y: 0}
 --- !u!1 &563310242
 GameObject:
   m_ObjectHideFlags: 0
@@ -4714,7 +4786,7 @@ RectTransform:
   m_Children:
   - {fileID: 874893532}
   - {fileID: 859911693}
-  - {fileID: 152940532}
+  - {fileID: 554279453}
   m_Father: {fileID: 717961169}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -5180,6 +5252,7 @@ MonoBehaviour:
   FeedSuccessDialogue: {fileID: 1234644206}
   energyBarScript: {fileID: 277346829}
   eatingSound: {fileID: 1033324431}
+  isEating: 0
 --- !u!61 &592187373
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13384,6 +13457,73 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1489592767}
   m_CullTransparentMesh: 1
+--- !u!1 &1500720109
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1500720110}
+  - component: {fileID: 1500720111}
+  m_Layer: 5
+  m_Name: Scroll back
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1500720110
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500720109}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 152940532}
+  m_Father: {fileID: 554279453}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.000035763, y: 0.00015259}
+  m_SizeDelta: {x: 1080, y: 1820.6}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1500720111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500720109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa08ab6e0800fa44ae55d278d1423e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Content: {fileID: 152940532}
+  m_Horizontal: 0
+  m_Vertical: 1
+  m_MovementType: 1
+  m_Elasticity: 0.1
+  m_Inertia: 1
+  m_DecelerationRate: 0.135
+  m_ScrollSensitivity: 1
+  m_Viewport: {fileID: 0}
+  m_HorizontalScrollbar: {fileID: 0}
+  m_VerticalScrollbar: {fileID: 0}
+  m_HorizontalScrollbarVisibility: 0
+  m_VerticalScrollbarVisibility: 0
+  m_HorizontalScrollbarSpacing: 0
+  m_VerticalScrollbarSpacing: 0
+  m_OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1514714757
 GameObject:
   m_ObjectHideFlags: 0
@@ -16404,6 +16544,7 @@ MonoBehaviour:
   kitchen: 0
   bathroom: 0
   gameroom: 0
+  currentStage: 0
 --- !u!4 &1771371947
 Transform:
   m_ObjectHideFlags: 0
@@ -16457,6 +16598,7 @@ MonoBehaviour:
   dirtyInterval: 50
   currentShower: {fileID: 0}
   catAnimator: {fileID: 0}
+  isBathing: 0
   energy: {fileID: 0}
   spawnArea: {fileID: 825106549}
   spawnAreaLying: {fileID: 0}
