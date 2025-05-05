@@ -38,6 +38,14 @@ public class SceneLoader : MonoBehaviour
     public bool bathroom = false;
     public bool gameroom = false;
     public PetStage currentStage;
+
+
+    public bool isEating;
+    public bool isSleeping;
+    public bool isDancing;
+    public bool isBathing;
+    public bool isAlbumOpen;
+
     private void Awake()
     {
         if (Instance == null)
@@ -80,12 +88,36 @@ public class SceneLoader : MonoBehaviour
         }
         else
         {
+            isBathing = false;
+            PlayerPrefs.SetInt("IsBathing", isBathing ? 1 : 0);
+            isDancing = false;
+            PlayerPrefs.SetInt("IsDancing", isDancing ? 1 : 0);
+            isEating = false;
+            PlayerPrefs.SetInt("IsEating", isEating ? 1 : 0);
+            isAlbumOpen = false;
+            PlayerPrefs.SetInt("IsAlbumOpen", isAlbumOpen ? 1 : 0);
+            isSleeping = false;
+            PlayerPrefs.SetInt("IsSleeping", isSleeping ? 1 : 0);
+
+            PlayerPrefs.Save();
             SceneManager.LoadScene(sceneName); // fallback
         }
     }
 
     private System.Collections.IEnumerator PlaySoundAndLoad(string sceneName)
     {
+        isBathing = false;
+        PlayerPrefs.SetInt("IsBathing", isBathing ? 1 : 0);
+        isDancing = false;
+        PlayerPrefs.SetInt("IsDancing", isDancing ? 1 : 0);
+        isEating = false;
+        PlayerPrefs.SetInt("IsEating", isEating ? 1 : 0);
+        isAlbumOpen = false;
+        PlayerPrefs.SetInt("IsAlbumOpen", isAlbumOpen ? 1 : 0);
+        isSleeping = false;
+        PlayerPrefs.SetInt("IsSleeping", isSleeping ? 1 : 0);
+
+        PlayerPrefs.Save();
         audioClip.Play();
         yield return new WaitForSeconds(0.4f); // wait short delay (or audioClip.clip.length)
         SceneManager.LoadScene(sceneName);

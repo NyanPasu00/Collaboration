@@ -2600,7 +2600,7 @@ Animator:
   m_GameObject: {fileID: 434181674}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 696e5d1d9504fa447b72e9378533fa55, type: 2}
+  m_Controller: {fileID: 9100000, guid: 363443b1ac7aa564c8b0f0c8e884e3ae, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -5059,6 +5059,11 @@ MonoBehaviour:
   bathroom: 0
   gameroom: 0
   currentStage: 0
+  isEating: 0
+  isSleeping: 0
+  isDancing: 0
+  isBathing: 0
+  isAlbumOpen: 0
 --- !u!82 &1089409764
 AudioSource:
   m_ObjectHideFlags: 0
