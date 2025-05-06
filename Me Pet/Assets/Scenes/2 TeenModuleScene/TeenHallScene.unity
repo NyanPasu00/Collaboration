@@ -10211,6 +10211,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1681957397}
+        m_TargetAssemblyTypeName: LightToggle, Assembly-CSharp
+        m_MethodName: OpenBackLight
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1615036142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11124,6 +11136,7 @@ MonoBehaviour:
   energyBar: {fileID: 255022664}
   isSleeping: 1
   audio: {fileID: 1681957404}
+  isWaitingToRegen: 0
 --- !u!114 &1681957398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11199,6 +11212,11 @@ MonoBehaviour:
   bathroom: 0
   gameroom: 0
   currentStage: 0
+  isEating: 0
+  isSleeping: 0
+  isDancing: 0
+  isBathing: 0
+  isAlbumOpen: 0
 --- !u!114 &1681957402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13436,6 +13454,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1681957401}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
         m_MethodName: BackToKitchenScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1681957397}
+        m_TargetAssemblyTypeName: LightToggle, Assembly-CSharp
+        m_MethodName: OpenBackLight
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

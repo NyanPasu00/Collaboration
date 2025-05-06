@@ -16,7 +16,7 @@ public class WaterDrop : MonoBehaviour
             if (catManager != null)
             {
                 // Block shower if not dirty enough
-                if (catManager.dirty <= 20)
+                if (catManager.dirty < 20)
                 {
                     catManager.ShowCloudMessage("I still not so dirty yet >_<", 2f);
                     return;

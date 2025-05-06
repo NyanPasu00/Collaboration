@@ -59,6 +59,14 @@ public class LightToggle : MonoBehaviour
         }
     }
 
+    public void OpenBackLight()
+    {
+        if (isLightOn == false)
+        {
+            HallLightScreen.SetActive(isLightOn);
+            HallDarkScreen.SetActive(!isLightOn);
+        }
+    }
     private IEnumerator DelayedRegenerateEnergy()
     {
         isWaitingToRegen = true;

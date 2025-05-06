@@ -13966,7 +13966,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Rise
+  m_text: Rice
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 94aec477f2c9127489a7fb07f498277e, type: 2}
   m_sharedMaterial: {fileID: -2286773819468506100, guid: 94aec477f2c9127489a7fb07f498277e, type: 2}
@@ -16150,6 +16150,11 @@ MonoBehaviour:
   bathroom: 0
   gameroom: 0
   currentStage: 0
+  isEating: 0
+  isSleeping: 0
+  isDancing: 0
+  isBathing: 0
+  isAlbumOpen: 0
 --- !u!4 &1771371947
 Transform:
   m_ObjectHideFlags: 0
@@ -17960,8 +17965,12 @@ MonoBehaviour:
   foodList:
   - foodName: apple
     foodSprite: {fileID: -7832214784768987486, guid: dab0f218206e2184ea44c6bd47fb059f, type: 3}
+  - foodName: orange
+    foodSprite: {fileID: -6410442598547967069, guid: f4972731ccf8cb544ae0574cf09f7b30, type: 3}
   - foodName: avacado
     foodSprite: {fileID: -3437114875299840621, guid: d86cfe7041bb50945b1755cb7e76a863, type: 3}
+  - foodName: cola
+    foodSprite: {fileID: 2138416828236337748, guid: ee2bf9524257fbb469d724ca2ed81c55, type: 3}
   - foodName: broccoli
     foodSprite: {fileID: -6693019930522712741, guid: 06842ed30f7d35543b876d53144efda4, type: 3}
   - foodName: burger
@@ -17970,8 +17979,6 @@ MonoBehaviour:
     foodSprite: {fileID: 8732635013323328055, guid: 25010ad8e323e10498922e2f4b835945, type: 3}
   - foodName: cinnamon roll
     foodSprite: {fileID: 1732006181834797791, guid: 03fb9bde0464cae428abd1b8657b25b8, type: 3}
-  - foodName: cola
-    foodSprite: {fileID: 2138416828236337748, guid: ee2bf9524257fbb469d724ca2ed81c55, type: 3}
   - foodName: donut
     foodSprite: {fileID: 1352961961597019730, guid: 6fd3dfb92205ac342a47eb764b2a2e1b, type: 3}
   - foodName: fish
@@ -17982,8 +17989,6 @@ MonoBehaviour:
     foodSprite: {fileID: -5110731548806032159, guid: 2a42a3efa63f1e0478d5609daa430f1a, type: 3}
   - foodName: noodle
     foodSprite: {fileID: 1118559602085323590, guid: bcffd4df8c6523a42af39b6d19ae9f10, type: 3}
-  - foodName: orange
-    foodSprite: {fileID: -6410442598547967069, guid: f4972731ccf8cb544ae0574cf09f7b30, type: 3}
   - foodName: potato
     foodSprite: {fileID: 5720276103968338487, guid: 386c4801b2a285d478d3e2c88f2420c0, type: 3}
   - foodName: rise
