@@ -1912,6 +1912,11 @@ MonoBehaviour:
   bathroom: 0
   gameroom: 0
   currentStage: 0
+  isEating: 0
+  isSleeping: 0
+  isDancing: 0
+  isBathing: 0
+  isAlbumOpen: 0
 --- !u!114 &388585454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11165,7 +11170,7 @@ PrefabInstance:
     - target: {fileID: 668408382764934556, guid: dde047afb0b15bc43b41531e603af947, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 19631f25115d3b74ab584baa8bb340b4, type: 2}
+      objectReference: {fileID: 9100000, guid: a8c6393019f05114591ebf8fa5a86962, type: 2}
     - target: {fileID: 2262169225891608259, guid: dde047afb0b15bc43b41531e603af947, type: 3}
       propertyPath: m_Color.b
       value: 0.5921569

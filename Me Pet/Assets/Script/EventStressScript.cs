@@ -22,7 +22,7 @@ public class EventStressTrigger : MonoBehaviour
     }
     public void StressEventTrigger()
     {
-      
+        
         stressPanel.SetActive(false);
         ChooseComfortPanel.SetActive(true);
     }

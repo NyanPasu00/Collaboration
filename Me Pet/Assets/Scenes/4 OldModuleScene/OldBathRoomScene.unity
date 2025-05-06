@@ -2600,7 +2600,7 @@ Animator:
   m_GameObject: {fileID: 434181674}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 696e5d1d9504fa447b72e9378533fa55, type: 2}
+  m_Controller: {fileID: 9100000, guid: 363443b1ac7aa564c8b0f0c8e884e3ae, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -3532,7 +3532,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 0000000049811cd5b598063a87ddb05a2f1c1e85b974c0148f1ea8a2517c212a231f0f2d1b45aea8
+  m_ApplyToSortingLayers: 0000000049811cd5b598063a87ddb05a838458332f1c1e85b974c0148f1ea8a207660afe517c212a231f0f2d1b45aea8
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -5059,6 +5059,11 @@ MonoBehaviour:
   bathroom: 0
   gameroom: 0
   currentStage: 0
+  isEating: 0
+  isSleeping: 0
+  isDancing: 0
+  isBathing: 0
+  isAlbumOpen: 0
 --- !u!82 &1089409764
 AudioSource:
   m_ObjectHideFlags: 0

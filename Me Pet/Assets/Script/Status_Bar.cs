@@ -489,6 +489,18 @@ public class Energy_Bar : MonoBehaviour
     void OnApplicationQuit()
     {
         SavePetData();
+        isBathing = false;
+        PlayerPrefs.SetInt("IsBathing", isBathing ? 1 : 0);
+        isDancing = false;
+        PlayerPrefs.SetInt("IsDancing", isDancing ? 1 : 0);
+        isEating = false;
+        PlayerPrefs.SetInt("IsEating", isEating ? 1 : 0);
+        isAlbumOpen = false;
+        PlayerPrefs.SetInt("IsAlbumOpen", isAlbumOpen ? 1 : 0);
+        isSleeping = false;
+        PlayerPrefs.SetInt("IsSleeping", isSleeping ? 1 : 0);
+
+        PlayerPrefs.Save();
     }
 
     void OnApplicationPause(bool pause)
@@ -496,6 +508,18 @@ public class Energy_Bar : MonoBehaviour
         if (pause)
         {
             SavePetData();
+            isBathing = false;
+            PlayerPrefs.SetInt("IsBathing", isBathing ? 1 : 0);
+            isDancing = false;
+            PlayerPrefs.SetInt("IsDancing", isDancing ? 1 : 0);
+            isEating = false;
+            PlayerPrefs.SetInt("IsEating", isEating ? 1 : 0);
+            isAlbumOpen = false;
+            PlayerPrefs.SetInt("IsAlbumOpen", isAlbumOpen ? 1 : 0);
+            isSleeping = false;
+            PlayerPrefs.SetInt("IsSleeping", isSleeping ? 1 : 0);
+
+            PlayerPrefs.Save();
         }
     }
 

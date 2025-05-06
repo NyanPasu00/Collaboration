@@ -10764,6 +10764,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1681957397}
+        m_TargetAssemblyTypeName: LightToggle, Assembly-CSharp
+        m_MethodName: OpenBackLight
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1615036142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11676,6 +11688,7 @@ MonoBehaviour:
   energyBar: {fileID: 255022664}
   isSleeping: 1
   audio: {fileID: 1681957404}
+  isWaitingToRegen: 0
 --- !u!114 &1681957398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11751,6 +11764,11 @@ MonoBehaviour:
   bathroom: 0
   gameroom: 0
   currentStage: 0
+  isEating: 0
+  isSleeping: 0
+  isDancing: 0
+  isBathing: 0
+  isAlbumOpen: 0
 --- !u!114 &1681957402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13894,6 +13912,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1681957397}
+        m_TargetAssemblyTypeName: LightToggle, Assembly-CSharp
+        m_MethodName: OpenBackLight
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1925945813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15395,7 +15425,7 @@ PrefabInstance:
     - target: {fileID: 668408382764934556, guid: dde047afb0b15bc43b41531e603af947, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 5687a545e0dbd9c4faec09e2621157a0, type: 2}
+      objectReference: {fileID: 9100000, guid: ea9f47b793806ab4ab26f9d00b6d9ab6, type: 2}
     - target: {fileID: 2262169225891608259, guid: dde047afb0b15bc43b41531e603af947, type: 3}
       propertyPath: m_FlipX
       value: 0

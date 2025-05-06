@@ -96,6 +96,7 @@ public class SongCategoryButton : MonoBehaviour
             isDancing = true;
             PlayerPrefs.SetInt("IsDancing", isDancing ? 1 : 0);
             PlayerPrefs.Save();
+            happinessBar.decreaseHappiness(5);
             happinessBar.ResumeHappinessDeduction();
         }
     }
