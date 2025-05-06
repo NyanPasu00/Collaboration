@@ -160,7 +160,7 @@ public class CatDirtyManager : MonoBehaviour
             //    cloud.SetActive(true);
             //    Debug.Log("The cat needs a bath!");
             //}
-            if (dirty >= maxDirty)
+            if (dirty >= 60)
             {
                 ShowCloudMessage("I need to bath !!! :(", 2.5f);
                 Debug.Log("The cat needs a bath!");

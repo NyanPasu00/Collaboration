@@ -11714,6 +11714,7 @@ MonoBehaviour:
   energyBar: {fileID: 255022664}
   isSleeping: 1
   audio: {fileID: 1681957404}
+  isWaitingToRegen: 0
 --- !u!114 &1681957398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11789,6 +11790,11 @@ MonoBehaviour:
   bathroom: 0
   gameroom: 0
   currentStage: 0
+  isEating: 0
+  isSleeping: 0
+  isDancing: 0
+  isBathing: 0
+  isAlbumOpen: 0
 --- !u!114 &1681957402
 MonoBehaviour:
   m_ObjectHideFlags: 0

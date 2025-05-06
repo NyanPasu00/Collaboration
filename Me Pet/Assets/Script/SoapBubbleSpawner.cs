@@ -124,7 +124,7 @@ public class SoapBubbleSpawner : MonoBehaviour
         activeBubbles.RemoveAll(b => b == null);
         CatDirtyManager catManager = FindAnyObjectByType<CatDirtyManager>();
 
-        if (activeBubbles.Count > 5 && activeBubbles.Count != maxBubbles && !hasShownHalfCleanMessage)
+        if (activeBubbles.Count > maxBubbles/2 && activeBubbles.Count != maxBubbles && !hasShownHalfCleanMessage)
         {
             catManager.ShowCloudMessage("Almost there! Keep scrubbing to make your pet shine!", 2.5f);
             Debug.Log("Message shown: Almost there!");
